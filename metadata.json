@@ -1,0 +1,6 @@
+{
+  "name": "Trim Tahirsylaj",
+  "description": "Website creator and investor specializing in B2B projects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
