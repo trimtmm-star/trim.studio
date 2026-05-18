@@ -26,7 +26,7 @@ const translations = {
     },
     hero: {
       line1: "Trim Tahirsylaj.",
-      line2: "Web Artisan & Investor"
+      line2: "Web Artisan for Growing Businesses"
     },
     subtext: "Refining digital landscapes through thoughtful creation and strategic investment. Specializing in B2B solutions that prioritize clarity and sustainable performance.",
     slogan: "Execution beats ideas.",
@@ -101,7 +101,7 @@ const translations = {
     },
     hero: {
       line1: "Trim Tahirsylaj.",
-      line2: "Web Artisan & Investeerder"
+      line2: "Web Artisan voor Groeiende Bedrijven"
     },
     subtext: "Digitale landschappen verfijnen door doordachte creatie en strategische investeringen. Gespecialiseerd in B2B-oplossingen die prioriteit geven aan helderheid en duurzame prestaties.",
     slogan: "Executie wint van ideeën.",
@@ -201,7 +201,7 @@ const WhatsAppButton = ({ label, full = false }: { label: string; full?: boolean
 );
 
 const SectionEyebrow = ({ label, tag }: { label: string; tag?: string }) => (
-  <div className="flex items-center gap-2 mb-4">
+  <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
     <span className="w-1.5 h-1.5 rounded-full bg-white" />
     <span className="text-xs uppercase tracking-widest text-white/50">{label}</span>
     {tag && (
@@ -241,7 +241,7 @@ const Navbar = ({ lang, setLang, t, visible }: { lang: 'en' | 'nl', setLang: (l:
             
             <div className="flex items-center gap-4 md:gap-8">
               <div className="flex items-center bg-white/5 border border-white/10 rounded-full p-1 h-10">
-                {(['en', 'nl'] as const).map((l) => (
+                {(['nl', 'en'] as const).map((l) => (
                   <button
                     key={l}
                     onClick={() => setLang(l)}
@@ -317,7 +317,7 @@ const Hero = ({ t }: { t: any }) => {
 const Portfolio = ({ t }: { t: any }) => {
   return (
     <section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10" id="portfolio">
-      <div className="mb-16">
+      <div className="mb-16 text-center md:text-left">
         <SectionEyebrow label={t.nav.portfolio} tag={t.portfolio.tag} />
         <h2 className="text-4xl md:text-6xl font-bold tracking-tight">{t.portfolio.title}</h2>
       </div>
@@ -330,10 +330,10 @@ const Portfolio = ({ t }: { t: any }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.2, duration: 0.8 }}
-            className="group liquid-glass rounded-3xl p-10 border border-white/10 h-full flex flex-col hover:bg-white/[0.03] transition-colors"
+            className="group liquid-glass rounded-3xl p-10 border border-white/10 h-full flex flex-col hover:bg-white/[0.03] transition-colors text-center md:text-left"
           >
-            <div className="flex items-start justify-between mb-8">
-              <div className="flex gap-2">
+            <div className="flex flex-col items-center md:flex-row md:items-start md:justify-between mb-8 gap-4">
+              <div className="flex flex-wrap justify-center md:justify-start gap-2">
                 {p.tags.map((tag: string) => (
                   <span key={tag} className="px-3 py-1 rounded-full bg-white/5 text-[9px] font-bold uppercase tracking-widest text-white/40 border border-white/5">
                     {tag}
@@ -371,13 +371,13 @@ const Portfolio = ({ t }: { t: any }) => {
 const AppCreator = ({ t }: { t: any }) => {
   return (
     <section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10 border-t border-white/5" id="apps">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
         <div>
           <SectionEyebrow label={t.apps.title} tag={t.apps.status} />
           <h2 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 italic">
             {t.apps.subtitle}
           </h2>
-          <p className="text-xl md:text-2xl text-white/60 leading-relaxed font-medium max-w-lg mb-10">
+          <p className="text-xl md:text-2xl text-white/60 leading-relaxed font-medium max-w-lg mb-10 mx-auto md:mx-0">
             {t.apps.desc}
           </p>
           <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/5 rounded-full border border-white/10">
@@ -410,7 +410,7 @@ const AppCreator = ({ t }: { t: any }) => {
 const Expertise = ({ t }: { t: any }) => {
   return (
     <section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10 border-t border-white/5" id="expertise">
-      <div className="grid md:grid-cols-12 gap-12">
+      <div className="grid md:grid-cols-12 gap-12 text-center md:text-left">
         <div className="md:col-span-5">
           <SectionEyebrow label={t.about.title} tag={t.about.subtitle} />
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
@@ -432,13 +432,13 @@ const Expertise = ({ t }: { t: any }) => {
 const Contact = ({ t }: { t: any }) => {
   return (
     <section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10 border-t border-white/5" id="contact">
-      <div className="grid md:grid-cols-2 gap-20">
+      <div className="grid md:grid-cols-2 gap-20 text-center md:text-left">
         <div>
           <SectionEyebrow label={t.nav.contact} tag={t.nav.contact} />
           <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">{t.contact.title}</h2>
-          <p className="text-white/50 text-lg mb-12 max-w-md">{t.contact.subtitle}</p>
+          <p className="text-white/50 text-lg mb-12 max-w-md mx-auto md:mx-0">{t.contact.subtitle}</p>
           
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col items-center md:items-start">
             <div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.location.href = "mailto:trimtmm@gmail.com"}>
               <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center p-3 transition-colors group-hover:bg-brand group-hover:border-brand">
                 <Mail className="w-full h-full text-white" />
@@ -561,7 +561,7 @@ const LegalModal = ({ isOpen, onClose, title, content }: { isOpen: boolean; onCl
 // --- App Root ---
 
 export default function App() {
-  const [lang, setLang] = useState<'en' | 'nl'>('en');
+  const [lang, setLang] = useState<'en' | 'nl'>('nl');
   const [navVisible, setNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showCookieBanner, setShowCookieBanner] = useState(false);
