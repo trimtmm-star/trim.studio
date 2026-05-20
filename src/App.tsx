@@ -84,21 +84,7 @@ const translations = {
       line1: "Building with Purpose.",
       line2: "In Pursuit of Excellence."
     },
-    footer: "All rights reserved.",
-    legal: {
-      privacy: "Privacy Policy",
-      terms: "Terms & Conditions",
-      cookies: {
-        title: "Consent Strategy",
-        desc: "We utilize analytical frameworks to refine our digital landscape. This data helps us understand patterns and improve institutional value.",
-        accept: "Accept",
-        decline: "Decline"
-      },
-      content: {
-        privacy: "This platform utilizes Google Analytics 4 (GA4) and Google Tag Manager (GTM) to observe technical performance and user interaction. Collected data includes anonymized IP addresses, device specifications, browser metadata, and navigational patterns. These insights are strictly used for architectural optimization and to enhance the strategic value of our digital presence. We do not sell or lease this information to third parties.",
-        terms: "By accessing this site, you acknowledge the use of technical cookies and analytical tracking for performance measurement. All intellectual property, including code, design systems, and the Owlog brand, remains the sole property of Trim Tahirsylaj. External links to third-party platforms (e.g., WhatsApp, Portfolio projects) are governed by their respective terms of service."
-      }
-    }
+    footer: "All rights reserved."
   },
   nl: {
     nav: {
@@ -165,21 +151,7 @@ const translations = {
       line1: "Bouwen met Doel.",
       line2: "Op Zoek naar Uitmuntendheid."
     },
-    footer: "Alle rechten voorbehouden.",
-    legal: {
-      privacy: "Privacybeleid",
-      terms: "Voorwaarden",
-      cookies: {
-        title: "Toestemmingsstrategie",
-        desc: "We maken gebruik van analytische kaders om ons digitale landschap te verfijnen. Deze gegevens helpen ons patronen te begrijpen en institutionele waarde te verbeteren.",
-        accept: "Accepteren",
-        decline: "Weigeren"
-      },
-      content: {
-        privacy: "Dit platform maakt gebruik van Google Analytics 4 (GA4) en Google Tag Manager (GTM) om technische prestaties en gebruikersinteractie te observeren. Verzamelde gegevens omvatten geanonimiseerde IP-adressen, apparaatspecificaties, browsermetadata en navigatiepatronen. Deze inzichten worden uitsluitend gebruikt voor architecturale optimalisatie en om de strategische waarde van onze digitale aanwezigheid te vergroten. Wij verkopen of verhuren deze informatie niet aan derden.",
-        terms: "Door deze site te bezoeken, erkent u het gebruik van technische cookies en analytische tracking voor prestatiemeting. Alle intellectuele eigendom, inclusief code, ontwerpsystemen en het merk Owlog, blijft het exclusieve eigendom van Trim Tahirsylaj. Externe links naar platforms van derden (bijv. WhatsApp, Portfolio-projecten) vallen onder hun respectieve algemene voorwaarden."
-      }
-    }
+    footer: "Alle rechten voorbehouden."
   }
 };
 
@@ -493,104 +465,13 @@ const Contact = ({ t }: { t: any }) => {
   );
 };
 
-const CookieBanner = ({ t, onAccept, onDecline }: { t: any; onAccept: () => void; onDecline: () => void }) => (
-  <motion.div
-    initial={{ y: 100, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    exit={{ y: 100, opacity: 0 }}
-    className="fixed bottom-6 left-6 right-6 md:left-auto md:max-w-sm z-[100]"
-  >
-    <div className="liquid-glass rounded-3xl border border-white/10 p-8 shadow-2xl backdrop-blur-2xl">
-      <SectionEyebrow label={t.legal.cookies.title} />
-      <p className="text-sm text-white/50 leading-relaxed mb-8">
-        {t.legal.cookies.desc}
-      </p>
-      <div className="flex gap-4">
-        <button 
-          onClick={onAccept}
-          className="flex-1 bg-white text-black text-xs font-bold uppercase tracking-widest py-3 rounded-full hover:bg-white/90 transition-colors"
-        >
-          {t.legal.cookies.accept}
-        </button>
-        <button 
-          onClick={onDecline}
-          className="flex-1 bg-white/5 border border-white/10 text-white/50 text-xs font-bold uppercase tracking-widest py-3 rounded-full hover:text-white hover:bg-white/10 transition-all"
-        >
-          {t.legal.cookies.decline}
-        </button>
-      </div>
-    </div>
-  </motion.div>
-);
-
-const LegalModal = ({ isOpen, onClose, title, content }: { isOpen: boolean; onClose: () => void; title: string; content: string }) => (
-  <AnimatePresence>
-    {isOpen && (
-      <>
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm"
-        />
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="fixed inset-0 z-[120] flex items-center justify-center p-6 pointer-events-none"
-        >
-          <div className="liquid-glass rounded-[2rem] border border-white/10 p-10 md:p-16 max-w-2xl w-full relative pointer-events-auto overflow-hidden">
-            <button 
-              onClick={onClose}
-              className="absolute top-8 right-8 p-2 rounded-full bg-white/5 border border-white/10 text-white/40 hover:text-white transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            
-            <SectionEyebrow label="Legal" />
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-tight">{title}</h2>
-            
-            <div className="space-y-6 text-white/60 text-base md:text-lg leading-relaxed">
-              <p>{content}</p>
-            </div>
-            
-            <div className="mt-12 pt-12 border-t border-white/5 flex justify-end">
-              <button 
-                onClick={onClose}
-                className="px-8 py-3 rounded-full bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-white/90 transition-colors"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </motion.div>
-      </>
-    )}
-  </AnimatePresence>
-);
-
 // --- App Root ---
 
 export default function App() {
   const [lang, setLang] = useState<'en' | 'nl'>('nl');
   const [navVisible, setNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [showCookieBanner, setShowCookieBanner] = useState(false);
-  const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
   const t = translations[lang];
-
-  useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      setShowCookieBanner(true);
-    }
-  }, []);
-
-  const handleCookieAction = (action: 'accept' | 'decline') => {
-    localStorage.setItem('cookie-consent', action);
-    setShowCookieBanner(false);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -682,12 +563,6 @@ export default function App() {
             <a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a>
             <a href="https://wa.me/32488842993" target="_blank" rel="noopener" className="hover:text-white transition-colors">WhatsApp</a>
           </div>
-
-          <div className="flex items-center gap-6 text-[9px] uppercase tracking-[0.2em] font-bold text-white/10">
-            <button onClick={() => setActiveModal('privacy')} className="hover:text-white transition-colors">{t.legal.privacy}</button>
-            <span className="w-1 h-1 rounded-full bg-white/5" />
-            <button onClick={() => setActiveModal('terms')} className="hover:text-white transition-colors">{t.legal.terms}</button>
-          </div>
           
           <div className="relative group">
              <div className="absolute inset-0 bg-brand/30 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
@@ -700,29 +575,6 @@ export default function App() {
         </div>
       </footer>
 
-      <AnimatePresence>
-        {showCookieBanner && (
-          <CookieBanner 
-            t={t} 
-            onAccept={() => handleCookieAction('accept')} 
-            onDecline={() => handleCookieAction('decline')} 
-          />
-        )}
-      </AnimatePresence>
-
-      <LegalModal 
-        isOpen={activeModal === 'privacy'} 
-        onClose={() => setActiveModal(null)} 
-        title={t.legal.privacy} 
-        content={t.legal.content.privacy} 
-      />
-      
-      <LegalModal 
-        isOpen={activeModal === 'terms'} 
-        onClose={() => setActiveModal(null)} 
-        title={t.legal.terms} 
-        content={t.legal.content.terms} 
-      />
     </div>
   );
 }
