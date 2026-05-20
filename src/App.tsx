@@ -48,6 +48,12 @@ const translations = {
           url: "pizzatruckherri.com",
           desc: "Mobile gastronomy digital presence. Seamless experience from menu browsing to event booking.",
           tags: ["Digital Strategy", "E-commerce", "Brand"]
+        },
+        {
+          title: "A Poppa",
+          url: "apoppa.com",
+          desc: "Italian culinary dining in Ghent and Evergem. Sophisticated digital presence reflecting authentic cuisine and refined hospitality.",
+          tags: ["Digital Strategy", "Brand Design", "E-commerce"]
         }
       ]
     },
@@ -123,6 +129,12 @@ const translations = {
           url: "pizzatruckherri.com",
           desc: "Mobiele gastronomie digitale aanwezigheid. Naadloze ervaring van menu bladeren tot evenement boeking.",
           tags: ["Digitale Strategie", "E-commerce", "Merk"]
+        },
+        {
+          title: "A Poppa",
+          url: "apoppa.com",
+          desc: "Italiaanse culinaire ervaring in Gent en Evergem. Elegante digitale aanwezigheid die authentieke keuken en verfijnde horeca weerspiegelt.",
+          tags: ["Digitale Strategie", "Merkontwerp", "E-commerce"]
         }
       ]
     },
