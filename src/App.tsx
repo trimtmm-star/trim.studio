@@ -160,12 +160,19 @@ const translations = {
 const LogoMark = ({ className = "" }: { className?: string }) => (
   <div className={`flex items-center gap-6 ${className}`}>
     <div className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
-      <img 
-        src="https://i.postimg.cc/3JgNvqTv/LO.png" 
-        alt="Trim Tahirsylaj Logo" 
-        className="w-full h-full object-contain"
-        referrerPolicy="no-referrer"
-      />
+      <a 
+        href="https://postimg.cc/jnjQ34fV" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block w-full h-full cursor-pointer"
+      >
+        <img 
+          src="https://i.postimg.cc/J0N6nT4h/LO.png" 
+          alt="Trim Tahirsylaj Logo" 
+          className="w-full h-full object-contain"
+          referrerPolicy="no-referrer"
+        />
+      </a>
     </div>
   </div>
 );
@@ -372,14 +379,19 @@ const AppCreator = ({ t }: { t: any }) => {
         <div className="relative aspect-video rounded-[3rem] overflow-hidden border border-white/10 liquid-glass flex items-center justify-center group">
            <div className="absolute inset-0 bg-brand/5 group-hover:bg-brand/10 transition-colors" />
            <div className="relative z-10 text-center">
-             <div className="w-32 h-32 flex items-center justify-center mx-auto transform group-hover:scale-[1.3] transition-transform duration-700 ease-[0.22,1,0.36,1] overflow-hidden">
+             <a 
+               href="https://postimg.cc/V0zHftbx" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="w-32 h-32 flex items-center justify-center mx-auto transform group-hover:scale-[1.3] transition-transform duration-700 ease-[0.22,1,0.36,1] overflow-hidden cursor-pointer"
+             >
                <img 
-                 src="https://i.postimg.cc/cCkpg0J0/Basic.png" 
+                 src="https://i.postimg.cc/nrm81YVh/Basic.png" 
                  alt="Owlog Logo" 
                  className="w-full h-full object-contain"
                  referrerPolicy="no-referrer"
                />
-             </div>
+             </a>
            </div>
            
            {/* Decorative elements */}
