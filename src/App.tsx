@@ -61,8 +61,9 @@ const translations = {
       title: "App Creator",
       subtitle: "Owlog",
       desc: "Refining how traders document their journey. Owlog provides a specialized framework for pattern recognition and psychological analysis.",
-      status: "In Development",
-      type: "Journaling App"
+      status: "Out Now",
+      type: "Journaling App",
+      hint: "Click the mascot to open the App Store"
     },
     about: {
       title: "Philosophy",
@@ -128,8 +129,9 @@ const translations = {
       title: "App Maker",
       subtitle: "Owlog",
       desc: "De manier waarop handelaren hun traject documenteren verfijnen. Owlog biedt een gespecialiseerd kader voor herkenning van patronen en psychologische analyse.",
-      status: "In Ontwikkeling",
-      type: "Journaling App"
+      status: "Nu Uit",
+      type: "Journaling App",
+      hint: "Klik op de mascotte om de App Store te openen"
     },
     about: {
       title: "Filosofie",
@@ -380,7 +382,7 @@ const AppCreator = ({ t }: { t: any }) => {
            <div className="absolute inset-0 bg-brand/5 group-hover:bg-brand/10 transition-colors" />
            <div className="relative z-10 text-center">
              <a 
-               href="https://postimg.cc/V0zHftbx" 
+               href="https://apps.apple.com/be/app/owlog/id6767484434" 
                target="_blank" 
                rel="noopener noreferrer"
                className="w-32 h-32 flex items-center justify-center mx-auto transform group-hover:scale-[1.3] transition-transform duration-700 ease-[0.22,1,0.36,1] overflow-hidden cursor-pointer"
@@ -392,6 +394,9 @@ const AppCreator = ({ t }: { t: any }) => {
                  referrerPolicy="no-referrer"
                />
              </a>
+             <p className="mt-4 text-xs font-bold uppercase tracking-widest text-white/40 pointer-events-none group-hover:text-white/60 transition-colors px-4">
+               {t.apps.hint}
+             </p>
            </div>
            
            {/* Decorative elements */}
