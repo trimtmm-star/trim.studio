@@ -16,6 +16,7 @@ import {
   X,
   ExternalLink
 } from 'lucide-react';
+import MeshBackground from './components/MeshBackground';
 
 // --- i18n ---
 const translations = {
@@ -510,7 +511,7 @@ export default function App() {
   }, [lastScrollY]);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#0c0c0c] text-white selection:bg-brand/30">
+    <div className="relative min-h-screen overflow-x-hidden text-white selection:bg-brand/30">
       {/* Noise Filters SVG */}
       <svg width="0" height="0" className="hidden" aria-hidden="true">
         <filter id="c3-noise">
@@ -521,19 +522,8 @@ export default function App() {
         </filter>
       </svg>
 
-      {/* Global background video */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-full h-full object-cover pointer-events-none"
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4" 
-        />
-        <div className="absolute inset-0 bg-black/70" />
-      </div>
-
+      {/* Animated MeshGradient Background */}
+      <MeshBackground />
       {/* Vertical Guides */}
       <div className="hidden md:block pointer-events-none fixed inset-y-0 left-1/2 -translate-x-[calc(50%+36rem)] w-px bg-white/10 z-[5]" />
       <div className="hidden md:block pointer-events-none fixed inset-y-0 left-1/2 translate-x-[calc(-50%+36rem)] w-px bg-white/10 z-[5]" />
