@@ -27,7 +27,7 @@ const translations = {
     },
     hero: {
       line1: "Trim Tahirsylaj.",
-      line2: "Web Artisan for Growing Businesses"
+      line2: "Web Artisan & Automation Specialist for Growing Businesses"
     },
     subtext: "Refining digital landscapes through thoughtful creation and strategic investment. Specializing in B2B solutions that prioritize clarity and sustainable performance.",
     slogan: "Execution beats ideas.",
@@ -95,7 +95,7 @@ const translations = {
     },
     hero: {
       line1: "Trim Tahirsylaj.",
-      line2: "Web Artisan voor Groeiende Bedrijven"
+      line2: "Web Artisan en Automation Specialist voor Groeiende Bedrijven"
     },
     subtext: "Digitale landschappen verfijnen door doordachte creatie en strategische investeringen. Gespecialiseerd in B2B-oplossingen die prioriteit geven aan helderheid en duurzame prestaties.",
     slogan: "Executie wint van ideeën.",
