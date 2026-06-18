@@ -59,8 +59,8 @@ const translations = {
         {
           title: "Kantara International",
           url: "kantara-international.com",
-          desc: "Sophisticated B2B digital portal bridging European manufacturers and African healthcare markets through market entry, regulatory compliance, and strategic partnerships.",
-          tags: ["B2B", "Healthcare", "Digital Strategy"]
+          desc: "Sophisticated B2B digital portal bridging European manufacturers and African markets through market entry, regulatory compliance, and strategic partnerships.",
+          tags: ["B2B", "Digital Strategy"]
         }
       ]
     },
@@ -133,8 +133,8 @@ const translations = {
         {
           title: "Kantara International",
           url: "kantara-international.com",
-          desc: "Geavanceerd B2B digitaal portaal dat Europese fabrikanten verbindt met Afrikaanse zorgmarkten via markttoegang, regelgeving en strategische partnerschappen.",
-          tags: ["B2B", "Gezondheidszorg", "Digitale Strategie"]
+          desc: "Geavanceerd B2B digitaal portaal dat Europese fabrikanten verbindt met Afrikaanse markten via markttoegang, regelgeving en strategische partnerschappen.",
+          tags: ["B2B", "Digitale Strategie"]
         }
       ]
     },
