@@ -55,6 +55,12 @@ const translations = {
           url: "apoppa.com",
           desc: "Italian culinary dining in Ghent and Evergem. Sophisticated digital presence reflecting authentic cuisine and refined hospitality.",
           tags: ["Digital Strategy", "Brand Design", "E-commerce"]
+        },
+        {
+          title: "Kantara International",
+          url: "kantara-international.com",
+          desc: "Sophisticated B2B digital portal bridging European manufacturers and African healthcare markets through market entry, regulatory compliance, and strategic partnerships.",
+          tags: ["B2B", "Healthcare", "Digital Strategy"]
         }
       ]
     },
@@ -123,6 +129,12 @@ const translations = {
           url: "apoppa.com",
           desc: "Italiaanse culinaire ervaring in Gent en Evergem. Elegante digitale aanwezigheid die authentieke keuken en verfijnde horeca weerspiegelt.",
           tags: ["Digitale Strategie", "Merkontwerp", "E-commerce"]
+        },
+        {
+          title: "Kantara International",
+          url: "kantara-international.com",
+          desc: "Geavanceerd B2B digitaal portaal dat Europese fabrikanten verbindt met Afrikaanse zorgmarkten via markttoegang, regelgeving en strategische partnerschappen.",
+          tags: ["B2B", "Gezondheidszorg", "Digitale Strategie"]
         }
       ]
     },
