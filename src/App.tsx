@@ -591,6 +591,7 @@ export default function App() {
           <p className="text-[10px] uppercase tracking-[0.5em] text-white/20 font-medium">
             &copy; {new Date().getFullYear()} — <a href="https://www.termsfeed.com/live/abfcf96d-c901-4f6e-b353-6c691e5f083a" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-dotted underline-offset-4">{t.footer}</a>
           </p>
+                        <p className="text-[10px] uppercase tracking-[0.5em] text-white/20 font-medium">BTW: BE1036404220</p>
         </div>
       </footer>
 
