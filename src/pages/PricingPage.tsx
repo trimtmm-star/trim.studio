@@ -26,7 +26,7 @@ const copy = {
     orSub: 'Of abonnement',
     packages: [
       { tier: 'STARTER', desc: "1 pagina", price: '€500', sub: '€200 + €25/mo', features: [true, true, true, false, false, false] },
-      { tier: 'ADVANCED', desc: "Tot 5 pagina's", price: '€1.000', sub: '€400 + €50/mo', features: [true, true, true, false, false, false], popular: true },
+      { tier: 'ADVANCED', desc: "Tot 5 pagina's", price: '€1.000', sub: '€400 + €50/mo', features: [true, true, true, true, false, false], popular: true },
       { tier: 'PREMIUM', desc: "5+ pagina's · CMS · DB", price: '€2.000*', sub: '€800 + €100/mo', features: [true, true, true, true, true, true] },
     ],
     featureLabels: ['Responsive design', 'Basis SEO', 'Contactformulier', 'CMS-integratie', 'Database', 'Custom animaties'],
@@ -62,7 +62,7 @@ const copy = {
     orSub: 'Or subscription',
     packages: [
       { tier: 'STARTER', desc: '1 page', price: '€500', sub: '€200 + €25/mo', features: [true, true, true, false, false, false] },
-      { tier: 'ADVANCED', desc: 'Up to 5 pages', price: '€1,000', sub: '€400 + €50/mo', features: [true, true, true, false, false, false], popular: true },
+      { tier: 'ADVANCED', desc: 'Up to 5 pages', price: '€1,000', sub: '€400 + €50/mo', features: [true, true, true, true, false, false], popular: true },
       { tier: 'PREMIUM', desc: '5+ pages · CMS · DB', price: '€2,000*', sub: '€800 + €100/mo', features: [true, true, true, true, true, true] },
     ],
     featureLabels: ['Responsive design', 'Basic SEO', 'Contact form', 'CMS integration', 'Database', 'Custom animations'],
