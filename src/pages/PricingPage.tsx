@@ -95,16 +95,16 @@ export default function PricingPage() {
     <div className="relative min-h-screen overflow-x-hidden text-white selection:bg-brand/30">
       <MeshBackground />
       {/* Top bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 pt-6">
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <div className="fixed top-0 left-0 right-0 z-50 pt-4 md:pt-6 backdrop-blur-md bg-[#050608]/40">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between gap-3">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors bg-white/5 border border-white/10 rounded-full px-5 py-2.5"
+            className="inline-flex items-center gap-2 text-white hover:text-white text-[11px] md:text-xs font-bold uppercase tracking-widest transition-colors bg-white/10 hover:bg-white/15 border border-white/20 rounded-full px-4 md:px-5 py-2.5 whitespace-nowrap"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            {t.back}
+            <ArrowLeft className="w-3.5 h-3.5 flex-shrink-0" />
+            <span className="truncate">{t.back}</span>
           </Link>
-          <div className="flex items-center bg-white/5 border border-white/10 rounded-full p-1 h-10">
+          <div className="flex items-center bg-white/5 border border-white/10 rounded-full p-1 h-10 flex-shrink-0">
             {(['nl', 'en'] as const).map((l) => (
               <button
                 key={l}
@@ -120,7 +120,7 @@ export default function PricingPage() {
         </div>
       </div>
 
-      <main className="relative z-10 pt-40 pb-32 max-w-6xl mx-auto px-6">
+      <main className="relative z-10 pt-32 md:pt-40 pb-32 max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -151,36 +151,40 @@ export default function PricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className={`relative liquid-glass rounded-3xl p-8 border ${
-                  pkg.popular ? 'border-brand' : 'border-white/10'
-                } flex flex-col`}
+                className="relative"
               >
                 {pkg.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-black text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 bg-brand text-black text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap">
                     {t.popular}
                   </span>
                 )}
-                <div className="text-sm font-bold uppercase tracking-widest text-white mb-1">{pkg.tier}</div>
-                <div className="text-brand text-xs font-semibold mb-4">{pkg.desc}</div>
-                <div className="text-4xl font-black mb-1">{pkg.price}</div>
-                <div className="text-white/30 text-xs mb-6">incl. BTW</div>
+                <div
+                  className={`liquid-glass rounded-3xl p-8 border h-full ${
+                    pkg.popular ? 'border-brand' : 'border-white/10'
+                  } flex flex-col`}
+                >
+                  <div className="text-sm font-bold uppercase tracking-widest text-white mb-1">{pkg.tier}</div>
+                  <div className="text-brand text-xs font-semibold mb-4">{pkg.desc}</div>
+                  <div className="text-4xl font-black mb-1">{pkg.price}</div>
+                  <div className="text-white/30 text-xs mb-6">incl. BTW</div>
 
-                <div className="border-t border-white/10 pt-4 mb-6">
-                  <div className="text-white/30 text-[10px] uppercase tracking-widest mb-1">{t.orSub}</div>
-                  <div className="text-white font-bold">{pkg.sub}</div>
-                </div>
+                  <div className="border-t border-white/10 pt-4 mb-6">
+                    <div className="text-white/30 text-[10px] uppercase tracking-widest mb-1">{t.orSub}</div>
+                    <div className="text-white font-bold">{pkg.sub}</div>
+                  </div>
 
-                <div className="space-y-2.5 mt-auto">
-                  {t.featureLabels.map((label, idx) => (
-                    <div key={label} className="flex items-center gap-3 text-sm">
-                      {pkg.features[idx] ? (
-                        <Check className="w-4 h-4 text-brand flex-shrink-0" />
-                      ) : (
-                        <Minus className="w-4 h-4 text-white/20 flex-shrink-0" />
-                      )}
-                      <span className={pkg.features[idx] ? 'text-white/80' : 'text-white/30'}>{label}</span>
-                    </div>
-                  ))}
+                  <div className="space-y-2.5 mt-auto">
+                    {t.featureLabels.map((label, idx) => (
+                      <div key={label} className="flex items-center gap-3 text-sm">
+                        {pkg.features[idx] ? (
+                          <Check className="w-4 h-4 text-brand flex-shrink-0" />
+                        ) : (
+                          <Minus className="w-4 h-4 text-white/20 flex-shrink-0" />
+                        )}
+                        <span className={pkg.features[idx] ? 'text-white/80' : 'text-white/30'}>{label}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
