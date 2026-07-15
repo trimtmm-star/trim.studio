@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Check, Minus, ArrowLeft, MessageSquare, ChevronRight } from 'lucide-react';
 import PricingConfigurator from '../components/PricingConfigurator';
+import MeshBackground from '../components/MeshBackground';
 
 // --- i18n (self-contained, mirrors App.tsx pattern) ---
 const copy = {
@@ -91,7 +92,8 @@ export default function PricingPage() {
   const t = copy[lang];
 
   return (
-    <div className="relative min-h-screen bg-[#050608] text-white selection:bg-brand/30">
+    <div className="relative min-h-screen overflow-x-hidden text-white selection:bg-brand/30">
+      <MeshBackground />
       {/* Top bar */}
       <div className="fixed top-0 left-0 right-0 z-50 pt-6">
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -141,7 +143,7 @@ export default function PricingPage() {
           </div>
           <p className="text-white/40 text-sm mb-10 max-w-2xl">{t.oneTimeDesc}</p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mt-4">
             {t.packages.map((pkg, i) => (
               <motion.div
                 key={pkg.tier}
