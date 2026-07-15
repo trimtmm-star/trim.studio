@@ -4,6 +4,7 @@
 */
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import {
 ChevronRight,
@@ -259,6 +260,9 @@ className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-al
 
 <div className="hidden md:flex gap-8 items-center bg-white/[0.03] backdrop-blur-md border border-white/5 px-6 py-2 rounded-full">
 <button onClick={() => smoothScrollTo('portfolio')} className="text-white/70 text-xs font-semibold uppercase tracking-widest hover:text-white transition-colors">{t.nav.portfolio}</button>
+<Link to="/pricing" className="text-white/70 text-xs font-semibold uppercase tracking-widest hover:text-white transition-colors">
+  Pricing
+</Link>
 <button onClick={() => smoothScrollTo('contact')} className="text-white/70 text-xs font-semibold uppercase tracking-widest hover:text-white transition-colors">{t.nav.contact}</button>
 </div>
 
@@ -586,6 +590,7 @@ className="liquid-glass rounded-[4rem] px-8 py-24 text-center border border-whit
 <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-12 relative z-10">
 <div className="flex items-center gap-8 text-[11px] uppercase font-black tracking-[0.4em] text-white/20">
 <button onClick={() => smoothScrollTo('portfolio')} className="hover:text-white transition-colors">{t.nav.portfolio}</button>
+<Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
 <button onClick={() => smoothScrollTo('contact')} className="hover:text-white transition-colors">{t.nav.contact}</button>
 <a href="https://wa.me/32488842993" target="_blank" rel="noopener" className="hover:text-white transition-colors">WhatsApp</a>
 </div>
