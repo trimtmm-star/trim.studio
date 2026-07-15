@@ -231,6 +231,17 @@ filter: 'url(#c3-noise)'
 // --- Sections ---
 
 const Navbar = ({ lang, setLang, t, visible }: { lang: 'en' | 'nl', setLang: (l: 'en' | 'nl') => void, t: any, visible: boolean }) => {
+const [mobileOpen, setMobileOpen] = useState(false);
+
+useEffect(() => {
+if (!visible) setMobileOpen(false);
+}, [visible]);
+
+const handleMobileNav = (id: string) => {
+setMobileOpen(false);
+smoothScrollTo(id);
+};
+
 return (
 <AnimatePresence>
 {visible && (
@@ -269,8 +280,35 @@ className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-al
 <div className="hidden lg:block">
 <WhatsAppButton label={t.cta} />
 </div>
+
+<button
+onClick={() => setMobileOpen((v) => !v)}
+className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-white"
+aria-label="Menu"
+aria-expanded={mobileOpen}
+>
+{mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+</button>
 </div>
 </div>
+
+<AnimatePresence>
+{mobileOpen && (
+<motion.div
+initial={{ opacity: 0, y: -10 }}
+animate={{ opacity: 1, y: 0 }}
+exit={{ opacity: 0, y: -10 }}
+transition={{ duration: 0.25 }}
+className="md:hidden mx-6 mt-3 bg-[#0a0c10] border border-white/15 rounded-2xl overflow-hidden shadow-2xl shadow-black/50"
+>
+<button onClick={() => handleMobileNav('portfolio')} className="w-full text-left px-6 py-4 text-white text-sm font-semibold uppercase tracking-widest hover:bg-white/10 transition-colors border-b border-white/10">{t.nav.portfolio}</button>
+<Link to="/pricing" onClick={() => setMobileOpen(false)} className="block px-6 py-4 text-white text-sm font-semibold uppercase tracking-widest hover:bg-white/10 transition-colors border-b border-white/10">
+Pricing
+</Link>
+<button onClick={() => handleMobileNav('contact')} className="w-full text-left px-6 py-4 text-white text-sm font-semibold uppercase tracking-widest hover:bg-white/10 transition-colors">{t.nav.contact}</button>
+</motion.div>
+)}
+</AnimatePresence>
 </motion.nav>
 )}
 </AnimatePresence>
