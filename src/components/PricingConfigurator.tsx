@@ -7,13 +7,7 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 
-// ---------------------------------------------------------------------------
-// CONFIG — replace with the n8n production Webhook URL.
-// In n8n: create a workflow, add a "Webhook" node (POST, path e.g.
-// "pricing-configurator"), then whatever should happen downstream (Send
-// Email, Slack, add row to Sheet, ...). Copy the "Production URL" here.
-// ---------------------------------------------------------------------------
-const N8N_WEBHOOK_URL = 'https://YOUR-N8N-INSTANCE.app.n8n.cloud/webhook/pricing-configurator';
+const N8N_WEBHOOK_URL = 'https://n8n.ttrim.studio/webhook/pricing-configurator';
 
 type PackageId = 'starter' | 'advanced' | 'premium';
 type AddonId = 'chatbot' | 'automation' | 'ecommerce' | 'copy' | 'multilingual' | 'maintenance';
