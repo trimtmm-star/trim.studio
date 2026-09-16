@@ -6,19 +6,31 @@
     <title>Trim Tahirsylaj — Web Artisan & Automation specialist</title>
         <link rel="icon" type="image/png" href="https://i.postimg.cc/J0N6nT4h/LO.png" />
         <link rel="apple-touch-icon" href="https://i.postimg.cc/J0N6nT4h/LO.png" />
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MBJP7C6L');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Consent Mode v2: default denied, aggiornato dal componente CookieConsent -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    try {
+      if (localStorage.getItem('cookie_consent') === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+    </script>
+    <!-- Google Analytics 4 (diretto, senza GTM) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0MXNWNE9W8"></script>
+    <script>
+    gtag('js', new Date());
+    gtag('config', 'G-0MXNWNE9W8');
+    </script>
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBJP7C6L"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

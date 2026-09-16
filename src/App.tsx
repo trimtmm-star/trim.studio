@@ -18,6 +18,7 @@ X,
 ExternalLink
 } from 'lucide-react';
 import MeshBackground from './components/MeshBackground';
+import { openCookieSettings } from './components/CookieConsent';
 
 // --- i18n ---
 const translations = {
@@ -93,7 +94,7 @@ finalCta: {
 line1: "Building with Purpose.",
 line2: "In Pursuit of Excellence."
 },
-footer: "All rights reserved."
+footer: "All rights reserved · Privacy & cookies"
 },
 nl: {
 nav: {
@@ -167,7 +168,7 @@ finalCta: {
 line1: "Bouwen met Doel.",
 line2: "Op Zoek naar Uitmuntendheid."
 },
-footer: "Alle rechten voorbehouden."
+footer: "Alle rechten voorbehouden · Privacy & cookies"
 }
 };
 
@@ -631,6 +632,7 @@ className="liquid-glass rounded-[4rem] px-8 py-24 text-center border border-whit
 <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
 <button onClick={() => smoothScrollTo('contact')} className="hover:text-white transition-colors">{t.nav.contact}</button>
 <a href="https://wa.me/32488842993" target="_blank" rel="noopener" className="hover:text-white transition-colors">WhatsApp</a>
+<button onClick={openCookieSettings} className="hover:text-white transition-colors">Cookies</button>
 </div>
 
 <div className="relative group">
@@ -639,7 +641,7 @@ className="liquid-glass rounded-[4rem] px-8 py-24 text-center border border-whit
 </div>
 
 <p className="text-[10px] uppercase tracking-[0.5em] text-white/20 font-medium">
-&copy; {new Date().getFullYear()} — <a href="https://www.termsfeed.com/live/abfcf96d-c901-4f6e-b353-6c691e5f083a" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-dotted underline-offset-4">{t.footer}</a>
+&copy; {new Date().getFullYear()} — <Link to="/privacy" className="hover:text-white transition-colors underline decoration-dotted underline-offset-4">{t.footer}</Link>
 </p>
 <p className="text-[10px] uppercase tracking-[0.5em] text-white/20 font-medium">BTW: BE1036404220</p>
 </div>
