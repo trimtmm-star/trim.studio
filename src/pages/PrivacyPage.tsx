@@ -17,7 +17,7 @@ const copy: Record<'nl' | 'en', Copy> = {
     cookieBtn: 'Cookievoorkeuren wijzigen',
     sections: [
       { h: '1. Wie is verantwoordelijk', p: [
-        'Trim Tahirsylaj (ttrim.studio), eenmanszaak, BTW BE1036404220, [adres in te vullen], België. E-mail: trimtmm@gmail.com. Ik ben de verwerkingsverantwoordelijke voor de gegevens die via deze website worden verzameld.',
+        'Trim Tahirsylaj (ttrim.studio), eenmanszaak, BTW BE1036404220, Schoonstraat 175A, 9940 Evergem, België. E-mail: trimtmm@gmail.com. Ik ben de verwerkingsverantwoordelijke voor de gegevens die via deze website worden verzameld.',
       ]},
       { h: '2. Welke gegevens ik verzamel en waarom', p: [
         ['Contact via e-mail of WhatsApp — naam, e-mailadres of telefoonnummer en de inhoud van je bericht. Doel: je vraag beantwoorden en een eventuele offerte opmaken. Rechtsgrond: precontractuele maatregelen (art. 6.1.b AVG).',
@@ -60,7 +60,7 @@ const copy: Record<'nl' | 'en', Copy> = {
     cookieBtn: 'Change cookie preferences',
     sections: [
       { h: '1. Who is responsible', p: [
-        'Trim Tahirsylaj (ttrim.studio), sole trader, VAT BE1036404220, [address to be completed], Belgium. E-mail: trimtmm@gmail.com. I am the data controller for the data collected through this website.',
+        'Trim Tahirsylaj (ttrim.studio), sole trader, VAT BE1036404220, Schoonstraat 175A, 9940 Evergem, Belgium. E-mail: trimtmm@gmail.com. I am the data controller for the data collected through this website.',
       ]},
       { h: '2. What data I collect and why', p: [
         ['Contact by e-mail or WhatsApp — name, e-mail address or phone number and the content of your message. Purpose: answering your request and preparing a quote. Legal basis: pre-contractual steps (art. 6.1.b GDPR).',
