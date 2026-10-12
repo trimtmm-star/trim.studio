@@ -55,12 +55,12 @@ const copy = {
     duoTabs: ['Journal', 'Statistics', 'Analytics'],
     plansTitle: 'Start free. Go Pro when you’re ready.',
     free: 'Free',
-    freeItems: ['Forex journal & calendar', 'Analytics for the last 30 days', 'Position calculator for every market', 'iCloud sync & 8 languages'],
+    freeItems: ['Forex journal & calendar', 'Analytics on your recent trades', 'Position calculator for every market', 'iCloud sync & 8 languages'],
     pro: 'Owlog Pro',
     proItems: ['Every market: indices, stocks, crypto, futures, commodities', 'Analytics across your full history', 'Multiple accounts', 'More screenshots and links per trade', 'PDF & CSV export'],
-    proNote: 'Available as an in-app purchase. New users get a 14-day full-access trial.',
+    proNote: 'Monthly or yearly subscription via the App Store. New users get a free 14-day full-access trial that does not auto-renew.',
     ctaTitle: 'Your next trade deserves a better journal.',
-    legal: { privacy: 'Privacy Policy', terms: 'Terms of Use', disclaimer: 'Risk Disclaimer' },
+    legal: { support: 'Support', privacy: 'Privacy Policy', terms: 'Terms of Use', disclaimer: 'Risk Disclaimer' },
     risk: 'Trading involves significant risk. Owlog is a journaling and analysis tool, not financial advice.',
     madeBy: 'Designed and built by Trim Tahirsylaj',
   },
@@ -98,12 +98,12 @@ const copy = {
     duoTabs: ['Journal', 'Statistieken', 'Analyses'],
     plansTitle: 'Begin gratis. Ga Pro wanneer je klaar bent.',
     free: 'Gratis',
-    freeItems: ['Forexjournal & kalender', 'Analyses van de laatste 30 dagen', 'Positiecalculator voor elke markt', 'iCloud-sync & 8 talen'],
+    freeItems: ['Forexjournal & kalender', 'Analyses van je recente trades', 'Positiecalculator voor elke markt', 'iCloud-sync & 8 talen'],
     pro: 'Owlog Pro',
     proItems: ['Elke markt: indices, aandelen, crypto, futures, grondstoffen', 'Analyses over je volledige geschiedenis', 'Meerdere accounts', 'Meer screenshots en links per trade', 'Export naar PDF & CSV'],
-    proNote: 'Beschikbaar als in-app aankoop. Nieuwe gebruikers krijgen een proefperiode van 14 dagen met volledige toegang.',
+    proNote: 'Maand- of jaarabonnement via de App Store. Nieuwe gebruikers krijgen een gratis proefperiode van 14 dagen met volledige toegang, zonder automatische verlenging.',
     ctaTitle: 'Je volgende trade verdient een beter journal.',
-    legal: { privacy: 'Privacybeleid', terms: 'Gebruiksvoorwaarden', disclaimer: 'Risicodisclaimer' },
+    legal: { support: 'Support', privacy: 'Privacybeleid', terms: 'Gebruiksvoorwaarden', disclaimer: 'Risicodisclaimer' },
     risk: 'Trading brengt aanzienlijke risico’s met zich mee. Owlog is een journal- en analysetool, geen financieel advies.',
     madeBy: 'Ontworpen en gebouwd door Trim Tahirsylaj',
   },
@@ -427,6 +427,7 @@ export default function OwlogPage() {
             <p className="mt-1">© {new Date().getFullYear()} Owlog · {t.madeBy}</p>
           </div>
           <nav className="flex flex-wrap gap-5">
+            <Link to="/owlog/support" className="hover:text-white">{t.legal.support}</Link>
             <Link to="/owlog/privacy" className="hover:text-white">{t.legal.privacy}</Link>
             <Link to="/owlog/terms" className="hover:text-white">{t.legal.terms}</Link>
             <Link to="/owlog/disclaimer" className="hover:text-white">{t.legal.disclaimer}</Link>
