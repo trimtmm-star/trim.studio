@@ -164,7 +164,7 @@ function Duo({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="relative rounded-[2.4rem] bg-gradient-to-br from-zinc-600 via-zinc-900 to-zinc-700 p-[3px] shadow-[0_50px_140px_-30px_rgba(249,115,22,0.35)]">
       <div className="relative rounded-[2.25rem] bg-black p-3 md:p-4">
-        <div className="relative overflow-hidden rounded-[1.6rem] bg-black aspect-[1920/1435]">
+        <div className="relative overflow-hidden rounded-[1.6rem] bg-black aspect-[1914/1376]">
           <AnimatePresence mode="wait">
             <motion.img
               key={src}
