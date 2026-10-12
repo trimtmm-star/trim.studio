@@ -72,7 +72,8 @@ subtitle: "Owlog",
 desc: "Refining how traders document their journey. Owlog provides a specialized framework for pattern recognition and psychological analysis.",
 status: "Out Now",
 type: "Journaling App",
-hint: "Click the mascot to open the App Store"
+hint: "Click the icon to open the App Store",
+discover: "Discover Owlog"
 },
 about: {
 title: "Philosophy",
@@ -146,7 +147,8 @@ subtitle: "Owlog",
 desc: "De manier waarop handelaren hun traject documenteren verfijnen. Owlog biedt een gespecialiseerd kader voor herkenning van patronen en psychologische analyse.",
 status: "Nu Uit",
 type: "Journaling App",
-hint: "Klik op de mascotte om de App Store te openen"
+hint: "Klik op het icoon om de App Store te openen",
+discover: "Ontdek Owlog"
 },
 about: {
 title: "Filosofie",
@@ -431,9 +433,14 @@ return (
 <p className="text-xl md:text-2xl text-white/60 leading-relaxed font-medium max-w-lg mb-10 mx-auto md:mx-0">
 {t.apps.desc}
 </p>
+<div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+<Link to="/owlog" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full text-xs font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform">
+{t.apps.discover} <ArrowUpRight className="w-4 h-4" />
+</Link>
 <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/5 rounded-full border border-white/10">
 <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
 <span className="text-xs font-bold uppercase tracking-widest text-white/60">{t.apps.status}</span>
+</div>
 </div>
 </div>
 <div className="relative aspect-video rounded-[3rem] overflow-hidden border border-white/10 liquid-glass flex items-center justify-center group">
@@ -446,9 +453,9 @@ rel="noopener noreferrer"
 className="w-32 h-32 flex items-center justify-center mx-auto transform group-hover:scale-[1.3] transition-transform duration-700 ease-[0.22,1,0.36,1] overflow-hidden cursor-pointer"
 >
 <img
-src="https://i.postimg.cc/nrm81YVh/Basic.png"
+src="/owlog/icon.png"
 alt="Owlog Logo"
-className="w-full h-full object-contain"
+className="w-full h-full object-contain rounded-[1.8rem]"
 referrerPolicy="no-referrer"
 />
 </a>
