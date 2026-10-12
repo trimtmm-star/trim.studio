@@ -10,11 +10,11 @@ type Block = string | string[];
 type Section = { h: string; body: Block[] };
 type Doc = { title: string; updated: string; intro?: string; sections: Section[] };
 
-/** Same documents as the Owlog Notion pages (support, privacy, terms, risk). */
+/** Verbatim copy of the Owlog Notion pages (support, privacy, terms, risk) — Notion is the source of truth. */
 const documents: Record<string, Doc> = {
   privacy: {
     title: 'Privacy Policy',
-    updated: 'Effective May 14, 2026 · last updated October 2026',
+    updated: 'Effective date: May 14, 2026',
     intro: 'Owlog (“the app”, “we”) is a personal trading journal published on the Apple App Store. We respect your privacy. This policy explains what data the app handles, where it is stored, and what your rights are.',
     sections: [
       { h: '1. Data we collect', body: [
@@ -37,7 +37,6 @@ const documents: Record<string, Doc> = {
       { h: '5. Third-party services', body: [
         'Owlog uses the following Apple services: App Store, In-App Purchase, Sign in with Apple, iCloud Documents. These are governed by Apple’s own privacy policy.',
         'The in-app News feature opens an external website (ForexFactory) in an in-app web view. That website may process data under its own privacy policy.',
-        'The position size calculator downloads public reference exchange rates published by the European Central Bank through frankfurter.app. The request contains no personal or trading data; like any internet request, the service can see your IP address. The latest rates are cached on your device.',
         'Owlog does not integrate Google, Facebook, Firebase, analytics SDKs, advertising networks or any third-party tracker.',
       ]},
       { h: '6. Sharing & sale of data', body: [
@@ -51,7 +50,7 @@ const documents: Record<string, Doc> = {
         'Owlog is not directed at children under the age of 13. If you believe a child has provided data to the app, please contact us and we will help remove it.',
       ]},
       { h: '9. Changes to this policy', body: [
-        'We may update this policy when the app changes. The current version is always available on this page and inside the app under Settings → Legal documents → Privacy Policy.',
+        'We may update this policy when the app changes. The current version is always available at owlog.notion.site and inside the app under Settings → Legal documents → Privacy Policy.',
       ]},
       { h: '10. Contact', body: [`For any privacy question, write to ${EMAIL}.`] },
     ],
@@ -75,7 +74,7 @@ const documents: Record<string, Doc> = {
           'Refunds: refunds for App Store purchases are issued by Apple at reportaproblem.apple.com.'],
       ]},
       { h: '4. Availability', body: [
-        'Features may change, be added or be removed over time. Market data, calendars, news, exchange rates, web links and third-party content may be unavailable or inaccurate and must always be verified independently before trading.',
+        'Features may change, be added or be removed over time. Market data, calendars, news, web links and third-party content may be unavailable or inaccurate and must always be verified independently before trading.',
       ]},
       { h: '5. Intellectual property', body: [
         'The Owlog name, mascots, design, app screens and original copy are owned by the developer. Third-party names (Apple, App Store, etc.) are referenced only descriptively and remain trademarks of their respective owners. You may not copy, redistribute or resell the app’s content without written permission.',
@@ -115,17 +114,17 @@ const documents: Record<string, Doc> = {
   },
   support: {
     title: 'Owlog Support',
-    updated: 'Last updated October 2026',
+    updated: 'Last updated: May 2026',
     intro: 'Owlog is the operating journal for traders who want to log, review, and improve their performance — trade after trade, setup after setup. If something is not working or you have a question, the fastest way to reach us is by email. We typically reply within 1–2 business days (Monday–Friday, CET).',
     sections: [
       { h: 'When you write us, please include', body: [
         ['Your iOS version (Settings → General → About → Software Version)', 'Your iPhone / iPad model', 'The Owlog version (Settings → scroll to the bottom)', 'A short description of what happened and, if possible, a screenshot'],
       ]},
       { h: 'How does the 14-day trial work?', body: [
-        'When you install Owlog you automatically receive 14 days of full access to every feature. The trial is completely free and does not auto-renew into a paid subscription. After day 14, Owlog stays free with limited features. You can upgrade to Owlog Pro at any time from inside the app.',
+        'When you install Owlog you automatically receive 14 days of full access to every feature. The trial is completely free and does not auto-renew into a paid subscription. After day 14, Owlog stays free with limited features (Forex journal + last 7 days of analytics). You can upgrade to Owlog Pro at any time from inside the app.',
       ]},
       { h: 'How do I upgrade to Owlog Pro?', body: [
-        'Open the app → Settings → Owlog Pro card (or any “Unlock Owlog Pro” button) → choose Monthly or Yearly → confirm with Face ID / Touch ID. The purchase is handled by Apple.',
+        'Open the app → Settings → Owlog Pro card (or any “Unlock Owlog Pro” CTA) → choose Monthly or Yearly → confirm with Face ID / Touch ID. The purchase is handled by Apple.',
       ]},
       { h: 'How do I cancel my subscription?', body: [
         'Subscriptions purchased through the App Store are managed by Apple. Open Settings on your iPhone → tap your Apple ID at the top → Subscriptions → Owlog Pro → Cancel Subscription. You will keep Pro access until the end of the current billing period.',
@@ -140,7 +139,7 @@ const documents: Record<string, Doc> = {
         'Open Settings → Reset Owlog. This permanently removes every account, trade, goal and preference from this device. Data synced to iCloud follows your Apple ID and iCloud settings.',
       ]},
       { h: 'I cannot restore my purchase / the Upgrade screen is empty', body: [
-        ['Make sure you are signed in to the App Store with the same Apple ID you used to purchase Owlog Pro', 'Check your internet connection', 'In the Upgrade screen, tap Restore Purchases at the bottom', 'If it still does not work, write to us with your Apple ID’s purchase receipt'],
+        ['Make sure you are signed in to the App Store with the same Apple ID you used to purchase Owlog Pro', 'Check your internet connection', 'In the Upgrade screen, tap Restore Purchases at the bottom', 'If it still does not work, write to us at the email above with your Apple ID’s purchase receipt'],
       ]},
       { h: 'Is Owlog a broker? Does it place trades?', body: [
         'No. Owlog is a journaling and analytics tool. It does NOT place trades, hold funds, connect to brokers, or provide investment advice. You are fully responsible for every trading decision.',
