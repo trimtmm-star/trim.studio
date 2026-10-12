@@ -51,3 +51,19 @@ html, body {
   mask-composite: exclude;
   pointer-events: none;
 }
+
+/* Owlog gallery marquee: constant speed, right to left, endless. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 1rem)); }
+}
+.marquee-track {
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .marquee { overflow-x: auto; }
+}

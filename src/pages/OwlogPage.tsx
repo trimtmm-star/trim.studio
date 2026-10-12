@@ -369,13 +369,19 @@ export default function OwlogPage() {
         {/* Gallery */}
         <section className="py-28">
           <motion.h2 {...fadeUp} className="mx-auto max-w-6xl px-6 text-4xl font-black tracking-tighter md:text-6xl">{t.galleryTitle}</motion.h2>
-          <div className="mt-14 flex snap-x snap-mandatory gap-8 overflow-x-auto px-6 pb-8 [scrollbar-width:none] md:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
-            {galleryFiles.map((file, i) => (
-              <figure key={file} className="w-[220px] shrink-0 snap-center md:w-[250px]">
-                <Phone><img src={`/owlog/screens/${file}.jpg`} alt={t.gallery[i]} loading="lazy" className="absolute inset-0 h-full w-full object-cover" /></Phone>
-                <figcaption className="mt-5 text-center text-sm font-semibold text-white/60">{t.gallery[i]}</figcaption>
-              </figure>
-            ))}
+          {/* Endless marquee: the list is rendered twice and shifted by
+              exactly half its width, so the loop has no visible seam. */}
+          <div className="marquee mt-14 overflow-hidden pb-8 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+            <div className="marquee-track flex w-max gap-8">
+              {[0, 1].map((copy) =>
+                galleryFiles.map((file, i) => (
+                  <figure key={`${copy}-${file}`} aria-hidden={copy === 1} className="w-[220px] shrink-0 md:w-[250px]">
+                    <Phone><img src={`/owlog/screens/${file}.jpg`} alt={copy === 0 ? t.gallery[i] : ''} loading="lazy" className="absolute inset-0 h-full w-full object-cover" /></Phone>
+                    <figcaption className="mt-5 text-center text-sm font-semibold text-white/60">{t.gallery[i]}</figcaption>
+                  </figure>
+                ))
+              )}
+            </div>
           </div>
         </section>
 
