@@ -92,10 +92,10 @@ export default function PricingPage() {
   const t = copy[lang];
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden text-white selection:bg-brand/30">
+    <div className="relative min-h-screen overflow-x-clip text-white selection:bg-brand/30">
       <MeshBackground />
       {/* Top bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 pt-4 md:pt-6 backdrop-blur-md bg-[#050608]/40">
+      <div className="fixed top-[env(safe-area-inset-top)] left-0 right-0 z-50 pt-4 md:pt-6 backdrop-blur-md bg-[#050608]/40">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between gap-3">
           <Link
             to="/"

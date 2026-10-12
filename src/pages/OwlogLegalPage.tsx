@@ -167,7 +167,7 @@ export default function OwlogLegalPage() {
   return (
     <div className="relative min-h-screen bg-black text-white">
       <MeshBackground />
-      <main className="relative z-10 mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <main className="relative z-10 mx-auto max-w-3xl px-6 pt-[max(4rem,calc(env(safe-area-inset-top)+2rem))] pb-[max(4rem,calc(env(safe-area-inset-bottom)+2rem))] md:py-24">
         <Link to="/owlog" className="inline-flex items-center gap-2 text-sm text-white/50 transition-colors hover:text-white">
           <ArrowLeft className="h-4 w-4" /> Owlog
         </Link>

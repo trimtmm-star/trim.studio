@@ -253,7 +253,7 @@ initial={{ opacity: 0, y: -20 }}
 animate={{ opacity: 1, y: 0 }}
 exit={{ opacity: 0, y: -20 }}
 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-className="fixed top-0 left-0 right-0 z-50 pt-6"
+className="fixed top-[env(safe-area-inset-top)] left-0 right-0 z-50 pt-6"
 id="main-nav"
 >
 <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -580,7 +580,7 @@ return () => window.removeEventListener('scroll', handleScroll);
 }, [lastScrollY]);
 
 return (
-<div className="relative min-h-screen overflow-x-hidden text-white selection:bg-brand/30">
+<div className="relative min-h-screen overflow-x-clip text-white selection:bg-brand/30">
 {/* Noise Filters SVG */}
 <svg width="0" height="0" className="hidden" aria-hidden="true">
 <filter id="c3-noise">

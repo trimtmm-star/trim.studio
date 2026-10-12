@@ -51,7 +51,7 @@ export default function CookieConsent() {
 
   return (
     <div role="dialog" aria-live="polite" aria-label="Cookies"
-      className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-xl rounded-2xl border border-white/10 bg-black/90 p-5 text-white shadow-2xl backdrop-blur md:inset-x-auto md:right-6 md:left-auto">
+      className="fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-[100] mx-auto max-w-xl rounded-2xl border border-white/10 bg-black/90 p-5 text-white shadow-2xl backdrop-blur md:inset-x-auto md:right-6 md:left-auto">
       <p className="text-sm leading-relaxed text-white/80">
         {t.text}{' '}
         <a href="/privacy" className="underline decoration-dotted underline-offset-4 hover:text-white">{t.policy}</a>

@@ -231,11 +231,11 @@ export default function OwlogPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
+    <div className="relative min-h-screen overflow-x-clip bg-black text-white">
       <MeshBackground />
 
       {/* Top bar */}
-      <header className="fixed inset-x-0 top-0 z-50 pt-5">
+      <header className="fixed inset-x-0 top-[env(safe-area-inset-top)] z-50 pt-5">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
           <Link to="/" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-md transition-colors hover:text-white">
             <ArrowLeft className="h-3.5 w-3.5" /> {t.back}
@@ -420,7 +420,7 @@ export default function OwlogPage() {
         </section>
       </main>
 
-      <footer className="relative z-10 border-t border-white/10 py-10">
+      <footer className="relative z-10 border-t border-white/10 pt-10 pb-[max(2.5rem,calc(env(safe-area-inset-bottom)+1.5rem))]">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
           <div>
             <p>{t.risk}</p>
