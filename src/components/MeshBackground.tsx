@@ -9,6 +9,15 @@ import { MeshGradient } from "@paper-design/shaders-react";
 // ~720p and let the browser upscale it. The library default (min 2x pixel
 // ratio, up to 4x Full HD per layer) made the two layers lag on most devices.
 const RENDER = { minPixelRatio: 1, maxPixelCount: 1280 * 720 } as const;
+// Phones: one layer at an even lower resolution keeps scrolling smooth.
+const RENDER_TOUCH = { minPixelRatio: 1, maxPixelCount: 540 * 960 } as const;
+
+const isTouch =
+  typeof window !== "undefined" &&
+  window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+const reducedMotion =
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 export default function MeshBackground() {
   return (
@@ -21,17 +30,17 @@ export default function MeshBackground() {
         <MeshGradient
           className="absolute inset-0 w-full h-full"
           colors={["#000000", "#06b6d4", "#0891b2", "#164e63", "#f97316"]}
-          speed={0.3}
-          {...RENDER}
+          speed={reducedMotion ? 0 : 0.3}
+          {...(isTouch ? RENDER_TOUCH : RENDER)}
           backgroundColor="#000000"
         />
-        <MeshGradient
+        {!isTouch && <MeshGradient
           className="absolute inset-0 w-full h-full opacity-40"
           colors={["#000000", "#3D81E3", "#06b6d4", "#0c0c0c"]}
-          speed={0.15}
+          speed={reducedMotion ? 0 : 0.15}
           {...RENDER}
           backgroundColor="transparent"
-        />
+        />}
       </div>
     </div>
   );

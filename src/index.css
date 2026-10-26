@@ -51,6 +51,21 @@ html, body {
   pointer-events: none;
 }
 
+/* Touch devices: a backdrop blur over the animated WebGL background has to be
+   recomputed every frame, which made scrolling stutter on phones. Swap it for
+   a slightly more opaque tint there; desktop keeps the real glass. */
+@media (hover: none) and (pointer: coarse) {
+  .liquid-glass,
+  .backdrop-blur,
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
 /* Owlog gallery marquee: constant speed, right to left, endless. */
 @keyframes marquee {
   from { transform: translateX(0); }
