@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 
@@ -37,6 +37,9 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  // Anti-spam: hidden honeypot field + minimum time on the page before submitting
+  const [website, setWebsite] = useState('');
+  const mountedAt = useRef(Date.now());
 
   const toggleAddon = (id: AddonId) => {
     setAddons((prev) => {
@@ -108,6 +111,12 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email) return;
+    const formTimeMs = Date.now() - mountedAt.current;
+    if (website || formTimeMs < 3000) {
+      // Likely a bot: pretend it worked, send nothing
+      setStatus('sent');
+      return;
+    }
     setStatus('sending');
 
     const payload = {
@@ -122,6 +131,8 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
       name,
       email,
       notes,
+      website,
+      formTimeMs,
     };
 
     try {
@@ -224,6 +235,16 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
           </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-3 flex-1">
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              className="absolute -left-[9999px] h-0 w-0 opacity-0"
+            />
             <input
               type="text"
               required
