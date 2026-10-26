@@ -64,6 +64,10 @@ html, body {
   .liquid-glass {
     background: rgba(255, 255, 255, 0.06);
   }
+  /* The moving shine repaints the whole headline every frame */
+  .animate-shiny {
+    animation: none;
+  }
 }
 
 /* Owlog gallery marquee: constant speed, right to left, endless. */

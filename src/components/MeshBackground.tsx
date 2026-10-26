@@ -9,7 +9,8 @@ import { MeshGradient } from "@paper-design/shaders-react";
 // ~720p and let the browser upscale it. The library default (min 2x pixel
 // ratio, up to 4x Full HD per layer) made the two layers lag on most devices.
 const RENDER = { minPixelRatio: 1, maxPixelCount: 1280 * 720 } as const;
-// Phones: one layer at an even lower resolution keeps scrolling smooth.
+// Phones: one layer, drawn once and frozen (speed 0 stops the render loop),
+// because even a single animated layer made scrolling stutter on iPhone.
 const RENDER_TOUCH = { minPixelRatio: 1, maxPixelCount: 540 * 960 } as const;
 
 const isTouch =
@@ -30,7 +31,8 @@ export default function MeshBackground() {
         <MeshGradient
           className="absolute inset-0 w-full h-full"
           colors={["#000000", "#06b6d4", "#0891b2", "#164e63", "#f97316"]}
-          speed={reducedMotion ? 0 : 0.3}
+          speed={reducedMotion || isTouch ? 0 : 0.3}
+          frame={isTouch ? 8000 : 0}
           {...(isTouch ? RENDER_TOUCH : RENDER)}
           backgroundColor="#000000"
         />
