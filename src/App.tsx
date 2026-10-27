@@ -257,7 +257,7 @@ initial={{ opacity: 0, y: -20 }}
 animate={{ opacity: 1, y: 0 }}
 exit={{ opacity: 0, y: -20 }}
 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-className="fixed top-[env(safe-area-inset-top)] left-0 right-0 z-50 pt-6"
+className="fixed top-0 left-0 right-0 z-50 pt-[calc(env(safe-area-inset-top)+1rem)] pb-4 md:pt-6 md:pb-0 bg-gradient-to-b from-[#163f48] via-[#163f48]/80 to-transparent md:bg-none"
 id="main-nav"
 >
 <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">

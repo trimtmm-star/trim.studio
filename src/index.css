@@ -13,7 +13,9 @@
 html, body {
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #000000;
+  /* iOS Safari tints its status bar and toolbar with the page background.
+     Pure black showed as two black bands; this teal matches the gradient. */
+  background-color: #163f48;
   color: white;
 }
 
