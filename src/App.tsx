@@ -3,7 +3,7 @@
 * SPDX-License-Identifier: Apache-2.0
 */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, type RefObject } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -41,6 +41,7 @@ projects: [
 title: "Detailing Bros",
 url: "detailingbros.be",
 img: "detailingbros",
+video: true,
 desc: "Car detailing · Evergem",
 tags: ["Development", "Creative Direction", "B2B"]
 },
@@ -48,6 +49,7 @@ tags: ["Development", "Creative Direction", "B2B"]
 title: "Pizza Truck Herri",
 url: "pizzatruckherri.com",
 img: "pizzatruckherri",
+video: true,
 desc: "Pizza truck & catering",
 tags: ["Digital Strategy", "E-commerce", "Brand"]
 },
@@ -62,6 +64,7 @@ tags: ["Digital Strategy", "Brand Design", "E-commerce"]
 title: "Kantara International",
 url: "kantara-international.com",
 img: "kantara-international",
+video: true,
 desc: "B2B trade · Europe ↔ Africa",
 tags: ["B2B", "Digital Strategy"]
 }
@@ -119,6 +122,7 @@ projects: [
 title: "Detailing Bros",
 url: "detailingbros.be",
 img: "detailingbros",
+video: true,
 desc: "Car detailing · Evergem",
 tags: ["Ontwikkeling", "Creatieve Directie", "B2B"]
 },
@@ -126,6 +130,7 @@ tags: ["Ontwikkeling", "Creatieve Directie", "B2B"]
 title: "Pizza Truck Herri",
 url: "pizzatruckherri.com",
 img: "pizzatruckherri",
+video: true,
 desc: "Pizzatruck & catering",
 tags: ["Digitale Strategie", "E-commerce", "Merk"]
 },
@@ -140,6 +145,7 @@ tags: ["Digitale Strategie", "Merkontwerp", "E-commerce"]
 title: "Kantara International",
 url: "kantara-international.com",
 img: "kantara-international",
+video: true,
 desc: "B2B handel · Europa ↔ Afrika",
 tags: ["B2B", "Digitale Strategie"]
 }
@@ -349,11 +355,45 @@ className="mt-10 inline-flex items-center gap-2 text-xs font-bold uppercase trac
 );
 };
 
+// Muted looping clip of a client's hero; the screenshot is the poster, and
+// reduced-motion users just get the still. Playback is driven by the card.
+const stillMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const LoopVideo = ({ src, poster, className }: { src: string; poster: string; className: string }) => {
+if (stillMotion) return <img src={poster} alt="" loading="lazy" className={className} />;
+return <video src={src} poster={poster} muted loop playsInline preload="none" className={className} />;
+};
+
+// Plays a card's desktop + phone clips only while on screen, and keeps the
+// phone clip locked to the desktop one so both show the same moment.
+const useSyncedVideos = (card: RefObject<HTMLElement | null>) => {
+useEffect(() => {
+const el = card.current;
+if (!el || stillMotion) return;
+const vids = el.querySelectorAll<HTMLVideoElement>('video');
+const main = vids[0], phone = vids[1];
+if (!main) return;
+const sync = () => {
+if (phone && Math.abs(phone.currentTime - main.currentTime) > 0.1) phone.currentTime = main.currentTime;
+};
+main.addEventListener('timeupdate', sync);
+const io = new IntersectionObserver(([e]) => {
+const vids = [main, phone].filter(Boolean) as HTMLVideoElement[];
+if (e.isIntersecting) vids.forEach((v) => v.play().catch(() => {}));
+else vids.forEach((v) => v.pause());
+}, { rootMargin: '200px' });
+io.observe(el);
+return () => { io.disconnect(); main.removeEventListener('timeupdate', sync); };
+}, [card]);
+};
+
 // One project: big browser shot with the phone version overlapping it.
 const ProjectShowcase = ({ p, i, t }: { p: any; i: number; t: any; key?: string }) => {
 const flip = i % 2 === 1;
+const card = useRef<HTMLAnchorElement>(null);
+useSyncedVideos(card);
 return (
 <motion.a
+ref={card}
 href={`https://${p.url}`}
 target="_blank"
 rel="noopener noreferrer"
@@ -372,11 +412,15 @@ className="group block"
 <span className="ml-3 text-[10px] text-white/40 tracking-wide">{p.url}</span>
 </div>
 <div className="aspect-[16/10] overflow-hidden">
-<img src={`/work/${p.img}.jpg`} alt={p.title} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]" />
+{p.video
+? <LoopVideo src={`/work/${p.img}.mp4`} poster={`/work/${p.img}.jpg`} className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]" />
+: <img src={`/work/${p.img}.jpg`} alt={p.title} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]" />}
 </div>
 </div>
 <div className={`absolute bottom-0 ${flip ? 'left-4 md:left-0' : 'right-4 md:right-0'} md:bottom-[-2.5rem] w-[28%] md:w-[19%] rounded-[1.4rem] md:rounded-[2rem] overflow-hidden border-[3px] border-white/15 bg-black shadow-2xl shadow-black/70 transition-transform duration-700 group-hover:-translate-y-2`}>
-<img src={`/work/${p.img}-m.jpg`} alt="" loading="lazy" className="w-full aspect-[390/844] object-cover object-top" />
+{p.video
+? <LoopVideo src={`/work/${p.img}-m.mp4`} poster={`/work/${p.img}-m.jpg`} className="w-full aspect-[390/844] object-cover object-top" />
+: <img src={`/work/${p.img}-m.jpg`} alt="" loading="lazy" className="w-full aspect-[390/844] object-cover object-top" />}
 </div>
 </div>
 <div className={`mt-6 md:mt-12 flex items-end justify-between gap-6 ${flip ? 'md:pl-24' : 'md:pr-24'}`}>
