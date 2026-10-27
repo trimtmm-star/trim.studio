@@ -226,7 +226,7 @@ export default function OwlogPage() {
     document.title = 'Owlog — Trading journal for iPhone';
     window.scrollTo(0, 0);
     return () => {
-      document.title = 'Trim Tahirsylaj — Web Artisan & Automation specialist';
+      document.title = 'Trim Tahirsylaj — Sites. Apps. Automation.';
     };
   }, []);
 
