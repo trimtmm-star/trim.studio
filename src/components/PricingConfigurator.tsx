@@ -10,7 +10,7 @@ import { Check, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 const N8N_WEBHOOK_URL = 'https://n8n.ttrim.studio/webhook/pricing-configurator';
 
 type PackageId = 'starter' | 'advanced' | 'premium';
-type AddonId = 'chatbot' | 'automation' | 'ecommerce' | 'copy' | 'multilingual' | 'maintenance';
+type AddonId = 'chatbot' | 'automation' | 'multilingual' | 'maintenance';
 
 const PACKAGES: Record<PackageId, { label: string; desc: { nl: string; en: string }; oneTime: number; startFee: number; monthly: number }> = {
   starter: { label: 'Starter', desc: { nl: '1 pagina', en: '1 page' }, oneTime: 475, startFee: 195, monthly: 24 },
@@ -19,11 +19,9 @@ const PACKAGES: Record<PackageId, { label: string; desc: { nl: string; en: strin
 };
 
 const ADDONS: Record<AddonId, { label: { nl: string; en: string }; min: number; max: number; monthly?: boolean }> = {
-  chatbot: { label: { nl: 'Chatbot / AI-assistent', en: 'Chatbot / AI assistant' }, min: 875, max: 2475 },
+  chatbot: { label: { nl: 'Chatbot / AI-assistent', en: 'Chatbot / AI assistant' }, min: 1475, max: 2975 },
   automation: { label: { nl: 'Automatisering', en: 'Automation' }, min: 575, max: 1475 },
-  ecommerce: { label: { nl: 'E-commerce module', en: 'E-commerce module' }, min: 1275, max: 1875 },
-  copy: { label: { nl: 'Copywriting & SEO-teksten', en: 'Copywriting & SEO' }, min: 425, max: 975 },
-  multilingual: { label: { nl: 'Meertaligheid (per taal)', en: 'Multilingual (per language)' }, min: 345, max: 345 },
+  multilingual: { label: { nl: 'Meertaligheid (per taal)', en: 'Multilingual (per language)' }, min: 195, max: 195 },
   maintenance: { label: { nl: 'Technisch onderhoud (€29/mo)', en: 'Technical maintenance (€29/mo)' }, min: 0, max: 0, monthly: true },
 };
 
