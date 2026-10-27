@@ -10,8 +10,6 @@ import {
 ChevronRight,
 MessageSquare,
 Mail,
-Phone,
-Globe,
 ArrowUpRight,
 Menu,
 X,
@@ -29,9 +27,8 @@ contact: "Get in touch"
 },
 hero: {
 line1: "Trim Tahirsylaj.",
-line2: "Web Artisan & Automation Specialist for Growing Businesses"
+line2: "Crafted sites. Real apps. Smart automation."
 },
-subtext: "Refining digital landscapes through thoughtful creation and strategic investment. Specializing in B2B solutions that prioritize clarity and sustainable performance.",
 slogan: "Execution beats ideas.",
 cta: "Start a Conversation",
 portfolio: {
@@ -43,25 +40,29 @@ projects: [
 {
 title: "Detailing Bros",
 url: "detailingbros.be",
-desc: "Premium auto detailing services platform with advanced booking and service visualization.",
+img: "detailingbros",
+desc: "Car detailing · Evergem",
 tags: ["Development", "Creative Direction", "B2B"]
 },
 {
 title: "Pizza Truck Herri",
 url: "pizzatruckherri.com",
-desc: "Mobile gastronomy digital presence. Seamless experience from menu browsing to event booking.",
+img: "pizzatruckherri",
+desc: "Pizza truck & catering",
 tags: ["Digital Strategy", "E-commerce", "Brand"]
 },
 {
 title: "A Poppa",
 url: "apoppa.com",
-desc: "Italian culinary dining in Ghent and Evergem. Sophisticated digital presence reflecting authentic cuisine and refined hospitality.",
+img: "apoppa",
+desc: "Italian restaurant · Ghent",
 tags: ["Digital Strategy", "Brand Design", "E-commerce"]
 },
 {
 title: "Kantara International",
 url: "kantara-international.com",
-desc: "Sophisticated B2B digital portal bridging European manufacturers and African markets through market entry, regulatory compliance, and strategic partnerships.",
+img: "kantara-international",
+desc: "B2B trade · Europe ↔ Africa",
 tags: ["B2B", "Digital Strategy"]
 }
 ]
@@ -69,7 +70,7 @@ tags: ["B2B", "Digital Strategy"]
 apps: {
 title: "App Creator",
 subtitle: "Owlog",
-desc: "Refining how traders document their journey. Owlog provides a specialized framework for pattern recognition and psychological analysis.",
+desc: "Trading journal for iPhone.",
 status: "Out Now",
 type: "Journaling App",
 hint: "Click the icon to open the App Store",
@@ -83,8 +84,8 @@ desc: "Dedicated to helping established businesses build sophisticated digital f
 end: "I believe a digital presence should be as enduring as the businesses it represents."
 },
 contact: {
-title: "Connections",
-subtitle: "Open to new collaborations and investment opportunities.",
+title: "Contact",
+subtitle: "Got a project? Let's talk.",
 getInTouch: "Say hello",
 email: "Email",
 phone: "Phone",
@@ -104,9 +105,8 @@ contact: "Contact opnemen"
 },
 hero: {
 line1: "Trim Tahirsylaj.",
-line2: "Web Artisan en Automation Specialist voor Groeiende Bedrijven"
+line2: "Vakkundige sites. Echte apps. Slimme automatisatie."
 },
-subtext: "Digitale landschappen verfijnen door doordachte creatie en strategische investeringen. Gespecialiseerd in B2B-oplossingen die prioriteit geven aan helderheid en duurzame prestaties.",
 slogan: "Executie wint van ideeën.",
 cta: "Start een Gesprek",
 portfolio: {
@@ -118,25 +118,29 @@ projects: [
 {
 title: "Detailing Bros",
 url: "detailingbros.be",
-desc: "Premium platform voor auto-detailing met geavanceerde boeking en servicevisualisatie.",
+img: "detailingbros",
+desc: "Car detailing · Evergem",
 tags: ["Ontwikkeling", "Creatieve Directie", "B2B"]
 },
 {
 title: "Pizza Truck Herri",
 url: "pizzatruckherri.com",
-desc: "Mobiele gastronomie digitale aanwezigheid. Naadloze ervaring van menu bladeren tot evenement boeking.",
+img: "pizzatruckherri",
+desc: "Pizzatruck & catering",
 tags: ["Digitale Strategie", "E-commerce", "Merk"]
 },
 {
 title: "A Poppa",
 url: "apoppa.com",
-desc: "Italiaanse culinaire ervaring in Gent en Evergem. Elegante digitale aanwezigheid die authentieke keuken en verfijnde horeca weerspiegelt.",
+img: "apoppa",
+desc: "Italiaans restaurant · Gent",
 tags: ["Digitale Strategie", "Merkontwerp", "E-commerce"]
 },
 {
 title: "Kantara International",
 url: "kantara-international.com",
-desc: "Geavanceerd B2B digitaal portaal dat Europese fabrikanten verbindt met Afrikaanse markten via markttoegang, regelgeving en strategische partnerschappen.",
+img: "kantara-international",
+desc: "B2B handel · Europa ↔ Afrika",
 tags: ["B2B", "Digitale Strategie"]
 }
 ]
@@ -144,7 +148,7 @@ tags: ["B2B", "Digitale Strategie"]
 apps: {
 title: "App Maker",
 subtitle: "Owlog",
-desc: "De manier waarop handelaren hun traject documenteren verfijnen. Owlog biedt een gespecialiseerd kader voor herkenning van patronen en psychologische analyse.",
+desc: "Trading journal voor iPhone.",
 status: "Nu Uit",
 type: "Journaling App",
 hint: "Klik op het icoon om de App Store te openen",
@@ -158,8 +162,8 @@ desc: "Toegewijd aan het helpen van gevestigde bedrijven bij het bouwen van verf
 end: "Ik geloof dat een digitale aanwezigheid net zo duurzaam moet zijn als de bedrijven die het vertegenwoordigt."
 },
 contact: {
-title: "Verbindingen",
-subtitle: "Open voor nieuwe samenwerkingen en investeringsmogelijkheden.",
+title: "Contact",
+subtitle: "Een project in gedachten? Laten we praten.",
 getInTouch: "Zeg hallo",
 email: "E-mail",
 phone: "Telefoon",
@@ -320,101 +324,84 @@ Pricing
 
 const Hero = ({ t }: { t: any }) => {
 return (
-<section className="relative z-10 pt-24 md:pt-40 pb-20 text-center flex flex-col items-center px-6" id="hero-section">
+<section className="relative z-10 pt-16 md:pt-28 pb-16 md:pb-24 text-center flex flex-col items-center px-6" id="hero-section">
 <motion.h1
 initial={{ opacity: 0, y: 30 }}
 animate={{ opacity: 1, y: 0 }}
 transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-className="text-6xl md:text-[10rem] font-black tracking-tighter leading-[1.05] pb-4"
+className="text-6xl md:text-[9rem] font-black tracking-tighter leading-[1.02] pb-4"
 id="hero-headline"
 >
-<span className="block text-white mb-2">{t.hero.line1}</span>
-<span className="block animate-shiny" style={headlineGradientStyle}>{t.hero.line2}</span>
+<span className="block text-white">{t.hero.line1}</span>
+<span className="block mt-6 text-4xl md:text-7xl leading-[1.1] tracking-tight animate-shiny" style={headlineGradientStyle}>{t.hero.line2.split(". ").map((s: string, i: number, a: string[]) => <span key={i} className="block">{s}{i < a.length - 1 ? "." : ""}</span>)}</span>
 </motion.h1>
 
-<motion.p
-initial={{ opacity: 0, y: 20 }}
-animate={{ opacity: 1, y: 0 }}
-transition={{ delay: 0.5, duration: 0.8 }}
-className="mt-12 text-white/50 max-w-xl text-base md:text-xl leading-[1.6] font-medium"
-id="hero-subtext"
+<motion.button
+initial={{ opacity: 0 }}
+animate={{ opacity: 1 }}
+transition={{ delay: 0.9, duration: 0.8 }}
+onClick={() => smoothScrollTo('portfolio')}
+className="mt-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-white/50 hover:text-white transition-colors"
 >
-{t.subtext}
-</motion.p>
-
-<motion.div
-initial={{ opacity: 0, scale: 0.9 }}
-animate={{ opacity: 1, scale: 1 }}
-transition={{ delay: 0.6, duration: 0.8 }}
-className="mt-6 text-[10px] uppercase tracking-[0.5em] text-brand font-black"
->
-{t.slogan}
-</motion.div>
-
-<motion.div
-initial={{ opacity: 0, y: 20 }}
-animate={{ opacity: 1, y: 0 }}
-transition={{ delay: 0.7, duration: 0.8 }}
-className="mt-14"
-id="hero-cta-group"
->
-<WhatsAppButton label={t.cta} />
-</motion.div>
+{t.nav.portfolio} <ChevronRight className="w-4 h-4 rotate-90" />
+</motion.button>
 </section>
+);
+};
+
+// One project: big browser shot with the phone version overlapping it.
+const ProjectShowcase = ({ p, i, t }: { p: any; i: number; t: any; key?: string }) => {
+const flip = i % 2 === 1;
+return (
+<motion.a
+href={`https://${p.url}`}
+target="_blank"
+rel="noopener noreferrer"
+initial={{ opacity: 0, y: 40 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ once: true, margin: "-80px" }}
+transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+className="group block"
+>
+<div className={`relative ${flip ? 'md:pl-24' : 'md:pr-24'} pb-10 md:pb-0`}>
+<div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl shadow-black/60">
+<div className="flex items-center gap-1.5 px-4 h-8 bg-black/60 border-b border-white/10">
+<span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+<span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+<span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+<span className="ml-3 text-[10px] text-white/40 tracking-wide">{p.url}</span>
+</div>
+<div className="aspect-[16/10] overflow-hidden">
+<img src={`/work/${p.img}.jpg`} alt={p.title} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]" />
+</div>
+</div>
+<div className={`absolute bottom-0 ${flip ? 'left-4 md:left-0' : 'right-4 md:right-0'} md:bottom-[-2.5rem] w-[28%] md:w-[19%] rounded-[1.4rem] md:rounded-[2rem] overflow-hidden border-[3px] border-white/15 bg-black shadow-2xl shadow-black/70 transition-transform duration-700 group-hover:-translate-y-2`}>
+<img src={`/work/${p.img}-m.jpg`} alt="" loading="lazy" className="w-full aspect-[390/844] object-cover object-top" />
+</div>
+</div>
+<div className={`mt-6 md:mt-12 flex items-end justify-between gap-6 ${flip ? 'md:pl-24' : 'md:pr-24'}`}>
+<div>
+<h3 className="text-3xl md:text-5xl font-bold tracking-tight">{p.title}</h3>
+<p className="mt-2 text-white/40 text-sm md:text-base">{p.desc}</p>
+</div>
+<span className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/50 group-hover:text-white transition-colors">
+{t.portfolio.viewProject} <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+</span>
+</div>
+</motion.a>
 );
 };
 
 const Portfolio = ({ t }: { t: any }) => {
 return (
-<section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10" id="portfolio">
-<div className="mb-16 text-center md:text-left">
+<section className="max-w-6xl mx-auto px-6 py-16 md:py-24 relative z-10" id="portfolio">
+<div className="mb-16 md:mb-24 text-center md:text-left">
 <SectionEyebrow label={t.nav.portfolio} tag={t.portfolio.tag} />
 <h2 className="text-4xl md:text-6xl font-bold tracking-tight">{t.portfolio.title}</h2>
 </div>
-
-<div className="grid md:grid-cols-2 gap-8 md:gap-12">
+<div className="flex flex-col gap-28 md:gap-44">
 {t.portfolio.projects.map((p: any, i: number) => (
-<motion.div
-key={p.url}
-initial={{ opacity: 0, y: 30 }}
-whileInView={{ opacity: 1, y: 0 }}
-whileHover={{ y: -8, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } }}
-viewport={{ once: true, margin: "-80px" }}
-transition={{ delay: i * 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-className="group liquid-glass rounded-3xl p-10 border border-white/10 h-full flex flex-col hover:bg-white/[0.03] hover:border-white/20 transition-colors text-center md:text-left cursor-default"
->
-<div className="flex flex-col items-center md:flex-row md:items-start md:justify-between mb-8 gap-4">
-<div className="flex flex-wrap justify-center md:justify-start gap-2">
-{p.tags.map((tag: string) => (
-<span key={tag} className="px-3 py-1 rounded-full bg-white/5 text-[9px] font-bold uppercase tracking-widest text-white/40 border border-white/5">
-{tag}
-</span>
-))}
-</div>
-<Globe className="w-5 h-5 text-white/20 group-hover:text-brand transition-colors duration-300" />
-</div>
-
-<div className="flex-1 flex flex-col">
-<div className="mb-6">
-<h3 className="text-3xl font-bold text-white mb-2">{p.title}</h3>
-<a href={`https://${p.url}`} target="_blank" rel="noopener noreferrer" className="text-brand font-medium text-sm flex items-center gap-1 hover:underline">
-{p.url} <ExternalLink className="w-3 h-3" />
-</a>
-</div>
-<p className="text-base text-white/50 leading-relaxed mb-10">{p.desc}</p>
-
-<div className="mt-auto">
-<a
-href={`https://${p.url}`}
-target="_blank"
-rel="noopener noreferrer"
-className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-white/60 group-hover:text-white transition-all duration-300 group-hover:gap-4"
->
-{t.portfolio.viewProject} <ArrowUpRight className="w-4 h-4" />
-</a>
-</div>
-</div>
-</motion.div>
+<ProjectShowcase key={p.url} p={p} i={i} t={t} />
 ))}
 </div>
 </section>
@@ -422,74 +409,40 @@ className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[
 };
 
 const AppCreator = ({ t }: { t: any }) => {
+const shots = ['journal', 'stats', 'analytics'];
 return (
-<section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10 border-t border-white/5" id="apps">
-<div className="grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
-<div>
+<section className="max-w-6xl mx-auto px-6 py-32 md:py-48 relative z-10" id="apps">
+<div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 text-center md:text-left">
+<div className="flex flex-col items-center md:items-start">
 <SectionEyebrow label={t.apps.title} tag={t.apps.status} />
-<h2 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 italic">
-{t.apps.subtitle}
-</h2>
-<p className="text-xl md:text-2xl text-white/60 leading-relaxed font-medium max-w-lg mb-10 mx-auto md:mx-0">
-{t.apps.desc}
-</p>
-<div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+<div className="flex items-center gap-5">
+<img src="/owlog/icon.png" alt="Owlog" className="w-16 h-16 md:w-20 md:h-20 rounded-[1.2rem]" />
+<h2 className="text-5xl md:text-7xl font-black tracking-tighter">{t.apps.subtitle}</h2>
+</div>
+<p className="mt-4 text-white/40 text-base md:text-lg">{t.apps.desc}</p>
+</div>
+<div className="flex flex-wrap items-center justify-center gap-3">
 <Link to="/owlog" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full text-xs font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform">
 {t.apps.discover} <ArrowUpRight className="w-4 h-4" />
 </Link>
-<div className="inline-flex items-center gap-4 px-6 py-3 bg-white/5 rounded-full border border-white/10">
-<span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
-<span className="text-xs font-bold uppercase tracking-widest text-white/60">{t.apps.status}</span>
-</div>
-</div>
-</div>
-<div className="relative aspect-video rounded-[3rem] overflow-hidden border border-white/10 liquid-glass flex items-center justify-center group">
-<div className="absolute inset-0 bg-brand/5 group-hover:bg-brand/10 transition-colors duration-500" />
-<div className="relative z-10 text-center">
-<a
-href="https://apps.apple.com/be/app/owlog/id6767484434"
-target="_blank"
-rel="noopener noreferrer"
-className="w-32 h-32 flex items-center justify-center mx-auto transform group-hover:scale-[1.3] transition-transform duration-700 ease-[0.22,1,0.36,1] overflow-hidden cursor-pointer"
->
-<img
-src="/owlog/icon.png"
-alt="Owlog Logo"
-className="w-full h-full object-contain rounded-[1.8rem]"
-referrerPolicy="no-referrer"
-/>
+<a href="https://apps.apple.com/be/app/owlog/id6767484434" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white hover:border-white/40 transition-colors">
+App Store <ExternalLink className="w-3.5 h-3.5" />
 </a>
-<p className="mt-4 text-xs font-bold uppercase tracking-widest text-white/40 pointer-events-none group-hover:text-white/60 transition-colors px-4">
-{t.apps.hint}
-</p>
-</div>
-
-{/* Decorative elements */}
-<div className="absolute -bottom-20 -right-20 w-64 h-64 bg-brand/10 blur-[100px] rounded-full" />
-<div className="absolute -top-20 -left-20 w-64 h-64 bg-brand/5 blur-[100px] rounded-full" />
 </div>
 </div>
-</section>
-);
-};
-
-const Expertise = ({ t }: { t: any }) => {
-return (
-<section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10 border-t border-white/5" id="expertise">
-<div className="grid md:grid-cols-12 gap-12 text-center md:text-left">
-<div className="md:col-span-5">
-<SectionEyebrow label={t.about.title} tag={t.about.subtitle} />
-<h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
-{t.about.heading}
-</h2>
-</div>
-<div className="md:col-span-7 flex flex-col justify-center">
-<p className="text-lg md:text-2xl text-white/60 leading-relaxed font-medium">
-{t.about.desc}
-<br /><br />
-<span className="text-white">{t.about.end}</span>
-</p>
-</div>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+{shots.map((s, i) => (
+<motion.div
+key={s}
+initial={{ opacity: 0, y: 40 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ once: true, margin: "-60px" }}
+transition={{ delay: i * 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+className="rounded-3xl overflow-hidden border border-white/10 bg-white/5"
+>
+<img src={`/owlog/duo/${s}.jpg`} alt={`Owlog ${s}`} loading="lazy" className="w-full h-full object-cover" />
+</motion.div>
+))}
 </div>
 </section>
 );
@@ -497,51 +450,13 @@ return (
 
 const Contact = ({ t }: { t: any }) => {
 return (
-<section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10 border-t border-white/5" id="contact">
-<div className="grid md:grid-cols-2 gap-20 text-center md:text-left">
-<div>
-<SectionEyebrow label={t.nav.contact} tag={t.nav.contact} />
-<h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">{t.contact.title}</h2>
-<p className="text-white/50 text-lg mb-12 max-w-md mx-auto md:mx-0">{t.contact.subtitle}</p>
-
-<div className="space-y-6 flex flex-col items-center md:items-start">
-<div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.location.href = "mailto:trimtmm@gmail.com"}>
-<div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center p-3 transition-colors group-hover:bg-brand group-hover:border-brand">
-<Mail className="w-full h-full text-white" />
-</div>
-<div>
-<div className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-1">{t.contact.email}</div>
-<div className="text-xl font-medium group-hover:text-brand transition-colors tracking-tight">trimtmm@gmail.com</div>
-</div>
-</div>
-
-<div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.location.href = "tel:0488842993"}>
-<div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center p-3 transition-colors group-hover:bg-brand group-hover:border-brand">
-<Phone className="w-full h-full text-white" />
-</div>
-<div>
-<div className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-1">{t.contact.phone}</div>
-<div className="text-xl font-medium group-hover:text-brand transition-colors tracking-tight">0488842993</div>
-</div>
-</div>
-</div>
-</div>
-
-<div className="flex items-center justify-center">
-<motion.div
-initial={{ opacity: 0, scale: 0.95 }}
-whileInView={{ opacity: 1, scale: 1 }}
-viewport={{ once: true }}
-className="liquid-glass rounded-[3rem] p-12 w-full max-w-md aspect-square flex flex-col items-center justify-center text-center relative border border-white/10 shadow-2xl"
->
-<div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-brand opacity-10 blur-[80px] rounded-full pointer-events-none" />
-
-<MessageSquare className="w-16 h-16 text-white/20 mb-8" />
-<h3 className="text-2xl font-bold mb-4">{t.contact.directChannel}</h3>
-<p className="text-white/40 text-sm mb-10 px-8 leading-relaxed">{t.contact.whatsappDesc}</p>
-<WhatsAppButton label={t.contact.getInTouch} full />
-</motion.div>
-</div>
+<section className="max-w-6xl mx-auto px-6 py-32 md:py-48 relative z-10 border-t border-white/5 text-center" id="contact">
+<h2 className="text-5xl md:text-8xl font-black tracking-tighter">{t.contact.subtitle}</h2>
+<div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+<WhatsAppButton label={t.contact.getInTouch} />
+<a href="mailto:trimtmm@gmail.com" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-white/15 text-sm font-medium text-white/80 hover:text-white hover:border-white/40 transition-colors">
+<Mail className="w-4 h-4" /> trimtmm@gmail.com
+</a>
 </div>
 </section>
 );
@@ -599,30 +514,11 @@ return (
 
 <Navbar lang={lang} setLang={setLang} t={t} visible={navVisible} />
 
-<main className="relative z-10 pt-48 md:pt-64">
+<main className="relative z-10 pt-40 md:pt-52">
 <Hero t={t} />
-
-<div className="max-w-6xl mx-auto px-6 h-px bg-white/5 relative z-20" />
-
-<Expertise t={t} />
 <Portfolio t={t} />
 <AppCreator t={t} />
 <Contact t={t} />
-
-{/* Simple Final CTA with WhatsApp */}
-<section className="max-w-6xl mx-auto px-6 py-32 md:py-64 relative z-10">
-<motion.div
-initial={{ opacity: 0, y: 20 }}
-whileInView={{ opacity: 1, y: 0 }}
-viewport={{ once: true }}
-className="liquid-glass rounded-[4rem] px-8 py-24 text-center border border-white/10 relative overflow-hidden"
->
-<div className="absolute top-0 inset-x-0 h-[300px] bg-gradient-to-b from-brand/5 to-transparent pointer-events-none" />
-<LogoMark className="mx-auto mb-12 opacity-40" />
-<h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-8 max-w-2xl mx-auto">{t.finalCta.line1} <br /> {t.finalCta.line2}</h2>
-<WhatsAppButton label={t.cta} />
-</motion.div>
-</section>
 </main>
 
 <footer className="relative z-10 py-24 md:py-32 border-t border-white/5 text-center overflow-hidden">
