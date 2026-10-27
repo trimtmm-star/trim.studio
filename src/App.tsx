@@ -185,9 +185,15 @@ footer: "Privacy & cookies"
 };
 
 // --- Smooth scroll utility ---
+// Lazy images/videos can still load during the scroll and shift the target,
+// so check again once the smooth scroll has settled and finish the move.
 const smoothScrollTo = (id: string) => {
   const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  window.setTimeout(() => {
+    if (Math.abs(el.getBoundingClientRect().top) > 4) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 900);
 };
 
 // --- Primitives ---
@@ -484,7 +490,7 @@ viewport={{ once: true, margin: "-60px" }}
 transition={{ delay: i * 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
 className="rounded-3xl overflow-hidden border border-white/10 bg-white/5"
 >
-<img src={`/owlog/duo/${s}.jpg`} alt={`Owlog ${s}`} loading="lazy" className="w-full h-full object-cover" />
+<img src={`/owlog/duo/${s}.jpg`} alt={`Owlog ${s}`} loading="lazy" width={1600} height={1150} className="w-full h-auto aspect-[1600/1150] object-cover" />
 </motion.div>
 ))}
 </div>
