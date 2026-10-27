@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { UserPlus, MessageSquare, Mail, Phone, ArrowUpRight } from 'lucide-react';
@@ -17,6 +17,23 @@ const PROJECTS = [
   { title: 'Detailing Bros', url: 'detailingbros.be', img: 'detailingbros' },
   { title: 'Pizza Truck Herri', url: 'pizzatruckherri.com', img: 'pizzatruckherri' },
 ];
+
+// The client's moving hero (desktop recording) in a loop, played only while
+// on screen. Reduced-motion users get the screenshot instead.
+const still = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function HeroClip({ name, alt }: { name: string; alt: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const io = new IntersectionObserver(([e]) => { e.isIntersecting ? v.play().catch(() => {}) : v.pause(); }, { rootMargin: '150px' });
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+  const cls = 'w-full aspect-[16/10] object-cover object-top';
+  if (still) return <img src={`/work/${name}.jpg`} alt={alt} loading="lazy" width={1440} height={900} className={cls} />;
+  return <video ref={ref} src={`/work/${name}.mp4`} poster={`/work/${name}.jpg`} muted loop playsInline preload="none" aria-label={alt} className={cls} />;
+}
 
 const rise = (i: number) => ({
   initial: { opacity: 0, y: 20 },
@@ -95,14 +112,7 @@ export default function CardPage() {
                 rel="noopener noreferrer"
                 className="group block rounded-2xl overflow-hidden border border-white/10 bg-black/30"
               >
-                <img
-                  src={`/work/${p.img}.jpg`}
-                  alt={p.title}
-                  loading="lazy"
-                  width={1440}
-                  height={900}
-                  className="w-full aspect-[16/10] object-cover object-top"
-                />
+                <HeroClip name={p.img} alt={p.title} />
                 <div className="flex items-center justify-between px-4 py-3">
                   <span className="font-bold">{p.title}</span>
                   <ArrowUpRight className="w-4 h-4 text-white/60" />
