@@ -1,6 +1,6 @@
-import { StrictMode } from 'react';
+import { StrictMode, useLayoutEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import App from './App.tsx';
 import PricingPage from './pages/PricingPage.tsx';
 import PrivacyPage from './pages/PrivacyPage.tsx';
@@ -9,9 +9,19 @@ import OwlogLegalPage from './pages/OwlogLegalPage.tsx';
 import CookieConsent from './components/CookieConsent.tsx';
 import './index.css';
 
+// Opening another page (e.g. Pricing) always starts at its top.
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
+  return null;
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/pricing" element={<PricingPage />} />
