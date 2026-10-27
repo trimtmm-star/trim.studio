@@ -238,7 +238,7 @@ export default function PricingPage() {
         {/* Bottom CTA */}
         <div className="mt-28 text-center">
           <a
-            href="https://wa.me/32488842993"
+            href="https://wa.me/32451130597"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-white text-black font-medium text-sm px-6 py-3.5 transition-all hover:bg-white/90 active:scale-[0.98]"

@@ -213,7 +213,7 @@ referrerPolicy="no-referrer"
 
 const WhatsAppButton = ({ label, full = false }: { label: string; full?: boolean }) => (
 <a
-href="https://wa.me/32488842993"
+href="https://wa.me/32451130597"
 target="_blank"
 rel="noopener noreferrer"
 className={`group inline-flex items-center justify-center gap-2 rounded-full bg-white text-black font-medium text-sm px-6 py-3.5 transition-all hover:bg-white/90 active:scale-[0.98] ${full ? 'w-full' : ''}`}
@@ -578,7 +578,7 @@ return (
 <button onClick={() => smoothScrollTo('portfolio')} className="uppercase tracking-[0.25em] hover:text-white transition-colors">{t.nav.portfolio}</button>
 <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
 <button onClick={() => smoothScrollTo('contact')} className="uppercase tracking-[0.25em] hover:text-white transition-colors">{t.nav.contact}</button>
-<a href="https://wa.me/32488842993" target="_blank" rel="noopener" className="hover:text-white transition-colors">WhatsApp</a>
+<a href="https://wa.me/32451130597" target="_blank" rel="noopener" className="hover:text-white transition-colors">WhatsApp</a>
 <button onClick={openCookieSettings} className="uppercase tracking-[0.25em] hover:text-white transition-colors">Cookies</button>
 </nav>
 <div className="flex flex-col items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white/45">
