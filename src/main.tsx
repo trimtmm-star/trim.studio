@@ -6,6 +6,7 @@ import PricingPage from './pages/PricingPage.tsx';
 import PrivacyPage from './pages/PrivacyPage.tsx';
 import OwlogPage from './pages/OwlogPage.tsx';
 import OwlogLegalPage from './pages/OwlogLegalPage.tsx';
+import CardPage from './pages/CardPage.tsx';
 import CookieConsent from './components/CookieConsent.tsx';
 import './index.css';
 
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/owlog" element={<OwlogPage />} />
         <Route path="/owlog/:doc" element={<OwlogLegalPage />} />
+        <Route path="/card" element={<CardPage />} />
       </Routes>
       <CookieConsent />
     </BrowserRouter>
