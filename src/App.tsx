@@ -99,7 +99,7 @@ finalCta: {
 line1: "Building with Purpose.",
 line2: "In Pursuit of Excellence."
 },
-footer: "All rights reserved · Privacy & cookies"
+footer: "Privacy & cookies"
 },
 nl: {
 nav: {
@@ -180,7 +180,7 @@ finalCta: {
 line1: "Bouwen met Doel.",
 line2: "Op Zoek naar Uitmuntendheid."
 },
-footer: "Alle rechten voorbehouden · Privacy & cookies"
+footer: "Privacy & cookies"
 }
 };
 
@@ -565,32 +565,20 @@ return (
 <Contact t={t} />
 </main>
 
-<footer className="relative z-10 py-24 md:py-32 border-t border-white/5 text-center overflow-hidden">
-{/* Background Overlay */}
-<div className="absolute inset-0 pointer-events-none opacity-[0.03] flex items-center justify-center z-0">
-<svg viewBox="0 0 256 256" className="w-[800px] h-[800px] text-white fill-current">
-<path d="M 0 128 C 70.692 128 128 185.308 128 256 L 64 256 C 64 220.654 35.346 192 0 192 Z M 256 192 C 220.654 192 192 220.654 192 256 L 128 256 C 128 185.308 185.308 128 256 128 Z M 128 0 C 128 70.692 70.692 128 0 128 L 0 64 C 35.346 64 64 35.346 64 0 Z M 192 0 C 192 35.346 220.654 64 256 64 L 256 128 C 185.308 128 128 70.692 128 0 Z" />
-</svg>
-</div>
-
-<div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-12 relative z-10">
-<div className="flex items-center gap-8 text-[11px] uppercase font-black tracking-[0.4em] text-white/20">
-<button onClick={() => smoothScrollTo('portfolio')} className="hover:text-white transition-colors">{t.nav.portfolio}</button>
+<footer className="relative z-10 py-16 md:py-20 border-t border-white/10 text-center">
+<div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-10">
+<LogoMark className="opacity-80" />
+<nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-xs uppercase font-semibold tracking-[0.25em] text-white/60">
+<button onClick={() => smoothScrollTo('portfolio')} className="uppercase tracking-[0.25em] hover:text-white transition-colors">{t.nav.portfolio}</button>
 <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
-<button onClick={() => smoothScrollTo('contact')} className="hover:text-white transition-colors">{t.nav.contact}</button>
+<button onClick={() => smoothScrollTo('contact')} className="uppercase tracking-[0.25em] hover:text-white transition-colors">{t.nav.contact}</button>
 <a href="https://wa.me/32488842993" target="_blank" rel="noopener" className="hover:text-white transition-colors">WhatsApp</a>
-<button onClick={openCookieSettings} className="hover:text-white transition-colors">Cookies</button>
+<button onClick={openCookieSettings} className="uppercase tracking-[0.25em] hover:text-white transition-colors">Cookies</button>
+</nav>
+<div className="flex flex-col items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white/45">
+<p>&copy; {new Date().getFullYear()} Trim Tahirsylaj · <Link to="/privacy" className="hover:text-white transition-colors underline underline-offset-4 decoration-white/30">{t.footer}</Link></p>
+<p>BTW BE1036404220</p>
 </div>
-
-<div className="relative group">
-<div className="absolute inset-0 bg-brand/30 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-<LogoMark className="opacity-40 group-hover:opacity-100 transition-opacity duration-1000" />
-</div>
-
-<p className="text-[10px] uppercase tracking-[0.5em] text-white/20 font-medium">
-&copy; {new Date().getFullYear()} — <Link to="/privacy" className="hover:text-white transition-colors underline decoration-dotted underline-offset-4">{t.footer}</Link>
-</p>
-<p className="text-[10px] uppercase tracking-[0.5em] text-white/20 font-medium">BTW: BE1036404220</p>
 </div>
 </footer>
 
