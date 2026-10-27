@@ -13,18 +13,18 @@ type PackageId = 'starter' | 'advanced' | 'premium';
 type AddonId = 'chatbot' | 'automation' | 'ecommerce' | 'copy' | 'multilingual' | 'maintenance';
 
 const PACKAGES: Record<PackageId, { label: string; desc: { nl: string; en: string }; oneTime: number; startFee: number; monthly: number }> = {
-  starter: { label: 'Starter', desc: { nl: '1 pagina', en: '1 page' }, oneTime: 500, startFee: 200, monthly: 25 },
-  advanced: { label: 'Advanced', desc: { nl: "Tot 5 pagina's", en: 'Up to 5 pages' }, oneTime: 1000, startFee: 400, monthly: 50 },
-  premium: { label: 'Premium', desc: { nl: "5+ pagina's · CMS · DB", en: '5+ pages · CMS · DB' }, oneTime: 2000, startFee: 800, monthly: 100 },
+  starter: { label: 'Starter', desc: { nl: '1 pagina', en: '1 page' }, oneTime: 475, startFee: 195, monthly: 24 },
+  advanced: { label: 'Advanced', desc: { nl: "Tot 5 pagina's", en: 'Up to 5 pages' }, oneTime: 1150, startFee: 385, monthly: 49 },
+  premium: { label: 'Premium', desc: { nl: "5+ pagina's · CMS · DB", en: '5+ pages · CMS · DB' }, oneTime: 2350, startFee: 785, monthly: 95 },
 };
 
 const ADDONS: Record<AddonId, { label: { nl: string; en: string }; min: number; max: number; monthly?: boolean }> = {
-  chatbot: { label: { nl: 'Chatbot / AI-assistent', en: 'Chatbot / AI assistant' }, min: 800, max: 2500 },
-  automation: { label: { nl: 'Automatisering', en: 'Automation' }, min: 500, max: 1500 },
-  ecommerce: { label: { nl: 'E-commerce module', en: 'E-commerce module' }, min: 1200, max: 1800 },
-  copy: { label: { nl: 'Copywriting & SEO-teksten', en: 'Copywriting & SEO' }, min: 400, max: 1000 },
-  multilingual: { label: { nl: 'Meertaligheid (per taal)', en: 'Multilingual (per language)' }, min: 300, max: 800 },
-  maintenance: { label: { nl: 'Technisch onderhoud (€30/mo)', en: 'Technical maintenance (€30/mo)' }, min: 0, max: 0, monthly: true },
+  chatbot: { label: { nl: 'Chatbot / AI-assistent', en: 'Chatbot / AI assistant' }, min: 875, max: 2475 },
+  automation: { label: { nl: 'Automatisering', en: 'Automation' }, min: 575, max: 1475 },
+  ecommerce: { label: { nl: 'E-commerce module', en: 'E-commerce module' }, min: 1275, max: 1875 },
+  copy: { label: { nl: 'Copywriting & SEO-teksten', en: 'Copywriting & SEO' }, min: 425, max: 975 },
+  multilingual: { label: { nl: 'Meertaligheid (per taal)', en: 'Multilingual (per language)' }, min: 345, max: 345 },
+  maintenance: { label: { nl: 'Technisch onderhoud (€29/mo)', en: 'Technical maintenance (€29/mo)' }, min: 0, max: 0, monthly: true },
 };
 
 const money = (n: number) => `€${n.toLocaleString('nl-BE')}`;
@@ -58,7 +58,7 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
     addons.forEach((id) => {
       const a = ADDONS[id];
       if (a.monthly) {
-        monthlyExtra += 30;
+        monthlyExtra += 29;
       } else {
         min += a.min;
         max += a.max;
@@ -194,7 +194,7 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
                     <span className="text-sm text-white/80">{ADDONS[id].label[lang]}</span>
                   </div>
                   <span className="text-xs text-white/40 whitespace-nowrap">
-                    {ADDONS[id].monthly ? '€30/mo' : `${money(ADDONS[id].min)}–${money(ADDONS[id].max)}`}
+                    {ADDONS[id].monthly ? '€29/mo' : ADDONS[id].min === ADDONS[id].max ? money(ADDONS[id].min) : `${lang === 'nl' ? 'vanaf' : 'from'} ${money(ADDONS[id].min)}`}
                   </span>
                 </button>
               );
