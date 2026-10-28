@@ -8,13 +8,24 @@
     <title>Trim Tahirsylaj — Sites. Apps. Automation.</title>
         <link rel="icon" type="image/png" href="https://i.postimg.cc/J0N6nT4h/LO.png" />
         <link rel="apple-touch-icon" href="https://i.postimg.cc/J0N6nT4h/LO.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
     <!-- Google Consent Mode v2: default denied, aggiornato dal componente CookieConsent -->
     <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    // gtag.js itself is only loaded after the visitor accepts, so nothing
+    // is sent to Google before consent.
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0MXNWNE9W8';
+      document.head.appendChild(s);
+    }
+    function gtag(){
+      dataLayer.push(arguments);
+      if (arguments[0] === 'consent' && arguments[1] === 'update' &&
+          arguments[2] && arguments[2].analytics_storage === 'granted') loadGA();
+    }
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
@@ -28,8 +39,6 @@
       }
     } catch (e) {}
     </script>
-    <!-- Google Analytics 4 (diretto, senza GTM) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0MXNWNE9W8"></script>
     <script>
     gtag('js', new Date());
     gtag('config', 'G-0MXNWNE9W8');

@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import MeshBackground from '../components/MeshBackground';
 import { openCookieSettings } from '../components/CookieConsent';
 
-const UPDATED = '2026-09-16';
+const UPDATED = '2026-10-28';
 
 type Section = { h: string; p: (string | string[])[] };
 type Copy = { back: string; title: string; updated: string; cookieBtn: string; sections: Section[]; cookies: { head: string[]; rows: string[][] } };
@@ -22,7 +22,7 @@ const copy: Record<'nl' | 'en', Copy> = {
       { h: '2. Welke gegevens ik verzamel en waarom', p: [
         ['Contact via e-mail of WhatsApp — naam, e-mailadres of telefoonnummer en de inhoud van je bericht. Doel: je vraag beantwoorden en een eventuele offerte opmaken. Rechtsgrond: precontractuele maatregelen (art. 6.1.b AVG).',
          'Prijsconfigurator — naam, e-mailadres, gekozen pakket, opties, geschatte prijs en je opmerkingen. Deze worden via een beveiligde verbinding naar mijn eigen automatiseringsserver (n8n, gehost in de EU) gestuurd om je een voorstel te bezorgen. Rechtsgrond: precontractuele maatregelen (art. 6.1.b AVG).',
-         'Statistieken (Google Analytics 4) — enkel na jouw toestemming via de cookiebanner: bezochte pagina\'s, apparaat, browser, land, verwijzende site, bij benadering gemaakte locatie. IP-adressen worden door Google geanonimiseerd. Doel: begrijpen hoe de site wordt gebruikt en hem verbeteren. Rechtsgrond: toestemming (art. 6.1.a AVG). Zonder toestemming worden geen analytics-cookies geplaatst; Google Consent Mode stuurt dan enkel cookieloze, niet-identificeerbare signalen.',
+         'Statistieken (Google Analytics 4) — enkel na jouw toestemming via de cookiebanner: bezochte pagina\'s, apparaat, browser, land, verwijzende site, bij benadering gemaakte locatie. IP-adressen worden door Google geanonimiseerd. Doel: begrijpen hoe de site wordt gebruikt en hem verbeteren. Rechtsgrond: toestemming (art. 6.1.a AVG). Zonder toestemming wordt Google Analytics niet geladen en wordt er niets naar Google gestuurd.',
          'Technische logs — de hostingprovider (Vercel) bewaart kortstondig serverlogs (IP-adres, tijdstip, opgevraagde URL) voor beveiliging en werking van de site. Rechtsgrond: gerechtvaardigd belang (art. 6.1.f AVG).'],
       ]},
       { h: '3. Hoe lang ik gegevens bewaar', p: [
@@ -65,7 +65,7 @@ const copy: Record<'nl' | 'en', Copy> = {
       { h: '2. What data I collect and why', p: [
         ['Contact by e-mail or WhatsApp — name, e-mail address or phone number and the content of your message. Purpose: answering your request and preparing a quote. Legal basis: pre-contractual steps (art. 6.1.b GDPR).',
          'Pricing configurator — name, e-mail address, chosen package, options, estimated price and your notes. They are sent over an encrypted connection to my own automation server (n8n, hosted in the EU) so I can send you a proposal. Legal basis: pre-contractual steps (art. 6.1.b GDPR).',
-         'Statistics (Google Analytics 4) — only after your consent in the cookie banner: pages visited, device, browser, country, referring site, approximate location. Google anonymises IP addresses. Purpose: understanding how the site is used and improving it. Legal basis: consent (art. 6.1.a GDPR). Without consent no analytics cookies are set; Google Consent Mode then only sends cookieless, non-identifying signals.',
+         'Statistics (Google Analytics 4) — only after your consent in the cookie banner: pages visited, device, browser, country, referring site, approximate location. Google anonymises IP addresses. Purpose: understanding how the site is used and improving it. Legal basis: consent (art. 6.1.a GDPR). Without consent Google Analytics is not loaded and nothing is sent to Google.',
          'Technical logs — the hosting provider (Vercel) briefly keeps server logs (IP address, time, requested URL) for security and operation of the site. Legal basis: legitimate interest (art. 6.1.f GDPR).'],
       ]},
       { h: '3. How long I keep data', p: [

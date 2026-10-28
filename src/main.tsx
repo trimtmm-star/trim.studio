@@ -8,6 +8,13 @@ import OwlogPage from './pages/OwlogPage.tsx';
 import OwlogLegalPage from './pages/OwlogLegalPage.tsx';
 import CardPage from './pages/CardPage.tsx';
 import CookieConsent from './components/CookieConsent.tsx';
+// Inter is self-hosted (no request to Google Fonts)
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/800.css';
+import '@fontsource/inter/900.css';
 import './index.css';
 
 // Opening another page (e.g. Pricing) always starts at its top.
