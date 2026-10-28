@@ -262,7 +262,7 @@ export default function OwlogPage() {
         <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 pb-20 pt-32 md:grid-cols-[1.1fr_0.9fr] md:pt-40">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
             <div className="mb-8 flex items-center gap-4">
-              <img src="/owlog/icon.png" alt="Owlog app icon" className="h-20 w-20 rounded-[1.4rem] shadow-[0_20px_60px_-10px_rgba(6,182,212,0.6)]" />
+              <img src="/owlog/icon.webp" alt="Owlog app icon" className="h-20 w-20 rounded-[1.4rem] shadow-[0_20px_60px_-10px_rgba(6,182,212,0.6)]" />
               <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-300">{t.eyebrow}</span>
             </div>
             <h1 className="text-5xl font-black leading-[0.95] tracking-tighter md:text-7xl">
@@ -352,7 +352,7 @@ export default function OwlogPage() {
                   </button>
                 ))}
               </div>
-              <Duo src={`/owlog/duo/${duoFiles[duoTab]}.jpg`} alt={`Owlog on iPhone Duo — ${t.duoTabs[duoTab]}`} />
+              <Duo src={`/owlog/duo/${duoFiles[duoTab]}.webp`} alt={`Owlog on iPhone Duo — ${t.duoTabs[duoTab]}`} />
             </motion.div>
 
             <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-3">
@@ -419,7 +419,7 @@ export default function OwlogPage() {
         {/* Final CTA */}
         <section className="mx-auto max-w-6xl px-6 pb-24">
           <motion.div {...fadeUp} className="liquid-glass relative overflow-hidden rounded-[2.5rem] bg-white/[0.02] px-8 py-16 text-center md:py-20">
-            <img src="/owlog/icon.png" alt="" className="mx-auto h-24 w-24 rounded-[1.6rem] shadow-[0_20px_60px_-10px_rgba(6,182,212,0.6)]" />
+            <img src="/owlog/icon.webp" alt="" className="mx-auto h-24 w-24 rounded-[1.6rem] shadow-[0_20px_60px_-10px_rgba(6,182,212,0.6)]" />
             <h2 className="mx-auto mt-8 max-w-2xl text-4xl font-black tracking-tighter md:text-5xl">{t.ctaTitle}</h2>
             <div className="mt-10 flex justify-center"><StoreButton t={t} large /></div>
           </motion.div>

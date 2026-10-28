@@ -173,7 +173,7 @@ export default function OwlogLegalPage() {
         </Link>
 
         <div className="mt-10 flex items-center gap-4">
-          <img src="/owlog/icon.png" alt="" className="h-14 w-14 rounded-2xl" />
+          <img src="/owlog/icon.webp" alt="" className="h-14 w-14 rounded-2xl" />
           <div>
             <h1 className="text-3xl font-medium tracking-tight md:text-4xl">{page.title}</h1>
             <p className="mt-1 text-xs uppercase tracking-widest text-white/40">{page.updated}</p>

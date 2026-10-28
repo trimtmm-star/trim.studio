@@ -338,9 +338,9 @@ const Hero = ({ t }: { t: any }) => {
 return (
 <section className="relative z-10 pt-16 md:pt-28 pb-16 md:pb-24 text-center flex flex-col items-center px-6" id="hero-section">
 <motion.h1
-initial={{ opacity: 0, y: 30 }}
-animate={{ opacity: 1, y: 0 }}
-transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+initial={{ y: 24 }}
+animate={{ y: 0 }}
+transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
 className="text-6xl md:text-[9rem] font-black tracking-tighter leading-[1.02] pb-4"
 id="hero-headline"
 >
@@ -386,7 +386,7 @@ const io = new IntersectionObserver(([e]) => {
 const vids = [main, phone].filter(Boolean) as HTMLVideoElement[];
 if (e.isIntersecting) vids.forEach((v) => v.play().catch(() => {}));
 else vids.forEach((v) => v.pause());
-}, { rootMargin: '200px' });
+}, { rootMargin: '0px' });
 io.observe(el);
 return () => { io.disconnect(); main.removeEventListener('timeupdate', sync); };
 }, [card]);
@@ -419,14 +419,14 @@ className="group block"
 </div>
 <div className="aspect-[16/10] overflow-hidden">
 {p.video
-? <LoopVideo src={`/work/${p.img}.mp4`} poster={`/work/${p.img}.jpg`} className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]" />
-: <img src={`/work/${p.img}.jpg`} alt={p.title} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]" />}
+? <LoopVideo src={`/work/${p.img}.mp4`} poster={`/work/${p.img}.webp`} className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]" />
+: <img src={`/work/${p.img}.webp`} alt={p.title} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]" />}
 </div>
 </div>
 <div className={`absolute bottom-0 ${flip ? 'left-4 md:left-0' : 'right-4 md:right-0'} md:bottom-[-2.5rem] w-[28%] md:w-[19%] rounded-[1.4rem] md:rounded-[2rem] overflow-hidden border-[3px] border-white/15 bg-black shadow-2xl shadow-black/70 transition-transform duration-700 group-hover:-translate-y-2`}>
 {p.video
-? <LoopVideo src={`/work/${p.img}-m.mp4`} poster={`/work/${p.img}-m.jpg`} className="w-full aspect-[390/844] object-cover object-top" />
-: <img src={`/work/${p.img}-m.jpg`} alt="" loading="lazy" className="w-full aspect-[390/844] object-cover object-top" />}
+? <LoopVideo src={`/work/${p.img}-m.mp4`} poster={`/work/${p.img}-m.webp`} className="w-full aspect-[390/844] object-cover object-top" />
+: <img src={`/work/${p.img}-m.webp`} alt="" loading="lazy" className="w-full aspect-[390/844] object-cover object-top" />}
 </div>
 </div>
 <div className={`mt-6 md:mt-12 flex items-end justify-between gap-6 ${flip ? 'md:pl-24' : 'md:pr-24'}`}>
@@ -466,7 +466,7 @@ return (
 <div className="flex flex-col items-center md:items-start">
 <SectionEyebrow label={t.apps.title} tag={t.apps.status} />
 <div className="flex items-center gap-5">
-<img src="/owlog/icon.png" alt="Owlog" className="w-16 h-16 md:w-20 md:h-20 rounded-[1.2rem]" />
+<img src="/owlog/icon.webp" alt="Owlog" width={80} height={80} className="w-16 h-16 md:w-20 md:h-20 rounded-[1.2rem]" />
 <h2 className="text-5xl md:text-7xl font-black tracking-tighter">{t.apps.subtitle}</h2>
 </div>
 <p className="mt-4 text-white/40 text-base md:text-lg">{t.apps.desc}</p>
@@ -490,7 +490,7 @@ viewport={{ once: true, margin: "-60px" }}
 transition={{ delay: i * 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
 className="rounded-3xl overflow-hidden border border-white/10 bg-white/5"
 >
-<img src={`/owlog/duo/${s}.jpg`} alt={`Owlog ${s}`} loading="lazy" width={1600} height={1150} className="w-full h-auto aspect-[1600/1150] object-cover" />
+<img src={`/owlog/duo/${s}.webp`} alt={`Owlog ${s}`} loading="lazy" width={1600} height={1150} className="w-full h-auto aspect-[1600/1150] object-cover" />
 </motion.div>
 ))}
 </div>

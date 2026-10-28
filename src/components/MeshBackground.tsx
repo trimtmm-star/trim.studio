@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { MeshGradient } from "@paper-design/shaders-react";
 
 /**
@@ -19,14 +20,33 @@ const reducedMotion =
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Static stand-in with the same palette, painted instantly while the WebGL
+// gradient waits for the page to finish loading.
+const PLACEHOLDER =
+  "radial-gradient(60% 50% at 75% 20%, rgba(249,115,22,0.55), transparent 70%), radial-gradient(70% 60% at 20% 70%, rgba(6,182,212,0.6), transparent 70%), linear-gradient(160deg, #164e63, #0b2a33 60%, #000)";
+
 export default function MeshBackground() {
+  // Compiling the shaders blocks the main thread, so start them only after
+  // load (and an idle moment) instead of competing with the first paint.
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const start = () => {
+      const idle = (window as any).requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 200));
+      idle(() => setReady(true), { timeout: 1500 });
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+    return () => window.removeEventListener("load", start);
+  }, []);
+
   return (
     // Not position:fixed — iOS Safari paints its status bar and toolbar
     // with the colour of a fixed element touching the screen edge (black
     // bands). A sticky layer inside a page-tall container stays put while
     // scrolling and lets the real gradient show behind Safari's bars.
     <div className="pointer-events-none absolute inset-0 z-0">
-      <div className="sticky top-0 h-[100lvh] w-full overflow-hidden">
+      <div className="sticky top-0 h-[100lvh] w-full overflow-hidden" style={{ background: PLACEHOLDER }}>
+        {ready && <div className="absolute inset-0 animate-[fadein_1.2s_ease_forwards] opacity-0">
         <MeshGradient
           className="absolute inset-0 w-full h-full"
           colors={["#000000", "#06b6d4", "#0891b2", "#164e63", "#f97316"]}
@@ -41,6 +61,7 @@ export default function MeshBackground() {
           {...RENDER}
           backgroundColor="transparent"
         />}
+        </div>}
       </div>
     </div>
   );

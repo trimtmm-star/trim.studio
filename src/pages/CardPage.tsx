@@ -26,13 +26,13 @@ function HeroClip({ name, alt }: { name: string; alt: string }) {
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
-    const io = new IntersectionObserver(([e]) => { e.isIntersecting ? v.play().catch(() => {}) : v.pause(); }, { rootMargin: '150px' });
+    const io = new IntersectionObserver(([e]) => { e.isIntersecting ? v.play().catch(() => {}) : v.pause(); }, { rootMargin: '0px' });
     io.observe(v);
     return () => io.disconnect();
   }, []);
   const cls = 'w-full aspect-[16/10] object-cover object-top';
-  if (still) return <img src={`/work/${name}.jpg`} alt={alt} loading="lazy" width={1440} height={900} className={cls} />;
-  return <video ref={ref} src={`/work/${name}.mp4`} poster={`/work/${name}.jpg`} muted loop playsInline preload="none" aria-label={alt} className={cls} />;
+  if (still) return <img src={`/work/${name}.webp`} alt={alt} loading="lazy" width={1440} height={900} className={cls} />;
+  return <video ref={ref} src={`/work/${name}.mp4`} poster={`/work/${name}.webp`} muted loop playsInline preload="none" aria-label={alt} className={cls} />;
 }
 
 const rise = (i: number) => ({
