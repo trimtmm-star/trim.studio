@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
-import { MeshGradient } from "@paper-design/shaders-react";
+import { lazy, Suspense, useEffect, useState } from "react";
+
+// Loaded on demand so the shader library stays out of the first download.
+const MeshGradient = lazy(() => import("@paper-design/shaders-react").then((m) => ({ default: m.MeshGradient })));
 
 /**
  * MeshBackground — sfondo animato.
@@ -46,7 +48,7 @@ export default function MeshBackground() {
     // scrolling and lets the real gradient show behind Safari's bars.
     <div className="pointer-events-none absolute inset-0 z-0">
       <div className="sticky top-0 h-[100lvh] w-full overflow-hidden" style={{ background: PLACEHOLDER }}>
-        {ready && <div className="absolute inset-0 animate-[fadein_1.2s_ease_forwards] opacity-0">
+        {ready && <Suspense fallback={null}><div className="absolute inset-0 animate-[fadein_1.2s_ease_forwards] opacity-0">
         <MeshGradient
           className="absolute inset-0 w-full h-full"
           colors={["#000000", "#06b6d4", "#0891b2", "#164e63", "#f97316"]}
@@ -61,7 +63,7 @@ export default function MeshBackground() {
           {...RENDER}
           backgroundColor="transparent"
         />}
-        </div>}
+        </div></Suspense>}
       </div>
     </div>
   );
