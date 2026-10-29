@@ -225,6 +225,23 @@ id="whatsapp-cta"
 </a>
 );
 
+// Phones and tablets don't get the WhatsApp button in the top bar, so keep
+// one floating at the bottom of the screen.
+const MobileWhatsApp = ({ label }: { label: string }) => (
+<div className="lg:hidden fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)] pointer-events-none opacity-0 animate-[fadein_0.6s_ease_0.8s_forwards]">
+<a
+href="https://wa.me/32451130597"
+target="_blank"
+rel="noopener noreferrer"
+className="pointer-events-auto inline-flex items-center justify-center gap-2 rounded-full bg-white text-black font-semibold text-sm px-6 py-3.5 shadow-2xl shadow-black/50 active:scale-[0.97] transition-transform"
+>
+<MessageSquare className="w-4 h-4 fill-black/20" />
+<span>{label}</span>
+<ChevronRight className="w-4 h-4" />
+</a>
+</div>
+);
+
 const SectionEyebrow = ({ label, tag }: { label: string; tag?: string }) => (
 <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
 <span className="w-1.5 h-1.5 rounded-full bg-white" />
@@ -563,6 +580,7 @@ return (
 <div className="hidden md:block pointer-events-none fixed inset-y-0 left-1/2 translate-x-[calc(-50%+36rem)] w-px bg-white/10 z-[5]" />
 
 <Navbar lang={lang} setLang={setLang} t={t} visible={navVisible} />
+<MobileWhatsApp label={t.cta} />
 
 <main className="relative z-10 pt-40 md:pt-52">
 <Hero t={t} />
@@ -571,7 +589,7 @@ return (
 <Contact t={t} />
 </main>
 
-<footer className="relative z-10 py-16 md:py-20 border-t border-white/10 text-center">
+<footer className="relative z-10 pt-16 pb-32 md:pt-20 lg:pb-20 border-t border-white/10 text-center">
 <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-10">
 <LogoMark className="opacity-80" />
 <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-xs uppercase font-semibold tracking-[0.25em] text-white/60">
