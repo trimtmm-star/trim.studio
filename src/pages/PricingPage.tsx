@@ -23,6 +23,7 @@ const copy = {
       'Koop je website één keer aan. Je bezit de volledige broncode vanaf de eerste dag.',
     popular: 'MEEST POPULAIR',
     perMonth: '/mo',
+    vatNote: 'Btw niet van toepassing',
     orSub: 'Of abonnement',
     packages: [
       { tier: 'PREMIUM', desc: "5+ pagina's · CMS · DB", price: '€2.350*', sub: '€785 + €95/mo', features: [true, true, true, true, true, true] },
@@ -30,7 +31,7 @@ const copy = {
       { tier: 'STARTER', desc: "1 pagina", price: '€475', sub: '€195 + €24/mo', features: [true, true, true, false, false, false] },
     ],
     featureLabels: ['Responsive design', 'SEO-vriendelijke structuur', 'Contactformulier', 'CMS-integratie', 'Database', 'Custom animaties'],
-    footnote: '* Premiumprijs is indicatief. Definitieve offerte na briefing.',
+    footnote: '* Premiumprijs is indicatief. Definitieve offerte na briefing. Kleine onderneming onderworpen aan de vrijstellingsregeling: btw niet van toepassing.',
     b2bBox:
       'B2B & maatwerkprojecten — Voor projecten met complexe integraties (klantenportalen, CRM-koppelingen, marktplaatsen) is Premium een startpunt, geen plafond. Definitieve offerte volgt na een discovery call.',
     addonsEyebrow: 'ADD-ONS',
@@ -58,6 +59,7 @@ const copy = {
     oneTimeDesc: 'Buy your website once. You own the full source code from day one.',
     popular: 'MOST POPULAR',
     perMonth: '/mo',
+    vatNote: 'VAT not applicable',
     orSub: 'Or subscription',
     packages: [
       { tier: 'PREMIUM', desc: '5+ pages · CMS · DB', price: '€2,350*', sub: '€785 + €95/mo', features: [true, true, true, true, true, true] },
@@ -65,7 +67,7 @@ const copy = {
       { tier: 'STARTER', desc: '1 page', price: '€475', sub: '€195 + €24/mo', features: [true, true, true, false, false, false] },
     ],
     featureLabels: ['Responsive design', 'SEO-friendly structure', 'Contact form', 'CMS integration', 'Database', 'Custom animations'],
-    footnote: '* Premium price is indicative. Final quote after briefing.',
+    footnote: '* Premium price is indicative. Final quote after briefing. Small business under the Belgian VAT exemption scheme: VAT not applicable.',
     b2bBox:
       'B2B & custom projects — For projects with complex integrations (client portals, CRM, marketplaces), Premium is a starting point, not a ceiling. Final quote follows a discovery call.',
     addonsEyebrow: 'ADD-ONS',
@@ -164,7 +166,7 @@ export default function PricingPage() {
                   <div className="text-sm font-bold uppercase tracking-widest text-white mb-1">{pkg.tier}</div>
                   <div className="text-brand text-xs font-semibold mb-4">{pkg.desc}</div>
                   <div className="text-4xl font-black mb-1">{pkg.price}</div>
-                  <div className="text-white/30 text-xs mb-6">incl. BTW</div>
+                  <div className="text-white/50 text-xs mb-6">{t.vatNote}</div>
 
                   <div className="border-t border-white/10 pt-4 mb-6">
                     <div className="text-white/30 text-[10px] uppercase tracking-widest mb-1">{t.orSub}</div>
