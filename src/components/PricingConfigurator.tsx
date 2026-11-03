@@ -10,19 +10,22 @@ import { Check, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 const N8N_WEBHOOK_URL = 'https://n8n.ttrim.studio/webhook/pricing-configurator';
 
 type PackageId = 'starter' | 'advanced' | 'premium';
-type AddonId = 'chatbot' | 'automation' | 'multilingual' | 'maintenance';
+type AddonId = 'chatbot' | 'automation' | 'multilingual' | 'care' | 'growth';
 
 const PACKAGES: Record<PackageId, { label: string; desc: { nl: string; en: string }; oneTime: number; startFee: number; monthly: number }> = {
-  starter: { label: 'Starter', desc: { nl: '1 pagina', en: '1 page' }, oneTime: 475, startFee: 195, monthly: 24 },
-  advanced: { label: 'Advanced', desc: { nl: "Tot 5 pagina's", en: 'Up to 5 pages' }, oneTime: 1150, startFee: 385, monthly: 49 },
-  premium: { label: 'Premium', desc: { nl: "5+ pagina's · CMS · DB", en: '5+ pages · CMS · DB' }, oneTime: 2350, startFee: 785, monthly: 95 },
+  starter: { label: 'Starter', desc: { nl: '1 pagina', en: '1 page' }, oneTime: 475, startFee: 195, monthly: 54 },
+  advanced: { label: 'Advanced', desc: { nl: "Tot 5 pagina's", en: 'Up to 5 pages' }, oneTime: 1150, startFee: 385, monthly: 69 },
+  premium: { label: 'Premium', desc: { nl: "5+ pagina's · CMS · DB", en: '5+ pages · CMS · DB' }, oneTime: 2350, startFee: 785, monthly: 115 },
 };
 
-const ADDONS: Record<AddonId, { label: { nl: string; en: string }; min: number; max: number; monthly?: boolean }> = {
+// care/growth are monthly maintenance plans: pick at most one, and only with a
+// one-time purchase (a subscription already includes Growth).
+const ADDONS: Record<AddonId, { label: { nl: string; en: string }; min: number; max: number; monthly?: number }> = {
   chatbot: { label: { nl: 'Chatbot / AI-assistent', en: 'Chatbot / AI assistant' }, min: 1475, max: 2975 },
   automation: { label: { nl: 'Automatisering', en: 'Automation' }, min: 575, max: 1475 },
   multilingual: { label: { nl: 'Meertaligheid (per taal)', en: 'Multilingual (per language)' }, min: 195, max: 195 },
-  maintenance: { label: { nl: 'Technisch onderhoud (€29/mo)', en: 'Technical maintenance (€29/mo)' }, min: 0, max: 0, monthly: true },
+  care: { label: { nl: 'Onderhoud Care', en: 'Care maintenance' }, min: 0, max: 0, monthly: 24 },
+  growth: { label: { nl: 'Onderhoud Growth', en: 'Growth maintenance' }, min: 0, max: 0, monthly: 54 },
 };
 
 const money = (n: number) => `€${n.toLocaleString('nl-BE')}`;
@@ -42,7 +45,12 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
   const toggleAddon = (id: AddonId) => {
     setAddons((prev) => {
       const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
+      if (next.has(id)) next.delete(id);
+      else {
+        next.add(id);
+        if (id === 'care') next.delete('growth');
+        if (id === 'growth') next.delete('care');
+      }
       return next;
     });
   };
@@ -56,7 +64,7 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
     addons.forEach((id) => {
       const a = ADDONS[id];
       if (a.monthly) {
-        monthlyExtra += 29;
+        if (billing === 'onetime') monthlyExtra += a.monthly;
       } else {
         min += a.min;
         max += a.max;
@@ -122,7 +130,7 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
       lang,
       package: PACKAGES[pkg].label,
       billing,
-      addons: Array.from(addons).map((id) => ADDONS[id].label.nl),
+      addons: Array.from(addons).filter((id) => billing === 'onetime' || !ADDONS[id].monthly).map((id) => ADDONS[id].label.nl),
       estimateMin: estimate.min,
       estimateMax: estimate.max,
       estimateMonthly: estimate.monthly,
@@ -170,7 +178,7 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
 
           <div className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3">{labels.step2}</div>
           <div className="space-y-2 mb-8">
-            {(Object.keys(ADDONS) as AddonId[]).map((id) => {
+            {(Object.keys(ADDONS) as AddonId[]).filter((id) => billing === 'onetime' || !ADDONS[id].monthly).map((id) => {
               const active = addons.has(id);
               return (
                 <button
@@ -192,7 +200,7 @@ export default function PricingConfigurator({ lang = 'nl' as 'nl' | 'en' }) {
                     <span className="text-sm text-white/80">{ADDONS[id].label[lang]}</span>
                   </div>
                   <span className="text-xs text-white/40 whitespace-nowrap">
-                    {ADDONS[id].monthly ? '€29/mo' : ADDONS[id].min === ADDONS[id].max ? money(ADDONS[id].min) : `${lang === 'nl' ? 'vanaf' : 'from'} ${money(ADDONS[id].min)}`}
+                    {ADDONS[id].monthly ? `${money(ADDONS[id].monthly!)}/mo` : ADDONS[id].min === ADDONS[id].max ? money(ADDONS[id].min) : `${lang === 'nl' ? 'vanaf' : 'from'} ${money(ADDONS[id].min)}`}
                   </span>
                 </button>
               );

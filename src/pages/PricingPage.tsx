@@ -24,11 +24,11 @@ const copy = {
     popular: 'MEEST POPULAIR',
     perMonth: '/mo',
     vatNote: 'Btw niet van toepassing',
-    orSub: 'Of abonnement',
+    orSub: 'Of abonnement · Growth inbegrepen',
     packages: [
-      { tier: 'PREMIUM', desc: "5+ pagina's · CMS · DB", price: '€2.350*', sub: '€785 + €95/mo', features: [true, true, true, true, true, true] },
-      { tier: 'ADVANCED', desc: "Tot 5 pagina's", price: '€1.150', sub: '€385 + €49/mo', features: [true, true, true, true, false, false], popular: true },
-      { tier: 'STARTER', desc: "1 pagina", price: '€475', sub: '€195 + €24/mo', features: [true, true, true, false, false, false] },
+      { tier: 'PREMIUM', desc: "5+ pagina's · CMS · DB", price: '€2.350*', sub: '€785 + €115/mo', features: [true, true, true, true, true, true] },
+      { tier: 'ADVANCED', desc: "Tot 5 pagina's", price: '€1.150', sub: '€385 + €69/mo', features: [true, true, true, true, false, false], popular: true },
+      { tier: 'STARTER', desc: "1 pagina", price: '€475', sub: '€195 + €54/mo', features: [true, true, true, false, false, false] },
     ],
     featureLabels: ['Responsive design', 'SEO-vriendelijke structuur', 'Contactformulier', 'CMS-integratie', 'Database', 'Custom animaties'],
     footnote: '* Premiumprijs is indicatief. Definitieve offerte na briefing. Kleine onderneming onderworpen aan de vrijstellingsregeling: btw niet van toepassing.',
@@ -42,7 +42,13 @@ const copy = {
       { name: 'Automatisering', price: 'Vanaf €575', desc: 'E-mail, CRM en formulieren gekoppeld — minder handwerk, snellere opvolging.' },
       { name: 'Meertaligheid', price: '€195 / taal', desc: 'Volledige vertaling en lokalisatie per extra taal.' },
       { name: 'iOS-app', price: 'Op aanvraag', desc: 'Een eigen app voor iPhone, van idee tot App Store.' },
-      { name: 'Technisch onderhoud', price: '€29 / maand', desc: 'Optioneel bij eenmalige aankoop — updates, back-ups, monitoring.' },
+    ],
+    careEyebrow: 'ONDERHOUD',
+    careTitle: 'Care & Growth',
+    careSubtitle: 'Na de lancering blijft je site veilig, up-to-date en groeiend. Bij een abonnement zit Growth er al in.',
+    carePlans: [
+      { name: 'Care', price: '€24', features: ['Hosting, SSL & beveiliging', 'Back-ups & updates', 'Kleine aanpassingen tot 15 min/maand'] },
+      { name: 'Growth', price: '€54', popular: true, features: ['Alles van Care', 'Kleine aanpassingen tot 1 uur/maand', 'Maandelijks Google-rapport', 'Reviews & prijzen up-to-date', 'SEO-tip van de maand + 1 verbetering'] },
     ],
     configuratorEyebrow: 'OP MAAT',
     configuratorTitle: 'Stel je eigen offerte samen',
@@ -60,11 +66,11 @@ const copy = {
     popular: 'MOST POPULAR',
     perMonth: '/mo',
     vatNote: 'VAT not applicable',
-    orSub: 'Or subscription',
+    orSub: 'Or subscription · Growth included',
     packages: [
-      { tier: 'PREMIUM', desc: '5+ pages · CMS · DB', price: '€2,350*', sub: '€785 + €95/mo', features: [true, true, true, true, true, true] },
-      { tier: 'ADVANCED', desc: 'Up to 5 pages', price: '€1,150', sub: '€385 + €49/mo', features: [true, true, true, true, false, false], popular: true },
-      { tier: 'STARTER', desc: '1 page', price: '€475', sub: '€195 + €24/mo', features: [true, true, true, false, false, false] },
+      { tier: 'PREMIUM', desc: '5+ pages · CMS · DB', price: '€2,350*', sub: '€785 + €115/mo', features: [true, true, true, true, true, true] },
+      { tier: 'ADVANCED', desc: 'Up to 5 pages', price: '€1,150', sub: '€385 + €69/mo', features: [true, true, true, true, false, false], popular: true },
+      { tier: 'STARTER', desc: '1 page', price: '€475', sub: '€195 + €54/mo', features: [true, true, true, false, false, false] },
     ],
     featureLabels: ['Responsive design', 'SEO-friendly structure', 'Contact form', 'CMS integration', 'Database', 'Custom animations'],
     footnote: '* Premium price is indicative. Final quote after briefing. Small business under the Belgian VAT exemption scheme: VAT not applicable.',
@@ -78,7 +84,13 @@ const copy = {
       { name: 'Automation', price: 'From €575', desc: 'Email, CRM and forms connected — less manual work, faster follow-up.' },
       { name: 'Multilingual', price: '€195 / language', desc: 'Full translation and localization per extra language.' },
       { name: 'iOS app', price: 'On request', desc: 'Your own iPhone app, from idea to App Store.' },
-      { name: 'Technical maintenance', price: '€29 / month', desc: 'Optional add-on for one-time purchase — updates, backups, monitoring.' },
+    ],
+    careEyebrow: 'MAINTENANCE',
+    careTitle: 'Care & Growth',
+    careSubtitle: 'After launch your site stays safe, up to date and growing. With a subscription, Growth is already included.',
+    carePlans: [
+      { name: 'Care', price: '€24', features: ['Hosting, SSL & security', 'Backups & updates', 'Small changes up to 15 min/month'] },
+      { name: 'Growth', price: '€54', popular: true, features: ['Everything in Care', 'Small changes up to 1 hour/month', 'Monthly Google report', 'Reviews & prices kept up to date', 'SEO tip of the month + 1 improvement'] },
     ],
     configuratorEyebrow: 'CUSTOM',
     configuratorTitle: 'Build your own quote',
@@ -193,6 +205,41 @@ export default function PricingPage() {
 
           <div className="mt-8 bg-brand/5 border-l-2 border-brand rounded-r-xl px-6 py-4 text-white/70 text-sm max-w-3xl">
             {t.b2bBox}
+          </div>
+        </section>
+
+        {/* Care & Growth */}
+        <section className="mt-28">
+          <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <span className="text-xs uppercase tracking-widest text-white/50">{t.careEyebrow}</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">{t.careTitle}</h2>
+          <p className="text-white/50 mb-12 max-w-2xl">{t.careSubtitle}</p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {t.carePlans.map((plan, i) => (
+              <motion.div
+                key={plan.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+                className={`liquid-glass rounded-3xl p-8 border ${plan.popular ? 'border-brand' : 'border-white/10'}`}
+              >
+                <div className="flex items-baseline justify-between mb-6">
+                  <div className="text-sm font-bold uppercase tracking-widest">{plan.name}</div>
+                  <div><span className="text-4xl font-black">{plan.price}</span><span className="text-white/50 text-sm">{t.perMonth}</span></div>
+                </div>
+                <ul className="space-y-3">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3 text-sm text-white/80">
+                      <Check className="w-4 h-4 text-brand mt-0.5 shrink-0" /> {f}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
         </section>
 
