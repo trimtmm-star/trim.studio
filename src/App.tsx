@@ -475,6 +475,41 @@ return (
 );
 };
 
+// Short links to the Dutch service pages and case studies (they carry the
+// SEO text; the home page stays a visual showcase).
+const SERVICES = [
+{ to: '/website-laten-maken', title: 'Website laten maken', line: 'Op maat, snel, vanaf €475.' },
+{ to: '/automatisatie', title: 'Automatisatie', line: 'Minder handwerk, vanaf €575.' },
+{ to: '/app-laten-ontwikkelen', title: 'App laten ontwikkelen', line: 'Van idee tot App Store.' },
+];
+const CASES = [
+{ to: '/realisaties/detailing-bros', title: 'Detailing Bros' },
+{ to: '/realisaties/pizza-truck-herri', title: 'Pizza Truck Herri' },
+{ to: '/realisaties/a-poppa', title: 'A Poppa' },
+{ to: '/realisaties/kantara-international', title: 'Kantara International' },
+];
+
+const Services = () => (
+<section className="max-w-6xl mx-auto px-6 py-16 md:py-24 relative z-10" id="diensten">
+<div className="grid md:grid-cols-3 gap-4">
+{SERVICES.map((sv) => (
+<Link key={sv.to} to={sv.to} className="group rounded-3xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/25 transition-colors p-7">
+<div className="flex items-start justify-between gap-4">
+<h3 className="text-xl md:text-2xl font-bold tracking-tight">{sv.title}</h3>
+<ArrowUpRight className="w-5 h-5 text-white/50 group-hover:text-white transition-colors shrink-0" />
+</div>
+<p className="mt-2 text-white/60">{sv.line}</p>
+</Link>
+))}
+</div>
+<div className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3 text-sm text-white/60">
+<span className="text-xs uppercase tracking-[0.25em] text-white/45">Realisaties</span>
+{CASES.map((c) => <Link key={c.to} to={c.to} className="hover:text-white underline underline-offset-4 decoration-white/25">{c.title}</Link>)}
+<Link to="/blog/wat-kost-een-website-laten-maken" className="hover:text-white underline underline-offset-4 decoration-white/25">Wat kost een website?</Link>
+</div>
+</section>
+);
+
 const AppCreator = ({ t }: { t: any }) => {
 const shots = ['journal', 'stats', 'analytics'];
 return (
@@ -585,6 +620,7 @@ return (
 <main className="relative z-10 pt-40 md:pt-52">
 <Hero t={t} />
 <Portfolio t={t} />
+<Services />
 <AppCreator t={t} />
 <Contact t={t} />
 </main>

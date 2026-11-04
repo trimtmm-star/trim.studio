@@ -1,4 +1,4 @@
-import { StrictMode, useLayoutEffect, lazy, Suspense } from 'react';
+import { StrictMode, useLayoutEffect, lazy, Suspense, Fragment } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import App from './App.tsx';
@@ -7,6 +7,8 @@ const PrivacyPage = lazy(() => import('./pages/PrivacyPage.tsx'));
 const OwlogPage = lazy(() => import('./pages/OwlogPage.tsx'));
 const OwlogLegalPage = lazy(() => import('./pages/OwlogLegalPage.tsx'));
 const CardPage = lazy(() => import('./pages/CardPage.tsx'));
+const ContentPage = lazy(() => import('./pages/ContentPage.tsx'));
+import { PAGES } from './content/pages';
 import CookieConsent from './components/CookieConsent.tsx';
 // Inter is self-hosted (no request to Google Fonts)
 import '@fontsource/inter/400.css';
@@ -38,6 +40,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/owlog" element={<OwlogPage />} />
         <Route path="/owlog/:doc" element={<OwlogLegalPage />} />
         <Route path="/card" element={<CardPage />} />
+        {PAGES.map((p) => <Fragment key={p.path}><Route path={p.path} element={<ContentPage />} /></Fragment>)}
       </Routes>
       </Suspense>
       <CookieConsent />

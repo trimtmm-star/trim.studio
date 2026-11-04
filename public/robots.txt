@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /card
+
+Sitemap: https://ttrim.studio/sitemap.xml
