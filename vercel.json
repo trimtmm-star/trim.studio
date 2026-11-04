@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/spa.html"
+      "destination": "/spa"
     }
   ],
   "headers": [
