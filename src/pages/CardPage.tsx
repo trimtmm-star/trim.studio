@@ -56,7 +56,7 @@ export default function CardPage() {
       <main className="relative z-10 max-w-md mx-auto px-5 pt-[calc(env(safe-area-inset-top)+3rem)] pb-16 flex flex-col items-center text-center">
         <motion.img
           {...rise(0)}
-          src="https://i.postimg.cc/J0N6nT4h/LO.png"
+          src="/brand/logo.webp"
           alt="ttrim.studio"
           referrerPolicy="no-referrer"
           className="w-20 h-20 object-contain"

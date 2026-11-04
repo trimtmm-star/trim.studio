@@ -202,7 +202,7 @@ const LogoMark = ({ className = "" }: { className?: string }) => (
 <div className={`flex items-center gap-6 ${className}`}>
 <div className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
 <img
-src="https://i.postimg.cc/J0N6nT4h/LO.png"
+src="/brand/logo.webp"
 alt="Trim Tahirsylaj Logo"
 className="w-full h-full object-contain"
 referrerPolicy="no-referrer"
@@ -381,20 +381,28 @@ className="mt-10 inline-flex items-center gap-2 text-xs font-bold uppercase trac
 // Muted looping clip of a client's hero; the screenshot is the poster, and
 // reduced-motion users just get the still. Playback is driven by the card.
 const stillMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const LoopVideo = ({ src, poster, className }: { src: string; poster: string; className: string }) => {
-if (stillMotion) return <img src={poster} alt="" loading="lazy" className={className} />;
-return <video src={src} poster={poster} muted loop playsInline preload="none" className={className} />;
-};
+// The poster (screenshot) is attached only when the card nears the screen,
+// so the first load doesn't fetch every project's image.
+const LoopVideo = ({ src, poster, className }: { src: string; poster: string; className: string }) => (
+<video src={src} data-poster={poster} muted loop playsInline preload="none" className={className} />
+);
 
 // Plays a card's desktop + phone clips only while on screen, and keeps the
 // phone clip locked to the desktop one so both show the same moment.
 const useSyncedVideos = (card: RefObject<HTMLElement | null>) => {
 useEffect(() => {
 const el = card.current;
-if (!el || stillMotion) return;
+if (!el) return;
 const vids = el.querySelectorAll<HTMLVideoElement>('video');
 const main = vids[0], phone = vids[1];
 if (!main) return;
+const near = new IntersectionObserver(([e]) => {
+if (!e.isIntersecting) return;
+vids.forEach((v) => { if (v.dataset.poster) v.poster = v.dataset.poster; });
+near.disconnect();
+}, { rootMargin: '600px' });
+near.observe(el);
+if (stillMotion) return () => near.disconnect();
 const sync = () => {
 if (phone && Math.abs(phone.currentTime - main.currentTime) > 0.1) phone.currentTime = main.currentTime;
 };
@@ -405,7 +413,7 @@ if (e.isIntersecting) vids.forEach((v) => v.play().catch(() => {}));
 else vids.forEach((v) => v.pause());
 }, { rootMargin: '0px' });
 io.observe(el);
-return () => { io.disconnect(); main.removeEventListener('timeupdate', sync); };
+return () => { near.disconnect(); io.disconnect(); main.removeEventListener('timeupdate', sync); };
 }, [card]);
 };
 

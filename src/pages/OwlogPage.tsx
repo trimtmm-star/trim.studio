@@ -218,7 +218,11 @@ function Video({ name }: { name: string }) {
 }
 
 export default function OwlogPage() {
-  const [lang, setLang] = useState<Lang>(navigator.language.toLowerCase().startsWith('nl') ? 'nl' : 'en');
+  const [lang, setLang] = useState<Lang>('nl');
+  // Start in Dutch like the prerendered HTML, then follow the browser language
+  useEffect(() => {
+    if (!navigator.language.toLowerCase().startsWith('nl')) setLang('en');
+  }, []);
   const [duoTab, setDuoTab] = useState(0);
   const t = copy[lang];
 

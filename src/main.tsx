@@ -1,15 +1,7 @@
-import { StrictMode, useLayoutEffect, lazy, Suspense, Fragment } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import App from './App.tsx';
-const PricingPage = lazy(() => import('./pages/PricingPage.tsx'));
-const PrivacyPage = lazy(() => import('./pages/PrivacyPage.tsx'));
-const OwlogPage = lazy(() => import('./pages/OwlogPage.tsx'));
-const OwlogLegalPage = lazy(() => import('./pages/OwlogLegalPage.tsx'));
-const CardPage = lazy(() => import('./pages/CardPage.tsx'));
-const ContentPage = lazy(() => import('./pages/ContentPage.tsx'));
-import { PAGES } from './content/pages';
-import CookieConsent from './components/CookieConsent.tsx';
+import { StrictMode, lazy } from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes, { type PageSet } from './AppRoutes';
 // Inter is self-hosted (no request to Google Fonts)
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
@@ -19,31 +11,25 @@ import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
 import './index.css';
 
-// Opening another page (e.g. Pricing) always starts at its top.
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [pathname]);
-  return null;
-}
+const pages: PageSet = {
+  Pricing: lazy(() => import('./pages/PricingPage.tsx')),
+  Privacy: lazy(() => import('./pages/PrivacyPage.tsx')),
+  Owlog: lazy(() => import('./pages/OwlogPage.tsx')),
+  OwlogLegal: lazy(() => import('./pages/OwlogLegalPage.tsx')),
+  Card: lazy(() => import('./pages/CardPage.tsx')),
+  Content: lazy(() => import('./pages/ContentPage.tsx')),
+};
 
-createRoot(document.getElementById('root')!).render(
+const app = (
   <StrictMode>
     <BrowserRouter>
-      <ScrollToTop />
-      <Suspense fallback={<div className="min-h-screen" />}>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/owlog" element={<OwlogPage />} />
-        <Route path="/owlog/:doc" element={<OwlogLegalPage />} />
-        <Route path="/card" element={<CardPage />} />
-        {PAGES.map((p) => <Fragment key={p.path}><Route path={p.path} element={<ContentPage />} /></Fragment>)}
-      </Routes>
-      </Suspense>
-      <CookieConsent />
+      <AppRoutes pages={pages} />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 );
+
+// Prerendered pages already hold their HTML: hydrate it instead of
+// rebuilding the page (faster, and no layout jump).
+const root = document.getElementById('root')!;
+if (root.hasChildNodes()) hydrateRoot(root, app);
+else createRoot(root).render(app);

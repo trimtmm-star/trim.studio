@@ -47,7 +47,7 @@ export const LOCAL_BUSINESS = {
   name: 'ttrim.studio',
   alternateName: 'Trim Tahirsylaj',
   url: SITE,
-  logo: 'https://i.postimg.cc/J0N6nT4h/LO.png',
+  logo: `${SITE}/brand/logo.png`,
   image: `${SITE}/work/detailingbros.webp`,
   telephone: '+32451130597',
   email: 'trimtmm@gmail.com',

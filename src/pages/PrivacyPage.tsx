@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import MeshBackground from '../components/MeshBackground';
@@ -99,7 +99,11 @@ const copy: Record<'nl' | 'en', Copy> = {
 };
 
 export default function PrivacyPage() {
-  const [lang, setLang] = useState<'nl' | 'en'>(navigator.language.toLowerCase().startsWith('nl') ? 'nl' : 'en');
+  const [lang, setLang] = useState<'nl' | 'en'>('nl');
+  // Start in Dutch like the prerendered HTML, then follow the browser language
+  useEffect(() => {
+    if (!navigator.language.toLowerCase().startsWith('nl')) setLang('en');
+  }, []);
   const t = copy[lang];
 
   return (
