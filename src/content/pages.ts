@@ -207,8 +207,8 @@ export const PAGES: ContentPage[] = [
     description: 'Realisatie: een premium website met boekingen en prijzen voor Detailing Bros, car detailing in Evergem.',
     eyebrow: 'Realisatie · Car detailing',
     h1: 'Detailing Bros',
-    intro: 'Een premium website voor Detailing Bros, een car-detailingzaak in Evergem: reiniging, herstel en bescherming van auto’s.',
-    media: { img: 'detailingbros', video: true, url: 'detailingbros.be' },
+    intro: 'Een website voor Detailing Bros, een car-detailingzaak in Evergem: reiniging, herstel en bescherming van auto’s, in de werkplaats of bij de klant thuis.',
+    media: { img: 'detailingbros', url: 'detailingbros.be' },
     sections: [
       {
         h2: 'De opdracht',
@@ -220,9 +220,10 @@ export const PAGES: ContentPage[] = [
           {
             type: 'list',
             items: [
-              'Een donkere, filmische homepage met een geanimeerde voor-en-na van een wagen',
-              'Duidelijke knoppen voor offerte aanvragen en prijzen bekijken',
-              'Een volledig mobiele versie, want de meeste klanten zoeken op hun gsm',
+              'Een heldere, rustige homepage met de boodschap meteen bovenaan: reiniging, herstel en bescherming',
+              'De Google-score en reviews zichtbaar op de homepage, als bewijs voor nieuwe klanten',
+              'Duidelijke knoppen voor offerte aanvragen en prijzen bekijken, en het telefoonnummer altijd in beeld',
+              'Pagina’s voor de diensten, de prijzen en een blog',
             ],
           },
         ],
@@ -239,7 +240,7 @@ export const PAGES: ContentPage[] = [
     eyebrow: 'Realisatie · Food truck',
     h1: 'Pizza Truck Herri',
     intro: 'Een website voor Pizza Truck Herri: authentieke pizza uit een mobiele oven, voor feesten, bedrijfsevents en catering.',
-    media: { img: 'pizzatruckherri', video: true, url: 'pizzatruckherri.com' },
+    media: { img: 'pizzatruckherri', url: 'pizzatruckherri.com' },
     sections: [
       {
         h2: 'De opdracht',
@@ -251,8 +252,8 @@ export const PAGES: ContentPage[] = [
           {
             type: 'list',
             items: [
-              'Een homepage met grote foto’s die wisselen: authentieke pizza en evenementen',
-              'Een vaste balk “Vraag een offerte aan” bovenaan elke pagina',
+              'Een homepage met een sfeerfoto van de verlichte pizzatruck bij nacht',
+              'Een vaste balk “Vraag een offerte aan” bovenaan elke pagina, en een infobalk voor grotere bestellingen',
               'Pagina’s voor het pizzamenu, catering en events, en foto’s',
               'Een WhatsApp-knop om de zaak direct te contacteren',
             ],

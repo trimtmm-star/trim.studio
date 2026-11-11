@@ -41,7 +41,6 @@ projects: [
 title: "Detailing Bros",
 url: "detailingbros.be",
 img: "detailingbros",
-video: true,
 desc: "Car detailing · Evergem",
 tags: ["Development", "Creative Direction", "B2B"]
 },
@@ -49,7 +48,6 @@ tags: ["Development", "Creative Direction", "B2B"]
 title: "Pizza Truck Herri",
 url: "pizzatruckherri.com",
 img: "pizzatruckherri",
-video: true,
 desc: "Pizza truck & catering",
 tags: ["Digital Strategy", "E-commerce", "Brand"]
 },
@@ -122,7 +120,6 @@ projects: [
 title: "Detailing Bros",
 url: "detailingbros.be",
 img: "detailingbros",
-video: true,
 desc: "Car detailing · Evergem",
 tags: ["Ontwikkeling", "Creatieve Directie", "B2B"]
 },
@@ -130,7 +127,6 @@ tags: ["Ontwikkeling", "Creatieve Directie", "B2B"]
 title: "Pizza Truck Herri",
 url: "pizzatruckherri.com",
 img: "pizzatruckherri",
-video: true,
 desc: "Pizzatruck & catering",
 tags: ["Digitale Strategie", "E-commerce", "Merk"]
 },

@@ -13,15 +13,15 @@ const PHONE = '+32451130597';
 const PHONE_LABEL = '+32 451 13 05 97';
 
 const PROJECTS = [
-  { title: 'Kantara International', url: 'kantara-international.com', img: 'kantara-international' },
-  { title: 'Detailing Bros', url: 'detailingbros.be', img: 'detailingbros' },
-  { title: 'Pizza Truck Herri', url: 'pizzatruckherri.com', img: 'pizzatruckherri' },
+  { title: 'Kantara International', url: 'kantara-international.com', img: 'kantara-international', video: true },
+  { title: 'Detailing Bros', url: 'detailingbros.be', img: 'detailingbros', video: false },
+  { title: 'Pizza Truck Herri', url: 'pizzatruckherri.com', img: 'pizzatruckherri', video: false },
 ];
 
 // The client's moving hero (desktop recording) in a loop, played only while
 // on screen. Reduced-motion users get the screenshot instead.
 const still = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function HeroClip({ name, alt }: { name: string; alt: string }) {
+function HeroClip({ name, alt, video }: { name: string; alt: string; video: boolean }) {
   const ref = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const v = ref.current;
@@ -31,7 +31,7 @@ function HeroClip({ name, alt }: { name: string; alt: string }) {
     return () => io.disconnect();
   }, []);
   const cls = 'w-full aspect-[16/10] object-cover object-top';
-  if (still) return <img src={`/work/${name}.webp`} alt={alt} loading="lazy" width={1440} height={900} className={cls} />;
+  if (still || !video) return <img src={`/work/${name}.webp`} alt={alt} loading="lazy" width={1440} height={900} className={cls} />;
   return <video ref={ref} src={`/work/${name}.mp4`} poster={`/work/${name}.webp`} muted loop playsInline preload="none" aria-label={alt} className={cls} />;
 }
 
@@ -112,7 +112,7 @@ export default function CardPage() {
                 rel="noopener noreferrer"
                 className="group block rounded-2xl overflow-hidden border border-white/10 bg-black/30"
               >
-                <HeroClip name={p.img} alt={p.title} />
+                <HeroClip name={p.img} alt={p.title} video={p.video} />
                 <div className="flex items-center justify-between px-4 py-3">
                   <span className="font-bold">{p.title}</span>
                   <ArrowUpRight className="w-4 h-4 text-white/60" />
