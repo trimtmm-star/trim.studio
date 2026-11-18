@@ -11,6 +11,7 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.10.0",
     "@fontsource/inter": "^5.3.0",
     "@paper-design/shaders-react": "^0.0.76",
     "@tailwindcss/vite": "^4.1.14",

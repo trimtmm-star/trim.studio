@@ -2,6 +2,7 @@ import { Fragment, Suspense, useLayoutEffect, type ComponentType } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import App from './App';
 import CookieConsent from './components/CookieConsent';
+import ChatWidget from './components/ChatWidget';
 import { PAGES } from './content/pages';
 
 /**
@@ -28,6 +29,7 @@ function ScrollToTop() {
 }
 
 export default function AppRoutes({ pages: P }: { pages: PageSet }) {
+  const { pathname } = useLocation();
   return (
     <>
       <ScrollToTop />
@@ -43,6 +45,7 @@ export default function AppRoutes({ pages: P }: { pages: PageSet }) {
         </Routes>
       </Suspense>
       <CookieConsent />
+      {pathname !== '/card' && <ChatWidget />}
     </>
   );
 }
