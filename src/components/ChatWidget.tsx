@@ -10,6 +10,20 @@ const ENABLED = false;
 
 type Msg = { role: 'user' | 'assistant'; content: string };
 
+// Plain-text answers with bare URLs, emails and the phone number made clickable.
+const LINK = /(https?:\/\/[^\s)]+[^\s).,;:!?]|[\w.+-]+@[\w-]+\.[\w.]*\w|\+32 451 13 05 97)/g;
+function Linkified({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(LINK).map((part, i) => {
+        if (i % 2 === 0) return part;
+        const href = part.startsWith('http') ? part : part.includes('@') ? `mailto:${part}` : 'https://wa.me/32451130597';
+        return <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{part}</a>;
+      })}
+    </>
+  );
+}
+
 const GREETING: Msg = {
   role: 'assistant',
   content: 'Hoi! Ik ben de AI-assistent van ttrim.studio. Vraag me gerust iets over websites, prijzen of automatisatie.',
@@ -97,7 +111,7 @@ export default function ChatWidget() {
             {msgs.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${m.role === 'user' ? 'bg-white text-black' : 'bg-white/10 text-white/90'}`}>
-                  {m.content || <span className="inline-flex gap-1"><span className="animate-pulse">•</span><span className="animate-pulse [animation-delay:150ms]">•</span><span className="animate-pulse [animation-delay:300ms]">•</span></span>}
+                  {m.content ? <Linkified text={m.content} /> : <span className="inline-flex gap-1"><span className="animate-pulse">•</span><span className="animate-pulse [animation-delay:150ms]">•</span><span className="animate-pulse [animation-delay:300ms]">•</span></span>}
                 </div>
               </div>
             ))}
