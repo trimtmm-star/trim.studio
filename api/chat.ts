@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { PAGES } from '../src/content/pages';
+import { PAGES } from '../src/content/pages.js';
 
 /**
  * POST /api/chat — the site assistant. Streams Claude's answer as plain text.
