@@ -96,7 +96,7 @@ export const PAGES: ContentPage[] = [
       { q: 'Is de website van mij?', a: 'Bij een eenmalige aankoop ben je vanaf dag één eigenaar van de volledige broncode.' },
       { q: 'Werk je alleen in Gent?', a: 'Ik zit in Evergem en werk vooral voor zaken in Gent en Oost-Vlaanderen, maar samenwerken kan in heel Vlaanderen.' },
     ],
-    related: ['/realisaties/detailing-bros', '/realisaties/a-poppa', '/blog/wat-kost-een-website-laten-maken', '/pricing'],
+    related: ['/realisaties/tuinen-piens', '/realisaties/detailing-bros', '/blog/wat-kost-een-website-laten-maken', '/pricing'],
     updated: '2026-11-04',
   },
   {
@@ -200,6 +200,38 @@ export const PAGES: ContentPage[] = [
   },
 
   // ─── Case studies ────────────────────────────────────────────────────────
+  {
+    path: '/realisaties/tuinen-piens',
+    kind: 'case',
+    title: 'Tuinen Piens: website voor tuinonderhoud in Gent | ttrim.studio',
+    description: 'Realisatie: website voor Tuinen Piens, tuinman in Gent, met een voor-en-na foto die verandert terwijl je scrolt.',
+    eyebrow: 'Realisatie · Tuinonderhoud',
+    h1: 'Tuinen Piens',
+    intro: 'Een website voor Tuinen Piens, het tuinbedrijf van Filip Piens uit Gent: tuinonderhoud, snoeien en vellen, afsluitingen, opritten en terrassen.',
+    media: { img: 'tuinen-piens', video: true, url: 'tuinonderhoudgent.be' },
+    sections: [
+      {
+        h2: 'De opdracht',
+        blocks: [{ type: 'p', text: 'Bezoekers moesten in één oogopslag zien wat een goed onderhouden tuin oplevert, en meteen een offerte kunnen vragen.' }],
+      },
+      {
+        h2: 'Wat ik bouwde',
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Een homepage met een grote voor-en-na foto: terwijl je scrolt verandert een verwaarloosde tuin in een strak gazon',
+              'Duidelijke knoppen voor een offerte en de diensten, bovenaan de pagina',
+              'De vier diensten duidelijk op een rij: tuinonderhoud, afsluitingen, snoeien en vellen, opritten en terrassen',
+              'Een SEO-titel en -beschrijving gericht op tuinonderhoud in Gent en de regio',
+            ],
+          },
+        ],
+      },
+    ],
+    related: ['/website-laten-maken', '/realisaties/detailing-bros'],
+    updated: '2026-11-19',
+  },
   {
     path: '/realisaties/detailing-bros',
     kind: 'case',
@@ -399,6 +431,7 @@ export const LINK_LABELS: Record<string, string> = {
   '/website-laten-maken': 'Website laten maken',
   '/automatisatie': 'Automatisatie',
   '/app-laten-ontwikkelen': 'App laten ontwikkelen',
+  '/realisaties/tuinen-piens': 'Realisatie: Tuinen Piens',
   '/realisaties/detailing-bros': 'Realisatie: Detailing Bros',
   '/realisaties/pizza-truck-herri': 'Realisatie: Pizza Truck Herri',
   '/realisaties/a-poppa': 'Realisatie: A Poppa',

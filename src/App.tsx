@@ -38,6 +38,14 @@ viewProject: "Explore",
 tag: "Selected",
 projects: [
 {
+title: "Tuinen Piens",
+url: "tuinonderhoudgent.be",
+img: "tuinen-piens",
+video: true,
+desc: "Garden maintenance · Ghent",
+tags: ["Development", "SEO"]
+},
+{
 title: "Detailing Bros",
 url: "detailingbros.be",
 img: "detailingbros",
@@ -116,6 +124,14 @@ subtitle: "B2B & Digitale Partnerschappen",
 viewProject: "Ontdekken",
 tag: "Geselecteerd",
 projects: [
+{
+title: "Tuinen Piens",
+url: "tuinonderhoudgent.be",
+img: "tuinen-piens",
+video: true,
+desc: "Tuinonderhoud · Gent",
+tags: ["Ontwikkeling", "SEO"]
+},
 {
 title: "Detailing Bros",
 url: "detailingbros.be",
@@ -487,6 +503,7 @@ const SERVICES = [
 { to: '/app-laten-ontwikkelen', title: 'App laten ontwikkelen', line: 'Van idee tot App Store.' },
 ];
 const CASES = [
+{ to: '/realisaties/tuinen-piens', title: 'Tuinen Piens' },
 { to: '/realisaties/detailing-bros', title: 'Detailing Bros' },
 { to: '/realisaties/pizza-truck-herri', title: 'Pizza Truck Herri' },
 { to: '/realisaties/a-poppa', title: 'A Poppa' },
