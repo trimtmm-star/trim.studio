@@ -13,6 +13,7 @@ const PHONE = '+32451130597';
 const PHONE_LABEL = '+32 451 13 05 97';
 
 const PROJECTS = [
+  { title: 'Tuinen Piens', url: 'tuinonderhoudgent.be', img: 'tuinen-piens', video: true },
   { title: 'Kantara International', url: 'kantara-international.com', img: 'kantara-international', video: true },
   { title: 'Detailing Bros', url: 'detailingbros.be', img: 'detailingbros', video: false },
   { title: 'Pizza Truck Herri', url: 'pizzatruckherri.com', img: 'pizzatruckherri', video: false },
