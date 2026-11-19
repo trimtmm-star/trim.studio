@@ -24,12 +24,13 @@ const copy: Record<'nl' | 'en', Copy> = {
          'Prijsconfigurator — naam, e-mailadres, gekozen pakket, opties, geschatte prijs en je opmerkingen. Deze worden via een beveiligde verbinding naar mijn eigen automatiseringsserver (n8n, gehost in de EU) gestuurd om je een voorstel te bezorgen. Rechtsgrond: precontractuele maatregelen (art. 6.1.b AVG).',
          'Statistieken (Google Analytics 4) — enkel na jouw toestemming via de cookiebanner: bezochte pagina\'s, apparaat, browser, land, verwijzende site, bij benadering gemaakte locatie. IP-adressen worden door Google geanonimiseerd. Doel: begrijpen hoe de site wordt gebruikt en hem verbeteren. Rechtsgrond: toestemming (art. 6.1.a AVG). Zonder toestemming wordt Google Analytics niet geladen en wordt er niets naar Google gestuurd.',
          'Technische logs — de hostingprovider (Vercel) bewaart kortstondig serverlogs (IP-adres, tijdstip, opgevraagde URL) voor beveiliging en werking van de site. Rechtsgrond: gerechtvaardigd belang (art. 6.1.f AVG).',
-         'Chatassistent (AI) — als je de chat op deze site gebruikt, worden je vragen en de antwoorden naar Anthropic (Claude) gestuurd om een antwoord te genereren. Ik bewaar de gesprekken niet. Je IP-adres wordt kortstondig in het geheugen gebruikt om misbruik te beperken (maximum aantal vragen), niet opgeslagen. Deel geen gevoelige persoonsgegevens in de chat. Rechtsgrond: gerechtvaardigd belang (art. 6.1.f AVG) om je vragen te beantwoorden.'],
+         'Chatassistent (AI) — als je de chat op deze site gebruikt, worden je vragen en de antwoorden naar Anthropic (Claude) gestuurd om een antwoord te genereren. Ik bewaar de gesprekken niet; Anthropic verwijdert ze automatisch binnen 30 dagen. Je IP-adres wordt kortstondig in het geheugen gebruikt om misbruik te beperken (maximum aantal vragen), niet opgeslagen. Deel geen gevoelige persoonsgegevens in de chat. Rechtsgrond: gerechtvaardigd belang (art. 6.1.f AVG) om je vragen te beantwoorden.'],
       ]},
       { h: '3. Hoe lang ik gegevens bewaar', p: [
         ['Contact- en offerteaanvragen: maximaal 24 maanden na het laatste contact, of zolang nodig voor de uitvoering van een overeenkomst en de wettelijke boekhoudverplichtingen (7 jaar voor facturen).',
          'Google Analytics: 14 maanden (instelling van de property).',
          'Serverlogs: maximaal 30 dagen.',
+         'Chatgesprekken: niet bewaard door mij; bij Anthropic automatisch verwijderd binnen 30 dagen.',
          'Je cookiekeuze: bewaard in je browser (localStorage) tot je ze wist of wijzigt.'],
       ]},
       { h: '4. Met wie ik gegevens deel', p: [
@@ -68,12 +69,13 @@ const copy: Record<'nl' | 'en', Copy> = {
          'Pricing configurator — name, e-mail address, chosen package, options, estimated price and your notes. They are sent over an encrypted connection to my own automation server (n8n, hosted in the EU) so I can send you a proposal. Legal basis: pre-contractual steps (art. 6.1.b GDPR).',
          'Statistics (Google Analytics 4) — only after your consent in the cookie banner: pages visited, device, browser, country, referring site, approximate location. Google anonymises IP addresses. Purpose: understanding how the site is used and improving it. Legal basis: consent (art. 6.1.a GDPR). Without consent Google Analytics is not loaded and nothing is sent to Google.',
          'Technical logs — the hosting provider (Vercel) briefly keeps server logs (IP address, time, requested URL) for security and operation of the site. Legal basis: legitimate interest (art. 6.1.f GDPR).',
-         'Chat assistant (AI) — if you use the chat on this site, your questions and the answers are sent to Anthropic (Claude) to generate a reply. I do not store the conversations. Your IP address is used briefly in memory to limit abuse (a maximum number of questions) and is not saved. Please do not share sensitive personal data in the chat. Legal basis: legitimate interest (art. 6.1.f GDPR) in answering your questions.'],
+         'Chat assistant (AI) — if you use the chat on this site, your questions and the answers are sent to Anthropic (Claude) to generate a reply. I do not store the conversations; Anthropic deletes them automatically within 30 days. Your IP address is used briefly in memory to limit abuse (a maximum number of questions) and is not saved. Please do not share sensitive personal data in the chat. Legal basis: legitimate interest (art. 6.1.f GDPR) in answering your questions.'],
       ]},
       { h: '3. How long I keep data', p: [
         ['Contact and quote requests: up to 24 months after the last contact, or as long as needed to perform a contract and meet legal bookkeeping obligations (7 years for invoices).',
          'Google Analytics: 14 months (property setting).',
          'Server logs: up to 30 days.',
+         'Chat conversations: not stored by me; deleted automatically by Anthropic within 30 days.',
          'Your cookie choice: stored in your browser (localStorage) until you clear or change it.'],
       ]},
       { h: '4. Who I share data with', p: [
