@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import MeshBackground from '../components/MeshBackground';
 import { openCookieSettings } from '../components/CookieConsent';
 
-const UPDATED = '2026-10-28';
+const UPDATED = '2026-11-19';
 
 type Section = { h: string; p: (string | string[])[] };
 type Copy = { back: string; title: string; updated: string; cookieBtn: string; sections: Section[]; cookies: { head: string[]; rows: string[][] } };
@@ -23,7 +23,8 @@ const copy: Record<'nl' | 'en', Copy> = {
         ['Contact via e-mail of WhatsApp — naam, e-mailadres of telefoonnummer en de inhoud van je bericht. Doel: je vraag beantwoorden en een eventuele offerte opmaken. Rechtsgrond: precontractuele maatregelen (art. 6.1.b AVG).',
          'Prijsconfigurator — naam, e-mailadres, gekozen pakket, opties, geschatte prijs en je opmerkingen. Deze worden via een beveiligde verbinding naar mijn eigen automatiseringsserver (n8n, gehost in de EU) gestuurd om je een voorstel te bezorgen. Rechtsgrond: precontractuele maatregelen (art. 6.1.b AVG).',
          'Statistieken (Google Analytics 4) — enkel na jouw toestemming via de cookiebanner: bezochte pagina\'s, apparaat, browser, land, verwijzende site, bij benadering gemaakte locatie. IP-adressen worden door Google geanonimiseerd. Doel: begrijpen hoe de site wordt gebruikt en hem verbeteren. Rechtsgrond: toestemming (art. 6.1.a AVG). Zonder toestemming wordt Google Analytics niet geladen en wordt er niets naar Google gestuurd.',
-         'Technische logs — de hostingprovider (Vercel) bewaart kortstondig serverlogs (IP-adres, tijdstip, opgevraagde URL) voor beveiliging en werking van de site. Rechtsgrond: gerechtvaardigd belang (art. 6.1.f AVG).'],
+         'Technische logs — de hostingprovider (Vercel) bewaart kortstondig serverlogs (IP-adres, tijdstip, opgevraagde URL) voor beveiliging en werking van de site. Rechtsgrond: gerechtvaardigd belang (art. 6.1.f AVG).',
+         'Chatassistent (AI) — als je de chat op deze site gebruikt, worden je vragen en de antwoorden naar Anthropic (Claude) gestuurd om een antwoord te genereren. Ik bewaar de gesprekken niet. Je IP-adres wordt kortstondig in het geheugen gebruikt om misbruik te beperken (maximum aantal vragen), niet opgeslagen. Deel geen gevoelige persoonsgegevens in de chat. Rechtsgrond: gerechtvaardigd belang (art. 6.1.f AVG) om je vragen te beantwoorden.'],
       ]},
       { h: '3. Hoe lang ik gegevens bewaar', p: [
         ['Contact- en offerteaanvragen: maximaal 24 maanden na het laatste contact, of zolang nodig voor de uitvoering van een overeenkomst en de wettelijke boekhoudverplichtingen (7 jaar voor facturen).',
@@ -32,7 +33,7 @@ const copy: Record<'nl' | 'en', Copy> = {
          'Je cookiekeuze: bewaard in je browser (localStorage) tot je ze wist of wijzigt.'],
       ]},
       { h: '4. Met wie ik gegevens deel', p: [
-        'Ik verkoop je gegevens nooit. Ik gebruik wel de volgende verwerkers: Vercel Inc. (hosting, VS — doorgifte op basis van de EU-standaardcontractbepalingen), Google Ireland Ltd. (Google Analytics, Gmail — doorgifte naar de VS onder het EU-US Data Privacy Framework), Meta Platforms Ireland Ltd. (WhatsApp, wanneer jij via dat kanaal contact opneemt) en mijn eigen n8n-server (EU). Elke verwerker is gebonden aan een verwerkersovereenkomst.',
+        'Ik verkoop je gegevens nooit. Ik gebruik wel de volgende verwerkers: Vercel Inc. (hosting, VS — doorgifte op basis van de EU-standaardcontractbepalingen), Google Ireland Ltd. (Google Analytics, Gmail — doorgifte naar de VS onder het EU-US Data Privacy Framework), Meta Platforms Ireland Ltd. (WhatsApp, wanneer jij via dat kanaal contact opneemt) Anthropic PBC (AI-chatassistent, VS — doorgifte op basis van de EU-standaardcontractbepalingen; Anthropic gebruikt API-gegevens niet om zijn modellen te trainen) en mijn eigen n8n-server (EU). Elke verwerker is gebonden aan een verwerkersovereenkomst.',
       ]},
       { h: '5. Cookies', p: [
         'Deze site plaatst geen cookies vóór je keuze in de banner. Bij "Weigeren" worden alleen strikt noodzakelijke opslagitems gebruikt. Bij "Aanvaarden" worden de onderstaande analytics-cookies geplaatst. Je keuze kan je altijd wijzigen via de link "Cookies" onderaan elke pagina.',
@@ -66,7 +67,8 @@ const copy: Record<'nl' | 'en', Copy> = {
         ['Contact by e-mail or WhatsApp — name, e-mail address or phone number and the content of your message. Purpose: answering your request and preparing a quote. Legal basis: pre-contractual steps (art. 6.1.b GDPR).',
          'Pricing configurator — name, e-mail address, chosen package, options, estimated price and your notes. They are sent over an encrypted connection to my own automation server (n8n, hosted in the EU) so I can send you a proposal. Legal basis: pre-contractual steps (art. 6.1.b GDPR).',
          'Statistics (Google Analytics 4) — only after your consent in the cookie banner: pages visited, device, browser, country, referring site, approximate location. Google anonymises IP addresses. Purpose: understanding how the site is used and improving it. Legal basis: consent (art. 6.1.a GDPR). Without consent Google Analytics is not loaded and nothing is sent to Google.',
-         'Technical logs — the hosting provider (Vercel) briefly keeps server logs (IP address, time, requested URL) for security and operation of the site. Legal basis: legitimate interest (art. 6.1.f GDPR).'],
+         'Technical logs — the hosting provider (Vercel) briefly keeps server logs (IP address, time, requested URL) for security and operation of the site. Legal basis: legitimate interest (art. 6.1.f GDPR).',
+         'Chat assistant (AI) — if you use the chat on this site, your questions and the answers are sent to Anthropic (Claude) to generate a reply. I do not store the conversations. Your IP address is used briefly in memory to limit abuse (a maximum number of questions) and is not saved. Please do not share sensitive personal data in the chat. Legal basis: legitimate interest (art. 6.1.f GDPR) in answering your questions.'],
       ]},
       { h: '3. How long I keep data', p: [
         ['Contact and quote requests: up to 24 months after the last contact, or as long as needed to perform a contract and meet legal bookkeeping obligations (7 years for invoices).',
@@ -75,7 +77,7 @@ const copy: Record<'nl' | 'en', Copy> = {
          'Your cookie choice: stored in your browser (localStorage) until you clear or change it.'],
       ]},
       { h: '4. Who I share data with', p: [
-        'I never sell your data. I do rely on the following processors: Vercel Inc. (hosting, US — transfer under the EU Standard Contractual Clauses), Google Ireland Ltd. (Google Analytics, Gmail — US transfer under the EU-US Data Privacy Framework), Meta Platforms Ireland Ltd. (WhatsApp, when you choose that channel) and my own n8n server (EU). Each processor is bound by a data processing agreement.',
+        'I never sell your data. I do rely on the following processors: Vercel Inc. (hosting, US — transfer under the EU Standard Contractual Clauses), Google Ireland Ltd. (Google Analytics, Gmail — US transfer under the EU-US Data Privacy Framework), Meta Platforms Ireland Ltd. (WhatsApp, when you choose that channel) Anthropic PBC (AI chat assistant, US — transfer under the EU Standard Contractual Clauses; Anthropic does not use API data to train its models) and my own n8n server (EU). Each processor is bound by a data processing agreement.',
       ]},
       { h: '5. Cookies', p: [
         'This site sets no cookies before you make a choice in the banner. With "Reject" only strictly necessary storage is used. With "Accept" the analytics cookies listed below are set. You can change your choice at any time via the "Cookies" link at the bottom of every page.',

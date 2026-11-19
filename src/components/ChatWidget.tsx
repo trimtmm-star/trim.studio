@@ -3,10 +3,10 @@ import { MessageSquare, X, ArrowUp } from 'lucide-react';
 
 /**
  * ChatWidget — the site assistant (POST /api/chat, streamed plain text).
- * While it is being tested it only appears after visiting with ?chat=1
- * (remembered for the browser session); set ENABLED to true to show it to everyone.
+ * Set ENABLED to false to hide it again; it then only appears after visiting
+ * with ?chat=1 (remembered for the browser session), handy for testing.
  */
-const ENABLED = false;
+const ENABLED = true;
 
 type Msg = { role: 'user' | 'assistant'; content: string };
 
