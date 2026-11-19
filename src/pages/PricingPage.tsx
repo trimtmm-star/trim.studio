@@ -27,8 +27,8 @@ const copy = {
     orSub: 'Of abonnement · Growth inbegrepen',
     packages: [
       { tier: 'PREMIUM', desc: "5+ pagina's · CMS · DB", price: '€2.350*', sub: '€785 + €115/mo', features: [true, true, true, true, true, true] },
-      { tier: 'ADVANCED', desc: "Tot 5 pagina's", price: '€1.150', sub: '€385 + €69/mo', features: [true, true, true, true, false, false], popular: true },
-      { tier: 'STARTER', desc: "1 pagina", price: '€475', sub: '€195 + €54/mo', features: [true, true, true, false, false, false] },
+      { tier: 'ADVANCED', desc: "Tot 5 pagina's", price: '€1.290', sub: '€385 + €69/mo', features: [true, true, true, true, false, false], popular: true },
+      { tier: 'STARTER', desc: "1 pagina", price: '€545', sub: '€195 + €54/mo', features: [true, true, true, false, false, false] },
     ],
     featureLabels: ['Responsive design', 'SEO-vriendelijke structuur', 'Contactformulier', 'CMS-integratie', 'Database', 'Custom animaties'],
     footnote: '* Premiumprijs is indicatief. Definitieve offerte na briefing. Kleine onderneming onderworpen aan de vrijstellingsregeling: btw niet van toepassing.',
@@ -69,8 +69,8 @@ const copy = {
     orSub: 'Or subscription · Growth included',
     packages: [
       { tier: 'PREMIUM', desc: '5+ pages · CMS · DB', price: '€2,350*', sub: '€785 + €115/mo', features: [true, true, true, true, true, true] },
-      { tier: 'ADVANCED', desc: 'Up to 5 pages', price: '€1,150', sub: '€385 + €69/mo', features: [true, true, true, true, false, false], popular: true },
-      { tier: 'STARTER', desc: '1 page', price: '€475', sub: '€195 + €54/mo', features: [true, true, true, false, false, false] },
+      { tier: 'ADVANCED', desc: 'Up to 5 pages', price: '€1,290', sub: '€385 + €69/mo', features: [true, true, true, true, false, false], popular: true },
+      { tier: 'STARTER', desc: '1 page', price: '€545', sub: '€195 + €54/mo', features: [true, true, true, false, false, false] },
     ],
     featureLabels: ['Responsive design', 'SEO-friendly structure', 'Contact form', 'CMS integration', 'Database', 'Custom animations'],
     footnote: '* Premium price is indicative. Final quote after briefing. Small business under the Belgian VAT exemption scheme: VAT not applicable.',

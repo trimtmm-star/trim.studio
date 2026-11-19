@@ -15,9 +15,9 @@ export const ROUTES: RouteMeta[] = [
   },
   {
     path: '/pricing',
-    title: 'Prijzen website laten maken: pakketten vanaf €475 | ttrim.studio',
+    title: 'Prijzen website laten maken: pakketten vanaf €545 | ttrim.studio',
     description:
-      'Transparante prijzen: Starter €475, Advanced €1.150, Premium vanaf €2.350, of een abonnement. Onderhoud Care €24 en Growth €54 per maand.',
+      'Transparante prijzen: Starter €545, Advanced €1.290, Premium vanaf €2.350, of een abonnement. Onderhoud Care €24 en Growth €54 per maand.',
     priority: 0.9,
   },
   {

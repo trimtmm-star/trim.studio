@@ -38,11 +38,11 @@ export const PAGES: ContentPage[] = [
     kind: 'service',
     title: 'Website laten maken in Gent en Oost-Vlaanderen | ttrim.studio',
     description:
-      'Een snelle, moderne website op maat voor je zaak, vanaf €475. Ontwerp, bouw, hosting en onderhoud door Trim Tahirsylaj uit Evergem.',
+      'Een snelle, moderne website op maat voor je zaak, vanaf €545. Ontwerp, bouw, hosting en onderhoud door Trim Tahirsylaj uit Evergem.',
     eyebrow: 'Diensten · Website',
     h1: 'Website laten maken',
     intro:
-      'Ik ontwerp en bouw websites op maat voor zelfstandigen en kmo’s in Gent en Oost-Vlaanderen: snel, mobielvriendelijk en klaar om klanten binnen te halen. Vanaf €475, of met een abonnement vanaf €195 opstart.',
+      'Ik ontwerp en bouw websites op maat voor zelfstandigen en kmo’s in Gent en Oost-Vlaanderen: snel, mobielvriendelijk en klaar om klanten binnen te halen. Vanaf €545, of met een abonnement vanaf €195 opstart.',
     sections: [
       {
         h2: 'Wat je krijgt',
@@ -67,8 +67,8 @@ export const PAGES: ContentPage[] = [
             type: 'table',
             head: ['Pakket', 'Omvang', 'Eenmalig', 'Abonnement'],
             rows: [
-              ['Starter', '1 pagina', '€475', '€195 + €54/maand'],
-              ['Advanced', "Tot 5 pagina's + CMS", '€1.150', '€385 + €69/maand'],
+              ['Starter', '1 pagina', '€545', '€195 + €54/maand'],
+              ['Advanced', "Tot 5 pagina's + CMS", '€1.290', '€385 + €69/maand'],
               ['Premium', "5+ pagina's, CMS, database", 'vanaf €2.350', '€785 + €115/maand'],
             ],
           },
@@ -92,7 +92,7 @@ export const PAGES: ContentPage[] = [
       },
     ],
     faq: [
-      { q: 'Wat kost een website laten maken?', a: 'Bij mij vanaf €475 voor een website van één pagina, €1.150 tot 5 pagina’s en vanaf €2.350 voor grotere sites met CMS en database. Btw is niet van toepassing.' },
+      { q: 'Wat kost een website laten maken?', a: 'Bij mij vanaf €545 voor een website van één pagina, €1.290 tot 5 pagina’s en vanaf €2.350 voor grotere sites met CMS en database. Btw is niet van toepassing.' },
       { q: 'Is de website van mij?', a: 'Bij een eenmalige aankoop ben je vanaf dag één eigenaar van de volledige broncode.' },
       { q: 'Werk je alleen in Gent?', a: 'Ik zit in Evergem en werk vooral voor zaken in Gent en Oost-Vlaanderen, maar samenwerken kan in heel Vlaanderen.' },
     ],
@@ -365,11 +365,11 @@ export const PAGES: ContentPage[] = [
     kind: 'article',
     title: 'Wat kost een website laten maken in België? (2026) | ttrim.studio',
     description:
-      'Een website laten maken kost bij mij tussen €475 en €2.350+, of vanaf €195 met een abonnement. Zo zie je waar de prijs van afhangt.',
+      'Een website laten maken kost bij mij tussen €545 en €2.350+, of vanaf €195 met een abonnement. Zo zie je waar de prijs van afhangt.',
     eyebrow: 'Blog · Prijzen',
     h1: 'Wat kost een website laten maken in België?',
     intro:
-      'Kort antwoord: bij mij kost een website tussen €475 (één pagina) en €2.350 of meer (grote site met CMS en database). Wil je minder in één keer betalen, dan start een abonnement vanaf €195 plus een maandbedrag. Hieronder lees je waar de prijs van afhangt.',
+      'Kort antwoord: bij mij kost een website tussen €545 (één pagina) en €2.350 of meer (grote site met CMS en database). Wil je minder in één keer betalen, dan start een abonnement vanaf €195 plus een maandbedrag. Hieronder lees je waar de prijs van afhangt.',
     sections: [
       {
         h2: 'Mijn prijzen op een rij',
@@ -378,8 +378,8 @@ export const PAGES: ContentPage[] = [
             type: 'table',
             head: ['Pakket', 'Wat je krijgt', 'Eenmalig', 'Abonnement'],
             rows: [
-              ['Starter', '1 pagina, responsive, contactformulier', '€475', '€195 + €54/maand'],
-              ['Advanced', "Tot 5 pagina's + CMS", '€1.150', '€385 + €69/maand'],
+              ['Starter', '1 pagina, responsive, contactformulier', '€545', '€195 + €54/maand'],
+              ['Advanced', "Tot 5 pagina's + CMS", '€1.290', '€385 + €69/maand'],
               ['Premium', "5+ pagina's, CMS, database, animaties", 'vanaf €2.350', '€785 + €115/maand'],
             ],
           },

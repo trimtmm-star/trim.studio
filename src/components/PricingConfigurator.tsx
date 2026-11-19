@@ -13,8 +13,8 @@ type PackageId = 'starter' | 'advanced' | 'premium';
 type AddonId = 'chatbot' | 'automation' | 'multilingual' | 'care' | 'growth';
 
 const PACKAGES: Record<PackageId, { label: string; desc: { nl: string; en: string }; oneTime: number; startFee: number; monthly: number }> = {
-  starter: { label: 'Starter', desc: { nl: '1 pagina', en: '1 page' }, oneTime: 475, startFee: 195, monthly: 54 },
-  advanced: { label: 'Advanced', desc: { nl: "Tot 5 pagina's", en: 'Up to 5 pages' }, oneTime: 1150, startFee: 385, monthly: 69 },
+  starter: { label: 'Starter', desc: { nl: '1 pagina', en: '1 page' }, oneTime: 545, startFee: 195, monthly: 54 },
+  advanced: { label: 'Advanced', desc: { nl: "Tot 5 pagina's", en: 'Up to 5 pages' }, oneTime: 1290, startFee: 385, monthly: 69 },
   premium: { label: 'Premium', desc: { nl: "5+ pagina's · CMS · DB", en: '5+ pages · CMS · DB' }, oneTime: 2350, startFee: 785, monthly: 115 },
 };
 

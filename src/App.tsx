@@ -498,7 +498,7 @@ return (
 // Short links to the Dutch service pages and case studies (they carry the
 // SEO text; the home page stays a visual showcase).
 const SERVICES = [
-{ to: '/website-laten-maken', title: 'Website laten maken', line: 'Op maat, snel, vanaf €475.' },
+{ to: '/website-laten-maken', title: 'Website laten maken', line: 'Op maat, snel, vanaf €545.' },
 { to: '/automatisatie', title: 'Automatisatie', line: 'Minder handwerk, vanaf €575.' },
 { to: '/app-laten-ontwikkelen', title: 'App laten ontwikkelen', line: 'Van idee tot App Store.' },
 ];
