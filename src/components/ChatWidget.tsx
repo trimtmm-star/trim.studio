@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { MessageSquare, X, ArrowUp } from 'lucide-react';
+import { Sparkles, X, ArrowUp } from 'lucide-react';
 
 /**
  * ChatWidget — the site assistant (POST /api/chat, streamed plain text).
@@ -92,7 +92,7 @@ export default function ChatWidget() {
           aria-label="Chat met de AI-assistent"
           className="fixed z-50 right-4 bottom-[calc(env(safe-area-inset-bottom)+5.5rem)] lg:bottom-6 w-14 h-14 rounded-full bg-white text-black shadow-2xl shadow-black/50 flex items-center justify-center active:scale-95 transition-transform"
         >
-          <MessageSquare className="w-6 h-6" />
+          <Sparkles className="w-6 h-6" />
         </button>
       )}
       {open && (
