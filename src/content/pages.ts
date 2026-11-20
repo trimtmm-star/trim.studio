@@ -465,6 +465,78 @@ export const PAGES: ContentPage[] = [
     related: ['/website-laten-maken', '/pricing', '/blog/wat-kost-een-website-laten-maken'],
     updated: '2026-11-20',
   },
+  {
+    path: '/blog/website-laten-maken-gent',
+    kind: 'article',
+    title: 'Website laten maken in Gent: waar op letten? | ttrim.studio',
+    description:
+      'Een website laten maken in Gent of Oost-Vlaanderen? Dit zijn de 6 dingen waarop je best let: prijs, eigendom, snelheid, vindbaarheid, onderhoud en wie je aanspreekpunt is.',
+    eyebrow: 'Blog · Gids',
+    h1: 'Website laten maken in Gent: waar op letten?',
+    intro:
+      'Een website laten maken lijkt eenvoudig, tot je offertes naast elkaar legt en elk bedrijf iets anders belooft. Dit zijn de zes punten waarop je als zelfstandige of kmo in Gent en Oost-Vlaanderen best let, voor je tekent.',
+    sections: [
+      {
+        h2: '1. Vraag wat de prijs precies omvat',
+        blocks: [
+          { type: 'p', text: 'Twee offertes kunnen er even goedkoop uitzien en toch niet hetzelfde bevatten. Check of hosting, je domeinnaam, SSL, een contactformulier en aanpassingen na de oplevering erin zitten. En kijk of de prijs met of zonder btw is: dat verschilt snel 21%.' },
+          { type: 'p', text: 'Bij mij zijn de prijzen eindprijzen, omdat ik onder de vrijstellingsregeling voor kleine ondernemingen werk. Je vindt ze op de prijzenpagina.' },
+        ],
+      },
+      {
+        h2: '2. Wees zeker dat de website van jou is',
+        blocks: [
+          { type: 'p', text: 'Sommige bureaus houden de website in eigendom en verhuren hem aan je. Stop je, dan sta je met niets. Vraag dus uitdrukkelijk: wie is eigenaar van de code, van het ontwerp en van de domeinnaam?' },
+          { type: 'p', text: 'Bij een eenmalige aankoop is de website bij mij volledig van jou. Bij een abonnement krijg je een gebruiksrecht, met de mogelijkheid om de website later over te nemen.' },
+        ],
+      },
+      {
+        h2: '3. Snelheid telt, vooral op je gsm',
+        blocks: [
+          { type: 'p', text: 'De meeste bezoekers komen via hun telefoon. Een trage website kost je klanten voor ze je aanbod gezien hebben, en Google houdt rekening met laadsnelheid. Test je huidige of voorgestelde website gratis met PageSpeed Insights en vraag naar de score op mobiel.' },
+        ],
+      },
+      {
+        h2: '4. Zorg dat klanten je ook vinden',
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Een duidelijke titel en beschrijving per pagina, met je activiteit en regio.',
+              'Aparte pagina’s per dienst, zodat Google weet waarvoor je gevonden wil worden.',
+              'Een Google Bedrijfsprofiel met je openingstijden, foto’s en reviews.',
+              'Gestructureerde gegevens (zoals bedrijfsgegevens), zodat Google je correct toont.',
+            ],
+          },
+        ],
+      },
+      {
+        h2: '5. Wie houdt de website up-to-date?',
+        blocks: [
+          { type: 'p', text: 'Een website is nooit af. Software moet bijgewerkt worden, je openingsuren of prijzen veranderen, en een beveiligingsprobleem moet snel opgelost worden. Spreek dus vooraf af wie dat doet en wat het kost, bijvoorbeeld via een vast maandbedrag voor hosting en onderhoud.' },
+        ],
+      },
+      {
+        h2: '6. Wie is je aanspreekpunt?',
+        blocks: [
+          { type: 'p', text: 'Bij een grote speler praat je met een accountmanager die jouw verhaal doorgeeft aan een ontwerper en een ontwikkelaar. Bij een kleine studio spreek je rechtstreeks met de persoon die je website bouwt. Dat scheelt misverstanden, tijd en heen-en-weer mails.' },
+        ],
+      },
+      {
+        h2: 'Een voorbeeld uit de regio',
+        blocks: [
+          { type: 'p', text: 'Wil je zien hoe dat er in de praktijk uitziet? Bekijk de realisaties voor een tuinbedrijf uit Gent, een detailingbedrijf en een pizzatruck. Elke website is op maat gebouwd en werkt vlot op telefoon en computer.' },
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Wat kost een website laten maken in Gent?', a: 'Dat hangt af van het aantal pagina’s en de functies. Je kiest tussen een eenmalige prijs of een abonnement met lage opstartkost. Op de prijzenpagina zie je alle bedragen.' },
+      { q: 'Is een lokale webdesigner beter dan een groot bureau?', a: 'Dat hangt van je project af. Een kleine, lokale studio werkt persoonlijk en direct, een groot bureau heeft meer capaciteit voor omvangrijke projecten.' },
+      { q: 'Hoe vind ik klanten uit mijn regio via Google?', a: 'Combineer een snelle website met duidelijke dienstenpagina’s, een volledig Google Bedrijfsprofiel en reviews van tevreden klanten.' },
+    ],
+    related: ['/website-laten-maken', '/pricing', '/blog/wat-kost-een-website-laten-maken', '/blog/veelgestelde-vragen-website-laten-maken'],
+    updated: '2026-11-20',
+  },
 ];
 
 export const pageByPath = (path: string) => PAGES.find((p) => p.path === path);
@@ -481,6 +553,7 @@ export const LINK_LABELS: Record<string, string> = {
   '/realisaties/kantara-international': 'Realisatie: Kantara International',
   '/blog/wat-kost-een-website-laten-maken': 'Wat kost een website laten maken?',
   '/blog/veelgestelde-vragen-website-laten-maken': 'Veelgestelde vragen',
+  '/blog/website-laten-maken-gent': 'Website laten maken in Gent: waar op letten?',
   '/pricing': 'Alle prijzen',
   '/owlog': 'Owlog',
 };
