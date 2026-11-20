@@ -422,6 +422,49 @@ export const PAGES: ContentPage[] = [
     related: ['/website-laten-maken', '/pricing', '/automatisatie'],
     updated: '2026-11-04',
   },
+  {
+    path: '/blog/veelgestelde-vragen-website-laten-maken',
+    kind: 'article',
+    title: 'Website laten maken in Gent: veelgestelde vragen | ttrim.studio',
+    description:
+      'Antwoorden op de meest gestelde vragen over een website laten maken in Gent en Oost-Vlaanderen: kostprijs, doorlooptijd, eigendom, onderhoud, apps en automatisatie.',
+    eyebrow: 'Blog · Veelgestelde vragen',
+    h1: 'Website laten maken: veelgestelde vragen',
+    intro:
+      'Je overweegt een website voor je zaak in Gent, Evergem of Oost-Vlaanderen? Dit zijn de vragen die zelfstandigen en kmo’s me het vaakst stellen, met een eerlijk antwoord.',
+    sections: [
+      {
+        h2: 'Voor wie bouw ik websites?',
+        blocks: [{ type: 'p', text: 'Voor zelfstandigen en kmo’s in Gent, Evergem en Oost-Vlaanderen: aannemers, horeca, tuinbedrijven, dienstverleners en meer. Ik werk persoonlijk, van eerste gesprek tot oplevering.' }],
+      },
+      {
+        h2: 'Hoe lang duurt het om een website te laten maken?',
+        blocks: [{ type: 'p', text: 'Een eenvoudige website is meestal binnen enkele weken klaar. De planning start zodra de briefing en de inhoud binnen zijn, en je krijgt vooraf een duidelijke timing. Inbegrepen zijn twee revisierondes.' }],
+      },
+      {
+        h2: 'Is mijn website na oplevering echt van mij?',
+        blocks: [{ type: 'p', text: 'Bij een eenmalige aankoop wel: de website is volledig van jou vanaf dag 1, inclusief je domeinnaam. Bij een abonnement krijg je een gebruiksrecht, met de mogelijkheid om de website later over te nemen.' }],
+      },
+      {
+        h2: 'Doe je ook onderhoud en hosting?',
+        blocks: [{ type: 'p', text: 'Ja. Hosting, SSL, beveiliging, back-ups en updates zitten in het onderhoudsplan Care (€24/maand) of Growth (€54/maand). Bij een abonnement is Growth inbegrepen.' }],
+      },
+      {
+        h2: 'Maak je ook apps, chatbots of automatisaties?',
+        blocks: [{ type: 'p', text: 'Ja. Naast websites bouw ik iPhone-apps, chatbots en AI-assistenten, en automatiseer ik terugkerend werk zoals formulieren, e-mail en offertes.' }],
+      },
+    ],
+    faq: [
+      { q: 'Voor wie bouw je websites?', a: 'Voor zelfstandigen en kmo’s in Gent, Evergem en Oost-Vlaanderen: aannemers, horeca, tuinbedrijven, dienstverleners en meer.' },
+      { q: 'Hoeveel kost een website?', a: 'Dat hangt af van het aantal pagina’s en de functies. Je kiest tussen een eenmalige prijs of een abonnement met lage opstartkost. Alle prijzen staan op de prijzenpagina.' },
+      { q: 'Hoe lang duurt het om een website te laten maken?', a: 'Een eenvoudige website is meestal binnen enkele weken klaar. De planning start zodra de briefing en de inhoud binnen zijn.' },
+      { q: 'Is mijn website na oplevering echt van mij?', a: 'Bij een eenmalige aankoop wel, volledig vanaf dag 1. Bij een abonnement krijg je een gebruiksrecht met de mogelijkheid om de website later over te nemen.' },
+      { q: 'Doe je ook onderhoud en hosting?', a: 'Ja, via Care (€24/maand) of Growth (€54/maand). Bij een abonnement zit het onderhoud inbegrepen.' },
+      { q: 'Maak je ook apps of automatisaties?', a: 'Ja: iPhone-apps, chatbots, AI-assistenten en automatisaties voor formulieren, e-mail en offertes.' },
+    ],
+    related: ['/website-laten-maken', '/pricing', '/blog/wat-kost-een-website-laten-maken'],
+    updated: '2026-11-20',
+  },
 ];
 
 export const pageByPath = (path: string) => PAGES.find((p) => p.path === path);
@@ -437,6 +480,7 @@ export const LINK_LABELS: Record<string, string> = {
   '/realisaties/a-poppa': 'Realisatie: A Poppa',
   '/realisaties/kantara-international': 'Realisatie: Kantara International',
   '/blog/wat-kost-een-website-laten-maken': 'Wat kost een website laten maken?',
+  '/blog/veelgestelde-vragen-website-laten-maken': 'Veelgestelde vragen',
   '/pricing': 'Alle prijzen',
   '/owlog': 'Owlog',
 };

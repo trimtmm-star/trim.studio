@@ -527,6 +527,7 @@ const Services = () => (
 <span className="text-xs uppercase tracking-[0.25em] text-white/45">Realisaties</span>
 {CASES.map((c) => <Link key={c.to} to={c.to} className="hover:text-white underline underline-offset-4 decoration-white/25">{c.title}</Link>)}
 <Link to="/blog/wat-kost-een-website-laten-maken" className="hover:text-white underline underline-offset-4 decoration-white/25">Wat kost een website?</Link>
+<Link to="/blog/veelgestelde-vragen-website-laten-maken" className="hover:text-white underline underline-offset-4 decoration-white/25">Veelgestelde vragen</Link>
 </div>
 </section>
 );
